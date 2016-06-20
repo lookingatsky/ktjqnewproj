@@ -1,0 +1,40 @@
+.mediaListTitle a{
+	color:#666;
+}
+.mediaListTitle a:hover{
+	color:#666;
+	text-decoration:none;
+}
+.loginLink{
+	width:48%;
+	height:40px;
+	line-height:40px;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	text-align:center;
+	color:#fff;
+	border-radius:4px;
+}
+.loginLink:hover{
+	background-color: #286090;
+	border-color: #204d74;
+	color:#fff;	
+}
+.registerLink{
+	width:48%;
+	height:40px;
+	line-height:40px;
+	background-color: #d9534f;
+	border-color: #d43f3a;
+	text-align:center;
+	color:#fff;
+	border-radius:4px;
+}
+.registerLink:hover{
+	background-color: #c9302c;
+	border-color: #ac2925;
+	color:#fff;
+}
+.newsListTop a:hover{
+	text-decoration:none;
+}

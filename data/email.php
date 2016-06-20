@@ -1,0 +1,1 @@
+a:7:{s:9:"smtp_host";s:11:"smtp.qq.com";s:9:"smtp_port";s:2:"25";s:9:"smtp_user";s:18:"test@zhengfei.name";s:9:"smtp_pass";s:15:"zhengfei6526933";s:8:"senduser";s:18:"test@zhengfei.name";s:8:"sendname";s:18:"test@zhengfei.name";s:8:"testname";s:16:"261969563@qq.com";}
