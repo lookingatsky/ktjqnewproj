@@ -455,18 +455,22 @@ class User extends Admin_Controller {
 				}
 				sleep(3);
 				//查看订单状态
-				$row_ss = $this->order_m->single_order($outer_trade_no);
+				$row_ss = $this->order_m->single_order($outer_trade_no);				
 				if(!$row_ss)
 				{
 					$content = "生成的红包不存在：订单号为".$outer_trade_no."不存在";
 					sys_log($content);
 					echo "SUCCESS";exit();
 				}
-				
 				if($row_ss['static'] == 2) //处理过了
 				{
 					echo "SUCCESS";exit();	
 				}
+				
+				//修改红包状态
+				$this->db->where('order_id',$outer_trade_no);
+				$this->db->set('status',2);
+				$this->db->update('red_packets');	
 				
 				//交易完成
 				//更改订单状态为成功
@@ -475,6 +479,12 @@ class User extends Admin_Controller {
 				//交易失败
 				$content = "生成红包失败：订单号为".$outer_trade_no;
 				sys_log($content);
+				
+			   //修改红包状态
+			   	$this->db->where('order_id',$outer_trade_no);
+				$this->db->set('status',-2);
+				$this->db->update('red_packets');	
+			   				
 				echo "SUCCESS";exit();
 				  
 		   }
@@ -495,16 +505,107 @@ class User extends Admin_Controller {
 		$config['uri_segment'] = 4;
 		$this->pagination->initialize($config); 
 		$data['links'] = $this->pagination->create_links();
-		$data['result'] = $this->public_m->page_result('bulk_standard',$config['per_page'],$page,'id');
+		
+		$this->db->order_by('id','desc');
+		$this->db->where('static',2);
+		$data['result'] = $this->db->get('bulk_standard',$config['per_page'],$page)->result_array();
+
 		$this->_view('user/create_red_packets',$data);		
 	}	
 		
+	//项目 投资详情	
 	function bulk_detail_info($id = false){
-		//$this->db->start_cache();
-		//$this->db->from('user_products');
-		$this->db->where('projectid',$id);
-		$invest_list = $this->db->get('user_products')->row_array(); 
+		$this->db->select('user_products.*,user.*');	
+		$this->db->from('user_products');	
+		$this->db->join('user','user_products.uid = user.id');
+		$this->db->where('user_products.static',2);//购买成功
+		//$this->db->where('user_products.uid',$userinfo['id']);//购买成功
+		$this->db->where('user_products.projectid',$id);
+		//$this->db->where('user.static',2);//项目进行中
+		$this->db->order_by('user.id','asc');
+		$data['pid'] = $id;
+		$data['result'] = $this->db->get()->result_array();
 		
-		//fb($invest_list);
+		$this->db->select('red_packets.*');	
+		$this->db->from('red_packets');		
+		$this->db->where('pid',$id);
+		$data['record'] = $this->db->get()->result_array();
+		
+		//检查是否生成过5000红包
+		$this->db->where('status',2);
+		$this->db->where('type',1);
+		$this->db->where('pid',$id);
+		$query = $this->db->get('red_packets',1,0);
+		if($query->num_rows() <= 0)
+		{
+			$data['if_type_1'] = 0;
+		}
+		else
+		{
+			$data['if_type_1'] = 1;	
+		}		
+		//检查是否生成过邀请红包
+		
+		
+		$this->_view('user/bulk_detail_info',$data);	
+	}
+	
+
+	//批量生成5000红包
+	function createBatchRedPackets(){
+		$pid = $this->input->post('pid');
+		//$money = $this->input->post('money');
+		
+		$this->db->select('user_products.*');	
+		$this->db->from('user_products');	
+		$this->db->where('static',2);
+		$this->db->where('projectid',$pid);
+		$result = $this->db->get()->result_array();
+		
+		$this->load->model('admin/sina_m');
+		$this->load->model('order_m');	
+		
+		foreach($result as $key=>$val){
+			if($val['monkey'] > 5000 || $val['monkey'] == 5000){
+				$packMoney = sprintf("%.2f", floor($val['monkey']/5000)*10);
+				$remark = "生成红包".$packMoney."元，获得用户id为：".$val['uid'];
+
+				$order_id = $this->order_m->create_order_redpackets($val['uid'],$packMoney,$remark);
+				$sina_return = $this->sina_m->create_hosting_collect_trade($order_id,$val['uid'],$packMoney);	
+				
+				$this->db->trans_begin();
+				$this->db->set('money',$val['monkey']);
+				$this->db->set('pack_money',$packMoney);
+				$this->db->set('uid',$val['uid']);
+				$this->db->set('type',1);
+				$this->db->set('order_id',$order_id);
+				$this->db->set('pid',$pid);
+				$this->db->set('create_time',date("Y-m-d H:i:s"));
+				if($sina_return[0] == 1){
+					$this->db->set('status',-1);
+					$this->db->set('remark',$sina_return[1]);
+				}elseif($sina_return[0] == 0){
+					$this->db->set('status',1);
+					$this->db->set('remark',$sina_return[1]);
+				}else{
+					$this->db->set('status',0);
+				}
+				
+				$this->db->insert('red_packets');
+				if ($this->db->trans_status() === FALSE){
+					$this->db->trans_rollback();
+				}else{
+					$this->db->trans_commit();
+				}				
+			}
+		}
+		
+		return true;
+	}	
+	
+	//批量生成邀请红包
+	function createBatchInvitedRedPackets(){
+		$pid = $this->input->post('pid');
+		
 	}
 }
