@@ -42,7 +42,7 @@ class Welcome extends Front_Controller {
 			$inviteUid = base64_decode($inviteCode);
 			fb($inviteUid);
 			$this->db->where("id",$inviteUid);
-			$query = $this->db->get('bulk_standard',1,0)->row_array();
+			$query = $this->db->get('user',1,0)->row_array();
 			
 			fb($query);
 		}
