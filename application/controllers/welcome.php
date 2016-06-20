@@ -40,9 +40,10 @@ class Welcome extends Front_Controller {
 		$this->load->library('user_agent');
 		if($inviteCode){
 			$inviteUid = base64_decode($inviteCode);
+			fb($inviteUid);
 			$this->db->where("id",$inviteUid);
 			$query = $this->db->get('bulk_standard',1,0);
-			fb($query['mobile']);
+			fb($query);
 		}
 		
 		$siteinfo = $this->_siteinfo();  //获取网站信息
