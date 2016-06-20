@@ -295,7 +295,7 @@ class Sina_m extends CI_Model {
 		$result = $weibopay->curlPost($url,$data); // 使用模拟表单提交进行数据提交
 		
 		$result = urldecode ($result);
-
+		fb($result);
 		$splitdata = array ();
 		$splitdata = json_decode($result,true);
 		$sign_type = $splitdata ['sign_type'];//签名方式
