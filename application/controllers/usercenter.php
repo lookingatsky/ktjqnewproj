@@ -1075,7 +1075,7 @@ class Usercenter extends Front_Controller {
 	//邀请好友
 	function InviteFriends($page = 0){
 		$userinfo = userinfo();
-		$uid = $userinfo['uid'];
+		$uid = $userinfo['id'];
 		$keyUid = base64_encode($uid);
 		fb($keyUid);
 		
