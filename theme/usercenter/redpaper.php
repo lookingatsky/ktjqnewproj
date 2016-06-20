@@ -198,7 +198,7 @@ body{
 								<div class="row">
 									<div class="col-md-1 col-xs-1"></div>
 									<div class="col-md-10 col-xs-10">
-										<input type="text" disabled="disabled" class="form-control invite-link" id="name" placeholder="<?php echo $inviteLink;?>">
+										<input type="text" readonly="readonly" class="form-control invite-link" id="name" placeholder="<?php echo $inviteLink;?>">
 									</div>
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
@@ -224,7 +224,6 @@ body{
 <script>
 	function copyUrl()
 	{
-		alert(111);
 		var clipBoardContent= $(".invite-link").attr("placeholder");
 		window.clipboardData.setData("Text",clipBoardContent);
 		alert("复制成功!");
@@ -249,7 +248,7 @@ body{
 										</div>
 <script>
 window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};
-with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 									</div>
 									<div class="col-md-1 col-xs-1"></div>
