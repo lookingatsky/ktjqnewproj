@@ -505,7 +505,7 @@ class Usercenter_m extends CI_Model {
 			return array(1,"请输入正确的提现金额");
 		}
 		$quota_b = $monkey;
-		$shouxufei = 0;
+		$shouxufei = 0.00;
 		
 		//判断金额是否大于50完
 		if($monkey > 500000)
@@ -645,4 +645,103 @@ class Usercenter_m extends CI_Model {
 		//}
 	}
 	
+	//计算该用户邀请的好友
+	function getFriends(){
+		$userinfo = userinfo();
+		
+		$this->db->from('user');
+		//$this->db->select();
+		$this->db->where('recommender',$userinfo['mobile']);
+		
+		$query = $this->db->get();
+		/*
+		fb($query->num_rows());
+		if($query->num_rows()<=0)
+		{
+			return "无邀请好友";	
+		}
+		*/
+		$key = $query->result_array();
+		//$key = $query->row_array();
+		return $key;
+	}
+
+	//计算该用户邀请的好友获得的红包记录查询
+	function getFriendsRecord($type = 0,$uid = 0,$per_page = 20,$page = 0)
+	{
+		$userinfo = userinfo();	
+		$uid = $userinfo['id'];
+		//user_account_history
+		$uid = 
+		$this->db->start_cache();
+		$this->db->from('red_packets');
+		switch($type)
+		{
+			case 1://类型为1
+				$this->db->where('type',1);
+			break;
+			case 2://产品购买
+				$this->db->where('type',2);
+				$this->db->where('fr_order.static',2);
+			break;
+			case 5://利息发放
+				$this->db->where('type',5);
+			break;
+			case 7://提现
+				$this->db->where('type',7);
+			break;
+			case 9://购买债券
+				$this->db->where('type',9);
+			break;
+			case 10://转让
+				$this->db->where('type',10);
+			break;
+			default:
+			//全部
+				$this->db->where_in('type',array(1,2,5,7,9,10));
+			break;	
+		}
+		$this->db->where('uid',$userinfo['id']);
+		$this->db->stop_cache();
+		$count = $this->db->count_all_results();
+		$this->db->order_by('dateline','desc');
+		$this->db->limit($per_page,$page);
+		if($type == 2)
+		{
+			$this->db->select('fr_order.*,bulk_standard.is_backed,bulk_standard.title,bulk_standard.static as pstatic,bulk_standard.next_interest');	
+			$this->db->join('bulk_standard','bulk_standard.id = fr_order.productid','left');
+		}elseif($type == 5){
+			$this->db->select('fr_order.*,bulk_standard.is_backed,bulk_standard.title,bulk_standard.static as pstatic,bulk_standard.next_interest');	
+			$this->db->join('bulk_standard','bulk_standard.id = fr_order.productid','left');			
+		}
+		else
+		{
+			if($type == 9) //投资债券
+			{
+				$this->db->select('fr_order.*,bulk_standard.is_backed');	
+				$this->db->join('bulk_standard','bulk_standard.id = fr_order.productid','left');	
+			}
+			$this->db->select('fr_order.*');	
+		}
+		$result = $this->db->get()->result_array();
+		$this->db->flush_cache();
+		return array($count,$result);
+	}
+
+	function getUserRedPapers($per_page = 20,$page = 0){
+		$userinfo = userinfo();
+		$this->db->start_cache();
+		$this->db->from('red_packets');
+		$this->db->join('bulk_standard','red_packets.pid = bulk_standard.id');
+		$this->db->where('red_packets.uid',$userinfo['id']); 
+		$this->db->where('red_packets.status',3); //发送成功的红包
+		
+		$this->db->stop_cache();
+		$count = $this->db->count_all_results();
+		$this->db->select('bulk_standard.title,red_packets.*');
+		$this->db->limit($per_page,$page);
+		$result = $this->db->get()->result_array();
+		$this->db->flush_cache();
+		return array($count,$result);
+	}	
 }

@@ -1073,27 +1073,24 @@ class Usercenter extends Front_Controller {
 	}
 	
 	//邀请好友
-	function InviteFriends(){
+	function InviteFriends($page = 0){
+		$userinfo = userinfo();
+		$data['userinfo'] = userinfo();		
 		//计算出该用户邀请来的用户
 		$friends = $this->usercenter_m->getFriends();
+		if($friends){
+			$data['friends'] = $friends;
+		}
 		
 		$this->load->library('pagination');
-		$config['base_url'] = site_url('usercenter/record/7');
-		$config['per_page'] = 15; 
-		//$config['uri_segment'] = 4;
-		$return = $this->usercenter_m->getFriendsRecord(7,$config['per_page'],$page);
-		//fb($return);
-		
+		$config['per_page'] = 15;
+		$return = $this->usercenter_m->getUserRedPapers($config['per_page'],$page);
 		$config['total_rows'] = $return[0];
 		$this->pagination->initialize($config); 
 		$data['result'] = $return[1];
-		$data['links'] = $this->pagination->create_links();		
-		$data['type'] = 7;
+		$data['links'] = $this->pagination->create_links();
 		
-		$data['shouxufei'] = $this->usercenter_m->check_withdraw();
-		//fb($data);exit();
-		
-		$this->load->view('usercenter/withdraw',$data);
+		$this->load->view('usercenter/redpaper',$data);
 		
 	}
 	
