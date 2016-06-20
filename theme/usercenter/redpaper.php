@@ -222,15 +222,13 @@ body{
 								</div>
 							</div>
 <script>
-$(function(){
 	function copyUrl()
 	{
+		alert(111);
 		var clipBoardContent= $(".invite-link").attr("placeholder");
 		window.clipboardData.setData("Text",clipBoardContent);
 		alert("复制成功!");
 	}	
-	
-})
 </script>
 							<div class="col-md-3 col-xs-3">
 								<div class="row" style="margin-top:21px;height:30px;line-height:30px;color:#337ab7;">
