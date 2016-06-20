@@ -320,8 +320,8 @@ $(function(){
 								<div class="row award" style="position:relative;top:-20px;margin-left:35px;">
 									<div class="col-md-9 col-xs-12">
 										<h4>邀 请 人 奖 励：</h4>
-										<p>好友完成首次投资，奖励邀请人20元红包，投资懒人计划满2千即可使用<br/>
-										现金奖励=好友注册30天内投资额总收益*5%或10%
+										<p>
+											好友完成首次投资，奖励邀请人20元红包，投资懒人计划满2千即可使用
 										</p>
 										<h4>举 例：</h4>
 										<p>
