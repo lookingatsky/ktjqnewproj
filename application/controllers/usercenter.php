@@ -1075,6 +1075,10 @@ class Usercenter extends Front_Controller {
 	//邀请好友
 	function InviteFriends($page = 0){
 		$userinfo = userinfo();
+		$uid = $userinfo['uid'];
+		$keyUid = base64_encode($uid);
+		fb($keyUid);
+		
 		$data['userinfo'] = userinfo();		
 		//计算出该用户邀请来的用户
 		$friends = $this->usercenter_m->getFriends();
