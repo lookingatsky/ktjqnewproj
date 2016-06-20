@@ -288,6 +288,7 @@ class Bulk_standard extends Admin_Controller {
 					}
 					else
 					{
+						fb($return[1]);
 						$this->_message($return[1],admin_url('bulk_standard/index'),2);	exit();		
 					}
 				}
