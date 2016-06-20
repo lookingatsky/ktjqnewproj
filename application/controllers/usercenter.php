@@ -1080,6 +1080,8 @@ class Usercenter extends Front_Controller {
 		$friends = $this->usercenter_m->getFriends();
 		if($friends){
 			$data['friends'] = $friends;
+		}else{
+			$data['friends'] = 0;
 		}
 		
 		$this->load->library('pagination');

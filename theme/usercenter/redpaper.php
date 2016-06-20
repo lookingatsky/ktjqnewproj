@@ -368,15 +368,21 @@ $(function(){
 										</tr>
 									</thead>
 									<tbody>
-										<?php foreach($friends as $key=>$val){ ?>
-										<tr>
-											<td><?php echo $key+1;?></td>
-											<td><?php echo $val['nickname'];?></td>
-											<td><?php echo substr_replace($val['mobile'],'*****',3,5);?></td>
-											<td><?php echo $val['dateline'];?></td>
-											<td>奖励记录</td>
-										</tr>
-										<?php } ?>
+										<?php if($friends == 0){  ?>
+											<tr>
+												<td colspan="5" align="center">暂无邀请人</td>
+											</tr>
+										<?php }else{ ?>
+											<?php foreach($friends as $key=>$val){ ?>
+											<tr>
+												<td><?php echo $key+1;?></td>
+												<td><?php echo $val['nickname'];?></td>
+												<td><?php echo substr_replace($val['mobile'],'*****',3,5);?></td>
+												<td><?php echo $val['dateline'];?></td>
+												<td>奖励记录</td>
+											</tr>
+											<?php } ?>
+										<?php }?>
 									</tbody>
 								</table>
 							</div>
