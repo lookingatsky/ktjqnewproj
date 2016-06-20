@@ -198,7 +198,7 @@ body{
 								<div class="row">
 									<div class="col-md-1 col-xs-1"></div>
 									<div class="col-md-10 col-xs-10">
-										<input type="text" disabled="disabled" class="form-control" id="name" placeholder="http://www.kuaitoujiqi.com/public/is/Member_14228664">
+										<input type="text" disabled="disabled" class="form-control" id="name" placeholder="<?php echo $inviteLink;?>">
 									</div>
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
