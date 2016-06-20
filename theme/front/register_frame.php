@@ -190,7 +190,7 @@
 
 
 					
-					<div class="row" <?php if($recommender){ echo "style='display:none;'"}?>>
+					<div class="row" <?php if($recommender){ echo "style='display:none;'";}?>>
 						<div class="col-xs-12 col-md-12">
 							<div class="input-group">
 							   <span class="input-group-btn">
