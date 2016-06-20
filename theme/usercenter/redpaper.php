@@ -224,7 +224,8 @@ body{
 <script>
 	function copyUrl()
 	{
-		var clipBoardContent= $(".invite-link").attr("placeholder");
+		var clipBoardContent = $(".invite-link").attr("placeholder");
+		console.log(clipBoardContent);
 		window.clipboardData.setData("Text",clipBoardContent);
 		alert("复制成功!");
 	}	
@@ -319,11 +320,8 @@ $(function(){
 								<div class="row award" style="position:relative;top:-20px;margin-left:35px;">
 									<div class="col-md-9 col-xs-12">
 										<h4>邀 请 人 奖 励：</h4>
-										<p>好有完成首次投资，奖励邀请人20元红包，投资懒人计划满2千即可使用<br/>
-										现金奖励=好友注册30天内投资额总收益*5%或10%<br/>
-											VIP普卡用户：好友收益*5%<br/>
-											VIP银卡及以上：好友收益*10%<br/>
-											仅计算懒人计划和享乐计划
+										<p>好友完成首次投资，奖励邀请人20元红包，投资懒人计划满2千即可使用<br/>
+										现金奖励=好友注册30天内投资额总收益*5%或10%
 										</p>
 										<h4>举 例：</h4>
 										<p>
@@ -348,7 +346,6 @@ $(function(){
 									<div class="btn-group pull-left btn-group-sm" style="padding-top:12px;">
 										<button  type="button" class="btn btn-default">我获得奖励：&nbsp;&nbsp;&nbsp;&nbsp; 0.0元</button>
 										<button type="button" class="btn btn-default">好友奖励： &nbsp;&nbsp; &nbsp;&nbsp; 0.0元</button>
-										<button type="button" class="btn btn-default">好友注册：&nbsp;&nbsp; &nbsp;&nbsp; 0.0元</button>
 										<button type="button" class="btn btn-default">好友投资： &nbsp;&nbsp; &nbsp;&nbsp;0.0元</button>
 									</div>
 									<div class="dropdown pull-right" style="padding-right:10px;">
@@ -403,7 +400,6 @@ $(function(){
 									<div class="btn-group pull-left btn-group-sm" style="padding-top:12px;">
 										<button  type="button" class="btn btn-default">我获得奖励：&nbsp;&nbsp;&nbsp;&nbsp; 0.0元</button>
 										<button type="button" class="btn btn-default">好友奖励： &nbsp;&nbsp; &nbsp;&nbsp; 0.0元</button>
-										<button type="button" class="btn btn-default">好友注册：&nbsp;&nbsp; &nbsp;&nbsp; 0.0元</button>
 										<button type="button" class="btn btn-default">好友投资： &nbsp;&nbsp; &nbsp;&nbsp;0.0元</button>
 									</div>
 									<div class="dropdown pull-right" style="padding-right:10px;">

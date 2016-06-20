@@ -188,8 +188,6 @@
 					<div class="row" id="matches_password_error" style="display:none;">		
 					</div>	
 
-
-					
 					<div class="row" <?php if($recommender){ echo "style='display:none;'";}?>>
 						<div class="col-xs-12 col-md-12">
 							<div class="input-group">
@@ -203,10 +201,7 @@
 							   <?php }else{?>
 								   <input type="text" class="form-control" placeholder="无推荐人可不填(手机号)" name="recommender" id="recommender">
 							   <?php }?>
-							   
-							   
-							</div>							
-							
+							</div>		
 						</div>
 					</div>
 					
