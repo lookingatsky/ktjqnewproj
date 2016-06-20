@@ -1,5 +1,6 @@
 <?php
-//require_once './FirePHP/fb.php';
+require_once './FirePHP/fb.php';
+fb(1111);
 
 /*
  *---------------------------------------------------------------
