@@ -1079,6 +1079,8 @@ class Usercenter extends Front_Controller {
 		$keyUid = base64_encode($uid);
 		$data['inviteLink'] = "https://www.kuaitoujiqi.com/welcome/register_frame/".$keyUid;
 		
+		fb($data['inviteLink']);
+		
 		$data['userinfo'] = userinfo();		
 		//计算出该用户邀请来的用户
 		$friends = $this->usercenter_m->getFriends();
