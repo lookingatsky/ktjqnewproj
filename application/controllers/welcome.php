@@ -42,9 +42,9 @@ class Welcome extends Front_Controller {
 			$inviteUid = base64_decode($inviteCode);
 			fb($inviteUid);
 			$this->db->where("id",$inviteUid);
-			$query = $this->db->get('bulk_standard',1,0);
-			$row = $query->row_array();
-			fb($query['mobile']);
+			$query = $this->db->get('bulk_standard',1,0)->row_array();
+			
+			fb($query);
 		}
 		
 		$siteinfo = $this->_siteinfo();  //获取网站信息
