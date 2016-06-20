@@ -199,9 +199,9 @@
 								  </button>
 							   </span>
 							   <?php if($recommender){?>
-								   <input type="password" class="form-control" value="<?php echo $recommender;?>" readonly="readonly" name="recommender" id="recommender">
+								   <input type="text" class="form-control" value="<?php echo $recommender;?>" readonly="readonly" name="recommender" id="recommender">
 							   <?php }else{?>
-								   <input type="password" class="form-control" placeholder="无推荐人可不填(手机号)" name="recommender" id="recommender">
+								   <input type="text" class="form-control" placeholder="无推荐人可不填(手机号)" name="recommender" id="recommender">
 							   <?php }?>
 							   
 							   
