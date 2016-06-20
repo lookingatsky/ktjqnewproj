@@ -198,7 +198,7 @@ body{
 								<div class="row">
 									<div class="col-md-1 col-xs-1"></div>
 									<div class="col-md-10 col-xs-10">
-										<input type="text" disabled="disabled" class="form-control" id="name" placeholder="<?php echo $inviteLink;?>">
+										<input type="text" disabled="disabled" class="form-control invite-link" id="name" placeholder="<?php echo $inviteLink;?>">
 									</div>
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
@@ -207,7 +207,7 @@ body{
 									<div class="col-md-10 col-xs-10 text-center" style="background:url('../style/img/comframe.png');background-size:100% auto;height:65px;">
 										<div class="row" style="margin-top:23px;">
 											<div class="col-md-6 col-xs-6">
-												<button type="button" class="btn btn-primary">
+												<button type="button" class="btn btn-primary" onClick="copyUrl()">
 													&nbsp;&nbsp;&nbsp;复制邀请链接&nbsp;&nbsp;&nbsp;
 												</button>
 											</div>
@@ -221,7 +221,17 @@ body{
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
 							</div>
-
+<script>
+$(function(){
+	function copyUrl()
+	{
+		var clipBoardContent= $(".invite-link").attr("placeholder");
+		window.clipboardData.setData("Text",clipBoardContent);
+		alert("复制成功!");
+	}	
+	
+})
+</script>
 							<div class="col-md-3 col-xs-3">
 								<div class="row" style="margin-top:21px;height:30px;line-height:30px;color:#337ab7;">
 									<div class="col-md-1 col-xs-1"></div>
