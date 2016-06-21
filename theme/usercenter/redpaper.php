@@ -207,7 +207,7 @@ body{
 									<div class="col-md-10 col-xs-10 text-center" style="background:url('../style/img/comframe.png');background-size:100% auto;height:65px;">
 										<div class="row" style="margin-top:23px;">
 											<div class="col-md-6 col-xs-6">
-												<button type="button" class="btn btn-primary copyLink">
+												<button type="button" class="btn btn-primary" id="copyLink">
 													&nbsp;&nbsp;&nbsp;复制邀请链接&nbsp;&nbsp;&nbsp;
 												</button>
 											</div>
@@ -228,7 +228,7 @@ body{
             obj = $(".inviteLink");
             data = obj.val();
             end = data.length;
-			$(".copyLink").click(function(){
+			$("#copyLink").click(function(){
 				console.log(1241);
                 if(-[1,]){             //处理费IE浏览器
 					console.log(1111);
