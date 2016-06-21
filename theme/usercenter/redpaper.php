@@ -228,18 +228,12 @@ body{
             obj = $(".inviteLink");
             data = obj.val();
             end = data.length;
-			$(".weiboShare").click(function(){
-				alert(124);
-			})
 			$("#copyLink").click(function(){
-				console.log(1241);
-                if(-[1,]){             //处理费IE浏览器
-					console.log(1111);
-                    alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
-                    obj.setSelectionRange(0,end);
-                    obj.focus();
-                }else{
-					console.log(2222);
+               // if(-[1,]){             //处理费IE浏览器
+               //     alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
+               //     obj.setSelectionRange(0,end);
+               //     obj.focus();
+               // }else{
                     var flag = window.clipboardData.setData("text",data);
                     if(flag == true){
                         alert("复制成功!");
@@ -250,7 +244,7 @@ body{
                     range.moveEnd("character",end);
                     range.moveStart("character",0);
                     range.select();
-                }				
+               // }				
 			})
             //$(".copyLink").onclick = function(){
             //}
