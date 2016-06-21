@@ -226,6 +226,7 @@ body{
             //var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
             var start, end, obj, data;
             obj = $(".inviteLink");
+			console.log(2121);
             data = obj.value;
 			console.log(data);
             end = data.length;
