@@ -447,7 +447,7 @@ $(function(){
 											<th>序号</th>
 											<th>红包金额</th>
 											<th>项目来源</th>
-											<th>获取时间</th>
+											<th>获取时间</th>	
 											<th>红包类型</th>
 											<th>发送状态</th>
 										</tr>
