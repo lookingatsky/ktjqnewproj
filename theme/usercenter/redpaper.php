@@ -228,7 +228,7 @@ body{
             obj = $(".inviteLink");
             data = obj.val();
             end = data.length;
-            $(".copyLink").onclick = function(){
+			$(".copyLink").click(function(){
 				console.log(1241);
                 if(-[1,]){             //处理费IE浏览器
 					console.log(1111);
@@ -247,9 +247,10 @@ body{
                     range.moveEnd("character",end);
                     range.moveStart("character",0);
                     range.select();
-                }
-
-            }
+                }				
+			})
+            //$(".copyLink").onclick = function(){
+            //}
         })()
 </script>
 							<div class="col-md-3 col-xs-3">
