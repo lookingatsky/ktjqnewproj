@@ -198,7 +198,7 @@ body{
 								<div class="row">
 									<div class="col-md-1 col-xs-1"></div>
 									<div class="col-md-10 col-xs-10">
-										<input type="text" readonly="readonly" class="form-control inviteLink" id="name" placeholder="<?php echo $inviteLink;?>">
+										<input type="text" readonly="readonly" class="form-control inviteLink" id="name" value="<?php echo $inviteLink;?>">
 									</div>
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
