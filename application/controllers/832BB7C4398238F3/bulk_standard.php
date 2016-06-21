@@ -62,7 +62,6 @@ class Bulk_standard extends Admin_Controller {
 			$this->db->where('static',3); //审核通过的企业
 			$data['company'] = $this->db->get('company_user')->result_array();
 			$data['repay_way'] = $this->public_m->result('repay_way');//还款方式
-			fb($data);
 			$this->_view('bulk/add_bulk',$data);
 		}
 		else
@@ -155,7 +154,6 @@ class Bulk_standard extends Admin_Controller {
 			$data['company'] = $this->db->get('company_user')->result_array();
 			$data['row'] = $this->public_m->row('bulk_standard',$id);
 			$data['repay_way'] = $this->public_m->result('repay_way');//还款方式
-			fb($data);
 			$this->_view('bulk/edit_bulk',$data);
 		}
 		else
