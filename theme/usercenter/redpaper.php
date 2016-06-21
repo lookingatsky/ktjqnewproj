@@ -227,7 +227,7 @@ body{
             var start, end, obj, data;
             obj = $(".inviteLink");
 			console.log(2121);
-            data = obj.value();
+            data = obj.val();
 			console.log(data);
             end = data.length;
             $(".copyLink").onclick = function(){
