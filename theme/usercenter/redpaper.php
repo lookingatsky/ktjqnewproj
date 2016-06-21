@@ -231,6 +231,7 @@ body{
 			$(".weiboShare").click(function(){
 				alert(2421);
 			})
+			console.log(data);
 			$("#copyLink").click(function(){
                // if(-[1,]){             //处理费IE浏览器
                //     alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
