@@ -115,6 +115,8 @@ class Product_m extends CI_Model {
 			 if($sina_return[0] == 0)
 			 {
 				$this->db->trans_commit(); 
+				$this->load->model('interface_m');
+				$this->interface_m->sendmessage($userinfo['mobile'],6);
 				return array('code'=>1,'msg'=>$sina_return[1]); 
 			 }
 			 else

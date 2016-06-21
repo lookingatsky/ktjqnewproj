@@ -188,9 +188,7 @@
 					<div class="row" id="matches_password_error" style="display:none;">		
 					</div>	
 
-
-					
-					<div class="row">
+					<div class="row" <?php if($recommender){ echo "style='display:none;'";}?>>
 						<div class="col-xs-12 col-md-12">
 							<div class="input-group">
 							   <span class="input-group-btn">
@@ -198,10 +196,12 @@
 									 推荐人
 								  </button>
 							   </span>
-							   <input type="password" class="form-control" placeholder="无推荐人可不填(手机号)" name="recommender" id="recommender">
-							   
-							</div>							
-							
+							   <?php if($recommender){?>
+								   <input type="text" class="form-control" value="<?php echo $recommender;?>" readonly="readonly" name="recommender" id="recommender">
+							   <?php }else{?>
+								   <input type="text" class="form-control" placeholder="无推荐人可不填(手机号)" name="recommender" id="recommender">
+							   <?php }?>
+							</div>		
 						</div>
 					</div>
 					

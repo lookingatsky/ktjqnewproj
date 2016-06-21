@@ -36,9 +36,17 @@ class Welcome extends Front_Controller {
 	}
 	
 	//注册页面
-	function register_frame(){
+	function register_frame($inviteCode = false){
 		$this->load->library('user_agent');
-
+		if($inviteCode){
+			$inviteUid = base64_decode($inviteCode);
+			$this->db->where("id",$inviteUid);
+			$query = $this->db->get('user',1,0)->row_array();
+			if($query['mobile'] !== ''){
+				$data['recommender'] = $query['mobile'];
+			}
+		}
+		
 		$siteinfo = $this->_siteinfo();  //获取网站信息
 		$data['title'] = $siteinfo['indextitle'];
 		$data['keyword'] = $siteinfo['keyword'];

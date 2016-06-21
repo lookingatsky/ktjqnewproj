@@ -423,7 +423,10 @@ body{
 								<div class="row" style="color:#888;margin-top:30px;">
 									<div class="col-md-4 col-xs-12">绑定手机</div>
 									<div class="col-md-4 col-xs-12"><?php echo substr_replace($userinfo['mobile'],'*****',3,5);?></div>
-									<div class="col-md-4 col-xs-12"><button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#addphoneModal">修改</button></div>
+									<div class="col-md-4 col-xs-12">
+										<!---<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#addphoneModal">修改</button>--->
+										<a role="btn" href="<?php echo site_url('usercenter/change_phone');?>" class="btn btn-sm btn-default" target="_blank">修改</a>
+									</div>
 								</div>
 								<div class="row" style="color:#888;margin-top:30px;">
 									<div class="col-md-4 col-xs-12">登陆密码</div>
