@@ -223,8 +223,7 @@ body{
 							</div>
 <script>
         (function(){
-			alert(1111);
-            var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
+            //var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
             var start, end, obj, data;
             obj = $(".inviteLink");
             data = obj.value;
