@@ -226,16 +226,16 @@ body{
             //var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
             var start, end, obj, data;
             obj = $(".inviteLink");
-			console.log(2121);
             data = obj.val();
-			console.log(data);
             end = data.length;
             $(".copyLink").onclick = function(){
                 if(-[1,]){             //处理费IE浏览器
+					console.log(1111);
                     alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
                     obj.setSelectionRange(0,end);
                     obj.focus();
                 }else{
+					console.log(2222);
                     var flag = window.clipboardData.setData("text",data);
                     if(flag == true){
                         alert("复制成功!");
