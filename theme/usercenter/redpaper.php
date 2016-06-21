@@ -207,7 +207,7 @@ body{
 									<div class="col-md-10 col-xs-10 text-center" style="background:url('../style/img/comframe.png');background-size:100% auto;height:65px;">
 										<div class="row" style="margin-top:23px;">
 											<div class="col-md-6 col-xs-6">
-												<button type="button" class="btn btn-primary" onClick="copyUrl()">
+												<button type="button" class="btn btn-primary copyLink">
 													&nbsp;&nbsp;&nbsp;复制邀请链接&nbsp;&nbsp;&nbsp;
 												</button>
 											</div>
@@ -222,13 +222,32 @@ body{
 								</div>
 							</div>
 <script>
-	function copyUrl()
-	{
-		var clipBoardContent = $(".invite-link").attr("placeholder");
-		console.log(clipBoardContent);
-		window.clipboardData.setData("Text",clipBoardContent);
-		alert("复制成功!");
-	}	
+        (function(){
+            var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
+            var start, end, obj, data;
+            obj = $(".invite-link");
+            data = obj.value;
+            end = data.length;
+            $(".copyLink").onclick = function(){
+                if(-[1,]){             //处理费IE浏览器
+                    alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
+                    obj.setSelectionRange(0,end);
+                    obj.focus();
+                }else{
+                    var flag = window.clipboardData.setData("text",data);
+                    if(flag == true){
+                        alert("复制成功!");
+                    }else{
+                        alert("复制失败!");
+                    }
+                    var range = obj.createTextRange();
+                    range.moveEnd("character",end);
+                    range.moveStart("character",0);
+                    range.select();
+                }
+
+            }
+        })()
 </script>
 							<div class="col-md-3 col-xs-3">
 								<div class="row" style="margin-top:21px;height:30px;line-height:30px;color:#337ab7;">
