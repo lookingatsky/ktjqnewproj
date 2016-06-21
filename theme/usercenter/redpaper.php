@@ -212,7 +212,7 @@ body{
 												</button>
 											</div>
 											<div class="col-md-6 col-xs-6">
-												<button type="button" class="btn btn-info">
+												<button type="button" class="btn btn-info weiboShare">
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;微博分享&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												</button>
 											</div>
@@ -228,6 +228,9 @@ body{
             obj = $(".inviteLink");
             data = obj.val();
             end = data.length;
+			$(".weiboShare").click(function(){
+				alert(124);
+			})
 			$("#copyLink").click(function(){
 				console.log(1241);
                 if(-[1,]){             //处理费IE浏览器
