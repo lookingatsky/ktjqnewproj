@@ -125,7 +125,7 @@ $(document).ready(function(){
 			<?php echo form_error('borrower_type');?>
 		</td>
 	</tr>
-    <tr id="companyFrame">
+    <tr id="companyFrame" <?php if($row['borrower_type'] != 1){ ?>style="display:none;"<?php } ?>>
         <td class="tableleft" width="15%">关联借款企业</td>
         <td>
         	<select name="company">
@@ -136,7 +136,7 @@ $(document).ready(function(){
         </td>
     </tr>
 	
-    <tr id="personalFrame" style="display:none;">
+    <tr id="personalFrame"  <?php if($row['borrower_type'] == 1){ ?>style="display:none;"<?php } ?>>
         <td class="tableleft" width="15%">借款个人ID</td>
          <td><input type="text" name="borrower_id" value="<?php echo $row['borrower_id'];?>"/><?php echo form_error('borrower_id');?></td>
     </tr>	
