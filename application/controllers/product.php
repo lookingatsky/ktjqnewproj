@@ -204,7 +204,7 @@ class Product extends Front_Controller {
 			{
 				if($row['static'] == 3)
 				{
-					echo '<script language="javascript">alert("项目已结束");location.href="https://www.fengrongwang.com/";</script>';
+					echo '<script language="javascript">alert("项目已结束");location.href="https://www.kuaitoujiqi.com/";</script>';
 					exit();
 				}
 				if($row['static'] == 4)
