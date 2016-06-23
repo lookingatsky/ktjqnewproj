@@ -20,6 +20,15 @@
     <script src="<?php echo base_url();?>style/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo base_url();?>style/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>style/js/base.js"></script>
+	<script>
+	$(function(){
+		$(".weiboShare").click(function(){
+			window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=file%3A%2F%2F%2FC%3A%2FUsers%2FAdministrator%2FDesktop%2F%25E6%2596%25B0%25E5%25BB%25BA%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%2F1.html%23%230-qzone-1-14757-d020d2d2a4e8d1a374a433f596ad1440&title=&desc=&summary=&site=');
+			
+		})
+		
+	})
+	</script>
 </head>
 <body>
 <style>
@@ -221,6 +230,7 @@ body{
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
 							</div>
+						
 <script>
         (function(){
             //var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
