@@ -44,7 +44,11 @@ class Welcome extends Front_Controller {
 			$query = $this->db->get('user',1,0)->row_array();
 			if($query['mobile'] !== ''){
 				$data['recommender'] = $query['mobile'];
+			}else{
+				$data['recommender'] = null;
 			}
+		}else{
+			$data['recommender'] = null;
 		}
 		
 		$siteinfo = $this->_siteinfo();  //获取网站信息
