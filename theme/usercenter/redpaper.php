@@ -20,6 +20,15 @@
     <script src="<?php echo base_url();?>style/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo base_url();?>style/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>style/js/base.js"></script>
+	<script>
+	$(function(){
+		$(".weiboShare").click(function(){
+			window.open('http://service.weibo.com/share/share.php?url=file%3A%2F%2F%2FC%3A%2FUsers%2FAdministrator%2FDesktop%2F%25E6%2596%25B0%25E5%25BB%25BA%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%2F1.html%230-tsina-1-40514-397232819ff9a47a7b7e80a40613cfe1&title=&appkey=1343713053&searchPic=true#_loginLayer_1466668761663');
+			
+		})
+		
+	})
+	</script>
 </head>
 <body>
 <style>
@@ -221,6 +230,7 @@ body{
 									<div class="col-md-1 col-xs-1"></div>
 								</div>
 							</div>
+						
 <script>
         (function(){
             //var $=function(id){return "string" == typeof id ? document.getElementById(id) : id;};
