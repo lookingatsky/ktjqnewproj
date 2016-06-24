@@ -55,8 +55,8 @@
 		<div class="foot02">
 			
 			<div class="foot02_img">
-				<a id='___szfw_logo___' href='https://credit.szfw.org/CX20160503015013080166.html' target='_blank'><img src='<?php echo base_url();?>style/img/footer/cert.png' border='0' /></a>
-				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" ><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+				<a id='___szfw_logo___' href='https://credit.szfw.org/CX20160503015013080166.html' rel="nofollow" target='_blank'><img src='<?php echo base_url();?>style/img/footer/cert.png' border='0' /></a>
+				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" rel="nofollow"><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
 				<!----<a href="http://webscan.360.cn/index/checkwebsite/url/www.kuaitoujiqi.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/169f4cd3ecd57dd12dafbb65384b59dd"/></a>---->
 				
 				<!----<img src="<?php echo base_url();?>style/img/footer/foot_pic01.jpg" />
@@ -178,10 +178,10 @@
           <H3 class=titZx>QQ咨询</H3>
         </LI>
         <!----<LI><SPAN class=icoZx>在线咨询</SPAN> </LI>--->
-        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3030954862&site=qq&menu=yes" target="_blank">客服-静静</A> </LI>
-		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3138576731&site=qq&menu=yes" target="_blank">客服-美美</A> </LI>
-		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3372398804&site=qq&menu=yes" target="_blank">客服-小雅</A> </LI>
-        <!----<LI class=bot><A class=icoTc href="http://wpa.qq.com/msgrd?v=3&uin=3280728389&site=qq&menu=yes" target="_blank">客服-炎炎</A> </LI>---->
+        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3030954862&site=qq&menu=yes" rel="nofollow" target="_blank">客服-静静</A> </LI>
+		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3138576731&site=qq&menu=yes" rel="nofollow" target="_blank">客服-美美</A> </LI>
+		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3372398804&site=qq&menu=yes" rel="nofollow" target="_blank">客服-小雅</A> </LI>
+        <!----<LI class=bot><A class=icoTc href="http://wpa.qq.com/msgrd?v=3&uin=3280728389&site=qq&menu=yes" rel="nofollow" target="_blank">客服-炎炎</A> </LI>---->
       </UL>
       <UL>
         <LI>
