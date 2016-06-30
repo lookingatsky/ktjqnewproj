@@ -101,7 +101,7 @@
             <div class="dialog"></div>
             <div class="img"><img src="<?php echo base_url();?>style/app/images/text1.png" /></div>
             <a href="https://itunes.apple.com/cn/app/feng-rong-wang/id1056917223?mt=8"  class="iphone" target="_blank" style="z-index:999"></a>
-            <a href="http://www.fengrongwang.com/download/fengrongv1.apk" class="android"></a>
+            <a href="http://www.kuaitoujiqi.com/download/fengrongv1.apk" class="android"></a>
             <div class="erweima"></div>
         </div>
 	</div>

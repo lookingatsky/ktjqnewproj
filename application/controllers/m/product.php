@@ -152,7 +152,7 @@ class Product extends Front_Controller {
 			$data['row'] = $row; 
 			if($row['static'] == 3)
 			{
-				echo '<script language="javascript">alert("项目已结束");location.href="https://www.fengrongwang.com/m";</script>';
+				echo '<script language="javascript">alert("项目已结束");location.href="https://www.kuaitoujiqi.com/m";</script>';
 				exit();
 			} 
 			$data['userproject'] = $this->product_m->user_bulk($id);

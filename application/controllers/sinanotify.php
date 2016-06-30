@@ -384,6 +384,11 @@ class Sinanotify extends CI_Controller {
 							$this->db->trans_commit();
 							//同步用户金额
 							$this->order_m->same_monkey($order_row['uid']);	
+							
+							$this->db->where('id',$order_row['uid']);	
+							$result = $this->db->get('user',1,0)->row_array();
+							$this->load->model('interface_m');
+							$this->interface_m->sendmessage($result['mobile'],6);							
 						}
 						
 					

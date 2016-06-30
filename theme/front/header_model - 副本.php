@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$('.piccode').click(function(){
-		$(this).attr('src',"https://www.fengrongwang.com/welcome/regesiter_code/" + Math.random());
+		$(this).attr('src',"https://www.kuaitoujiqi.com/welcome/regesiter_code/" + Math.random());
 	});
 });
 </script>

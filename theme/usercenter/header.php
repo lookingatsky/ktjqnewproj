@@ -152,10 +152,10 @@
           <H3 class=titZx>QQ咨询</H3>
         </LI>
         <!----<LI><SPAN class=icoZx>在线咨询</SPAN> </LI>--->
-        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3030954862&site=qq&menu=yes" target="_blank">客服-静静</A> </LI>
-        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3138576731&site=qq&menu=yes" target="_blank">客服-美美</A> </LI>
-		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3372398804&site=qq&menu=yes" target="_blank">客服-小雅</A> </LI>
-        <!----<LI class=bot><A class=icoTc href="http://wpa.qq.com/msgrd?v=3&uin=3280728389&site=qq&menu=yes" target="_blank">客服-炎炎</A> </LI>---->
+        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3030954862&site=qq&menu=yes" rel="nofollow" target="_blank">客服-静静</A> </LI>
+        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3138576731&site=qq&menu=yes" rel="nofollow" target="_blank">客服-美美</A> </LI>
+		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3372398804&site=qq&menu=yes" rel="nofollow" target="_blank">客服-小雅</A> </LI>
+        <!----<LI class=bot><A class=icoTc href="http://wpa.qq.com/msgrd?v=3&uin=3280728389&site=qq&menu=yes" rel="nofollow" target="_blank">客服-炎炎</A> </LI>---->
       </UL>
       <UL>
         <LI>

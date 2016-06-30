@@ -798,6 +798,7 @@ class Usercenter extends Front_Controller {
 		$this->load->view('m/usercenter/account',$data);	
 	}
 	
+	
 	function _interest($rate=false,$day = false,$monkey = false)
 	{
 		//rate 年华利率 day 购买时间 monkey 购买钱数

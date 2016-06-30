@@ -100,7 +100,7 @@ class Temp extends Front_Controller {
 		$post['pay_method'] = "balance^".$products['money']."^SAVING_POT"; //余额支付  存钱罐支付
 		$post['can_repay_on_failed'] = "N";//交易失败后不能再次发起交易
 		$post['service'] = "create_hosting_collect_trade";
-		$post['notify_url'] = 'https://www.fengrongwang.com/temp/notify_daishou';//异步跳转
+		$post['notify_url'] = 'https://www.kuaitoujiqi.com/temp/notify_daishou';//异步跳转
 		$return = $this->_interface_submit($post,'mas');
 		sys_log(json_encode($return));
 	}
@@ -224,7 +224,7 @@ class Temp extends Front_Controller {
 		$post['out_trade_code'] = 2002;	
 		$post['trade_list'] = $trade_list;
 		$post['notify_method'] = "single_notify";
-		$post['notify_url'] = 'https://www.fengrongwang.com/sinanotify/send_user_lixi';//异步跳转
+		$post['notify_url'] = 'https://www.kuaitoujiqi.com/sinanotify/send_user_lixi';//异步跳转
 		$post['service'] = "create_batch_hosting_pay_trade";
 		return $this->_interface_submit($post,'mas');
 	}

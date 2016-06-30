@@ -55,8 +55,8 @@
 		<div class="foot02">
 			
 			<div class="foot02_img">
-				<a id='___szfw_logo___' href='https://credit.szfw.org/CX20160503015013080166.html' target='_blank'><img src='<?php echo base_url();?>style/img/footer/cert.png' border='0' /></a>
-				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" ><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+				<a id='___szfw_logo___' href='https://credit.szfw.org/CX20160503015013080166.html' rel="nofollow" target='_blank'><img src='<?php echo base_url();?>style/img/footer/cert.png' border='0' /></a>
+				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" rel="nofollow"><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
 				<!----<a href="http://webscan.360.cn/index/checkwebsite/url/www.kuaitoujiqi.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/169f4cd3ecd57dd12dafbb65384b59dd"/></a>---->
 				
 				<!----<img src="<?php echo base_url();?>style/img/footer/foot_pic01.jpg" />
@@ -123,9 +123,9 @@
                 
             </div>
             <div class="pull-left" style="margin-left: 15px">
-                <p style="margin-bottom: 5px"><?php /*?><a href="http://webscan.360.cn/index/checkwebsite/url/www.fengrongwang.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/1a4da25a35c98cf05c2677b4f7528a91"/></a><?php */?> <script language="javascript" type="text/javascript" src="//smarticon.geotrust.com/si.js"></script>
+                <p style="margin-bottom: 5px"><?php /*?><a href="http://webscan.360.cn/index/checkwebsite/url/www.kuaitoujiqi.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/1a4da25a35c98cf05c2677b4f7528a91"/></a><?php */?> <script language="javascript" type="text/javascript" src="//smarticon.geotrust.com/si.js"></script>
 <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action"> 沪ICP备15014079号-1</a></p>
-                <p>© 2014 fengrongwang.com  |  上海金椰金融信息服务有限公司 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255522926'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255522926' type='text/javascript'%3E%3C/script%3E"));</script></p>
+                <p>© 2014 kuaitoujiqi.com  |  上海金椰金融信息服务有限公司 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255522926'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255522926' type='text/javascript'%3E%3C/script%3E"));</script></p>
             </div>
         </div>
     </div>
@@ -178,10 +178,10 @@
           <H3 class=titZx>QQ咨询</H3>
         </LI>
         <!----<LI><SPAN class=icoZx>在线咨询</SPAN> </LI>--->
-        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3030954862&site=qq&menu=yes" target="_blank">客服-静静</A> </LI>
-		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3138576731&site=qq&menu=yes" target="_blank">客服-美美</A> </LI>
-		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3372398804&site=qq&menu=yes" target="_blank">客服-小雅</A> </LI>
-        <!----<LI class=bot><A class=icoTc href="http://wpa.qq.com/msgrd?v=3&uin=3280728389&site=qq&menu=yes" target="_blank">客服-炎炎</A> </LI>---->
+        <LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3030954862&site=qq&menu=yes" rel="nofollow" target="_blank">客服-静静</A> </LI>
+		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3138576731&site=qq&menu=yes" rel="nofollow" target="_blank">客服-美美</A> </LI>
+		<LI><A class=icoTc style="color:#888;" href="http://wpa.qq.com/msgrd?v=3&uin=3372398804&site=qq&menu=yes" rel="nofollow" target="_blank">客服-小雅</A> </LI>
+        <!----<LI class=bot><A class=icoTc href="http://wpa.qq.com/msgrd?v=3&uin=3280728389&site=qq&menu=yes" rel="nofollow" target="_blank">客服-炎炎</A> </LI>---->
       </UL>
       <UL>
         <LI>

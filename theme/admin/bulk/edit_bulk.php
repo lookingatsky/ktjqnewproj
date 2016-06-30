@@ -117,28 +117,28 @@ $(document).ready(function(){
 		<td class="tableleft" width="15%">借款人类型</td>
 		<td>
 			<select name="borrower_type" id="borrower_type">
-				<option value="1">企业</option>
-				<option value="2">个体户</option>
-				<option value="3">个人</option>
+				<option value="1" <?php if($row['borrower_type'] == 1){ echo "selected='selected'"; } ?> >企业</option>
+				<option value="2" <?php if($row['borrower_type'] == 2){ echo "selected='selected'"; } ?> >个体户</option>
+				<option value="3" <?php if($row['borrower_type'] == 3){ echo "selected='selected'"; } ?> >个人</option>
 			</select>
 			
 			<?php echo form_error('borrower_type');?>
 		</td>
 	</tr>
-    <tr id="companyFrame">
+    <tr id="companyFrame" <?php if($row['borrower_type'] != 1){ ?>style="display:none;"<?php } ?>>
         <td class="tableleft" width="15%">关联借款企业</td>
         <td>
         	<select name="company">
             	<?php foreach($company as $key){?>
-            		<option value="<?php echo $key['id'];?>" <?php echo set_select('company',$key['id']);?>><?php echo $key['company_name'];?></option>
+            		<option value="<?php echo $key['id'];?>" <?php if($row['company'] == $key['id']){ echo "selected='selected'"; } ?> ><?php echo $key['company_name'];?></option>
                 <?php }?>
             </select>
         </td>
     </tr>
 	
-    <tr id="personalFrame" style="display:none;">
+    <tr id="personalFrame"  <?php if($row['borrower_type'] == 1){ ?>style="display:none;"<?php } ?>>
         <td class="tableleft" width="15%">借款个人ID</td>
-         <td><input type="text" name="borrower_id" value="<?php echo set_value('borrower_id');?>"/><?php echo form_error('borrower_id');?></td>
+         <td><input type="text" name="borrower_id" value="<?php echo $row['borrower_id'];?>"/><?php echo form_error('borrower_id');?></td>
     </tr>	
 	
     <tr>

@@ -113,9 +113,9 @@
                 
             </div>
             <div class="pull-left" style="margin-left: 15px">
-                <p style="margin-bottom: 5px"><?php /*?><a href="http://webscan.360.cn/index/checkwebsite/url/www.fengrongwang.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/1a4da25a35c98cf05c2677b4f7528a91"/></a><?php */?> <script language="javascript" type="text/javascript" src="//smarticon.geotrust.com/si.js"></script>
+                <p style="margin-bottom: 5px"><?php /*?><a href="http://webscan.360.cn/index/checkwebsite/url/www.kuaitoujiqi.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/1a4da25a35c98cf05c2677b4f7528a91"/></a><?php */?> <script language="javascript" type="text/javascript" src="//smarticon.geotrust.com/si.js"></script>
 <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action"> 沪ICP备15014079号-1</a></p>
-                <p>© 2014 fengrongwang.com  |  上海金椰金融信息服务有限公司 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255522926'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255522926' type='text/javascript'%3E%3C/script%3E"));</script></p>
+                <p>© 2014 kuaitoujiqi.com  |  上海金椰金融信息服务有限公司 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255522926'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255522926' type='text/javascript'%3E%3C/script%3E"));</script></p>
             </div>
         </div>
     </div>

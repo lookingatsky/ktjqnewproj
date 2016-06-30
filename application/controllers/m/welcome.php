@@ -10,6 +10,15 @@ class Welcome extends Front_Controller {
 	
 	public function index()
 	{
+		$this->load->library('user_agent');
+		
+		
+		if ($this->agent->is_mobile()){
+			
+		}else{
+			redirect('https://www.kuaitoujiqi.com');	
+		}
+		
 		$siteinfo = $this->_siteinfo();  //获取网站信息
 		$data['title'] = $siteinfo['indextitle'];
 		$data['keyword'] = $siteinfo['keyword'];

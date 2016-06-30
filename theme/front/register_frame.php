@@ -3,7 +3,7 @@
 <head>
 <?php /*?>	<script src="<?php echo base_url();?>style/js/uaredirect.js"></script>
 	<script language="javascript">
-    	uaredirect("https://www.fengrongwang.com/m/");
+    	uaredirect("https://www.kuaitoujiqi.com/m/");
     </script><?php */?>
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
