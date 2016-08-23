@@ -56,157 +56,232 @@ var _hmt = _hmt || [];
 	})
     </script>
 </head>
-<body class="grey_body">
+<body>
 <?php $this->load->view('front/header');?>
+<style>
+	.risk_economic .col-md-4 {
+		color:#337ab7;
+		font-size:20px;
+	}
+	.risk_economic .lined {
+		border-top:1px solid #ddd;
+		margin-top:15px;
+	}
+	.risk_economic>div>p {
+		margin:20px 50px;
+		text-indent: 2em;
+		font-size:14px;
+		line-height:25px;
+	}
+	.risk_economic .photo_list{
+		margin:30px 0px;
+		font-size: 18px;
+	}
+	.risk_economic .photo_list p{
+		line-height:25px;
+		font-size: 14px;
+		margin-top:15px;
+	}
+	body{
+		color:#666;
+	}
+	
+	.fLeft{
+		float:left;
+	}
+	.fRight{
+		float:right;
+	}
+	.clear{
+		clear:both;
+	}
+</style>
+<div class="risk_control_system">
+	<img src="<?php echo base_url();?>style/img/zizhi/1_02.jpg" class="img-responsive" alt=""/>
+	<div class="risk_economic" style="margin:30px auto;width:1000px;">
+		<div class="row text-center">
+			<div class="col-xs-12 col-md-1"></div>
+			<div class="col-xs-12 col-md-3 lined"></div>
+			<div class="col-xs-12 col-md-4">什么是供应链金融？</div>
+			<div class="col-xs-12 col-md-3 lined"></div>
+			<div class="col-xs-12 col-md-1"></div>
+		</div>
+		<div class="row">
+			<p>供应链金融，就是将核心企业和上下游企业联系在一起提供灵活运用的金融产品和服务的一种融资模式。该模式可增加其企业资金流动性，提高企业竞争力。</p>
+			<p>“供应链金融”最大的特点就是在供应链中寻找出一个大的核心企业，以核心企业为出发点，为供应链提供金融支持。一方面，将资金有效注入处于相对弱势的上下游配套中小企业，解决中小企业融资难和供应链失衡的问题；另一方面，将信用融入上下游企业的购销行为，增强其商业信用，促进中小企业与核心企业建立长期战略协同关系，提升供应链的竞争能力。</p>
+		</div>
+	</div>
+	<div style="background-color:#eee;">
+		<div class="risk_economic" style="margin:30px auto;width:1000px;padding:25px 0px;">
+			<div class="row text-center" >
+				<div class="col-xs-12 col-md-1"></div>
+				<div class="col-xs-12 col-md-3 lined"></div>
+				<div class="col-xs-12 col-md-4">我们的优势</div>
+				<div class="col-xs-12 col-md-3 lined"></div>
+				<div class="col-xs-12 col-md-1"></div>
+			</div>
+			<div class="row text-center photo_list">
+				<div class="col-xs-12 col-md-3"><img src="<?php echo base_url();?>style/img/article/51_03-05.gif" alt=""/><br>专业好
+					<p>核心企业 优质推荐<br>供应链金融健康发展</p>
+				</div>
+				<div class="col-xs-12 col-md-3"><img src="<?php echo base_url();?>style/img/article/51_05.gif" alt=""/><br>风控严
+					<p>多层次风险保障机制<br>高标准企业准入门槛</p>
+				</div>
+				<div class="col-xs-12 col-md-3"><img src="<?php echo base_url();?>style/img/article/51_07.gif" alt=""/><br>收益稳健
+					<P>多种期限 任意选择<br>100元起投 灵活投资</P>
+				</div>
+				<div class="col-xs-12 col-md-3"><img src="<?php echo base_url();?>style/img/article/51_09.gif" alt=""/><br>资金安全
+					<p>新浪支付品牌资金托管<br>核心企业全程担保</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="risk_economic" style="margin:30px auto;width:1000px;">
+		<div class="row text-center">
+			<div class="col-xs-12 col-md-1"></div>
+			<div class="col-xs-12 col-md-3 lined"></div>
+			<div class="col-xs-12 col-md-4">快投机器平台原理</div>
+			<div class="col-xs-12 col-md-3 lined"></div>
+			<div class="col-xs-12 col-md-1"></div>
+		</div>
+		<div class="row text-center">
+			<img style="margin-left:130px;" src="<?php echo base_url();?>style/img/article/51_18.gif" class="img-responsive" alt=""/>
+		</div>
+	</div>
+	<div class="risk_economic" style="margin:30px auto;width:1000px;">
+		<div class="row text-center">
+			<div class="col-xs-12 col-md-1"></div>
+			<div class="col-xs-12 col-md-3 lined"></div>
+			<div class="col-xs-12 col-md-4">如何在快投机器投资</div>
+			<div class="col-xs-12 col-md-3 lined"></div>
+			<div class="col-xs-12 col-md-1"></div>
+		</div>
+		<div class="row text-center" style="margin-top:120px;">
+			<div class="v_out v_out_p">
+				<div class="prev"><a href="javascript:void(0)"><img src="<?php echo base_url();?>style/img/article/i_1.png"></a></div>
+				<div class="v_show">
+					<div class="v_cont">
+						<ul>
+							<li index="0"><img src="<?php echo base_url();?>style/img/article/r.jpg"></li>
+							<li index="1"><img src="<?php echo base_url();?>style/img/article/e.jpg"></li>
+							<li index="2"><img src="<?php echo base_url();?>style/img/article/w.jpg"></li>
+							<li index="3"><img src="<?php echo base_url();?>style/img/article/q.jpg"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="next"><a href="javascript:void(0)"><img src="<?php echo base_url();?>style/img/article/i_2.png"></a></div>
+				<ul class="circle">
+					<li class="circle-cur">
+						<p>1</p>
+						<p>注册/登录</p>
+					</li>
+					<li>
+						<p>2</p>
+						<p>实名验证</p>
+					</li>
+					<li>
+						<p>3</p>
+						<p>&nbsp;&nbsp;充值</p>
+					</li>
+					<li>
+						<p>4</p>
+						<p>&nbsp;&nbsp;投资</p>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="row text-center" style="margin:100px 0px;">
+			<a href="<?php echo site_url('welcome/register_frame');?>" style="padding:10px 80px;background-color: red;color:#fff;">立 即 注 册</a>
+		</div>
+	</div>
 
-<div class="container">
-    <div class="row">	
-        <div class="col-xs-12 col-md-2 about_nav">	
+</div>
+<script>
+$(function() {
+		var index = 0;
+        $(".next a").click(function() {
+            $('.prev a').show();
+            index++;
+			if(index == 4){
+				index = 0;
+			}
+			$(".v_cont li").eq(index).show().siblings().hide();
+			$(".circle li").eq(index).addClass("circle-cur").siblings().removeClass('circle-cur');
+			
+        });	
+        $(".prev a").click(function() {
+            $('.next a').show();
+            index--;
+			if(index == -1){
+				index = 3;
+			}
+			$(".v_cont li").eq(index).show().siblings().hide();
+			$(".circle li").eq(index).addClass("circle-cur").siblings().removeClass('circle-cur');
+        });			
+    })
+   </script>
+<style>
+	*{margin:0px;padding:0px;list-style-type:none;}
+	.v_out{width:1000px;margin:20px auto;overflow:hidden;}
+	.v_show{width:1000px;overflow:hidden;position:relative;height:600px;float:left}
+	.v_cont{ width:6650px;position:absolute;left:0px;top:0px;}
+	.v_cont ul{float:left;text-align:center;line-height:50px;}
+	.v_cont ul li{width:1000px;height:600px;float:left;margin-top:3px;}
+	/*---圆圈---*/
+	.v_out_p{position:relative;overflow:visible}
+	.circle{position:absolute;left: 40px;top:-80px; margin-left:30px;}
+	.circle li{width:180px;height:40px;float:left;margin-right:50px;line-height:40px;background:#ccc;}
+	.circle .circle-cur{background:#347ab8;color:#fff;}
+	.circle li p{
+		font-size:20px;
+		text-align:center;
+		float:left;
 
-			<a href="<?php echo site_url('news/article_about');?>"><img src="/../style/img/article/about.png" height="50" /> 关于我们</a>
-			<a href="<?php echo site_url('news/article_safety');?>"><img src="/../style/img/article/safety.png" height="50" /> 安全保障</a>
-			<a href="<?php echo site_url('news/article_control');?>"><img src="/../style/img/article/control.png" height="50" /> 风控体系</a>
-			<a href="<?php echo site_url('news/article_mode');?>"><img src="/../style/img/article/platform.png" height="50" /> 平台模式</a>
-			<a href="<?php echo site_url('news/article_transfer');?>"><img src="/../style/img/article/debt.png" height="50" /> 债权转让</a>
-			<a href="<?php echo site_url('news/article_partener');?>"><img src="/../style/img/article/cooperation.png" height="50" /> 合作伙伴</a>
-			<a href="<?php echo site_url('news/article_fee');?>"><img src="/../style/img/article/fee.png" height="50" /> 费用标准</a>
-			<a href="<?php echo site_url('news/article_novice');?>" class="active"><img src="/../style/img/article/novice_.png" height="50" /> 新手指引</a>
-			<a href="<?php echo site_url('news/newslist/1');?>"><img src="/../style/img/article/repay.png" height="50" /> 还款公告</a>
-			<a href="<?php echo site_url('news/newslist/11');?>"><img src="/../style/img/article/website.png" height="50" /> 网站公告</a>
-			<a href="<?php echo site_url('news/newslist/3');?>"><img src="/../style/img/article/media.png" height="50" /> 媒体报道</a>
-			<a href="<?php echo site_url('news/newslist/7');?>"><img src="/../style/img/article/help.png" height="50" /> 帮助中心</a>
-			<a href="<?php echo site_url('news/article_contact');?>"><img src="/../style/img/article/contact.png" height="50" /> 联系我们</a>
-        </div>
 
-        <div class="col-xs-12 col-md-10">
-            <div class="about_con clearfix">
+	}
+	.circle li p:first-child{
+		border-right:3px solid #fff;
+		width:30px;
+		margin-right:30px;
+	}
+
+
+	/*---切换---*/
+	.prev,.next{float:left;}
+	.prev a{position:absolute;left:-100px;top:350px;text-decoration:none;}
+
+	.next a{position:absolute;left:1040px;top:350px;text-decoration:none;}
+	.prev,.prev a,.next,.next a{width:21px;height:28px; display:block}
+
+</style>
 
 <style>
-.clear{
-	clear:both;
-}
-.new_content p{
-	color:#888;
-}
-.text-kt{
-	color:#00aac6;
-}
-.text-grey{
-	color:#aaa;
-}
-.text-dgrey{
-	color:#888;
-}
+	.risk_economic .photo_im{
+		margin:30px 20px 30px 0px;
 
-</style>				
-				<div class="new_content" style="padding:30px; line-height:1.7em;font-size:14px;color:#666">
-					<div style="border-left:4px solid #00aac6;border-bottom:1px solid #888;font-size:16px;height:30px;line-height:30px;margin-bottom:20px;padding-left:10px;">新 手 指 引</div>
-				
-					<div style="width:98%;margin:20px auto;">
-						<div><img src="/../style/img/article/x1.png" width="100%" /></div>
-						<div style="width:100%;margin:50px auto 0 auto;">
-							<div style="border-bottom:1px solid #888;">
-								<h4>什么是供应链金融？</h4>
-							</div>
-							
-							<div class="row" style="margin:30px auto;">
-								<div class="col-xs-12 col-md-3">
-									<img src="/../style/img/article/x2.png" width="183" />
-								</div>
-								<div class="col-xs-12 col-md-9" style="margin-top:30px;">
-									<p style="text-indent:20px;">快投机器凭借多年金融行业背景，在国内首创供应链合规模式的P2P网贷平台，将借款方锁定大中型企业、集团公司等核心企业，为其上下游供应商和分销商，子公司、合作伙伴和其他关联公司提供整合型征信的新型融资方式。这些企业有着良好的实体经营，有发展前景的项目，有能提供固定资产抵押，同时有借款需求以促进自己的高速发展。</p>
-								</div>
-							</div>
-							
-							<div style="border-bottom:1px solid #888;">
-								<h4>为什么选择供应链金融？</h4>
-							</div>
-							
-							<div class="row text-center" style="margin:30px auto;">
-								<div class="col-xs-12 col-md-3"><img src="/../style/img/article/x3.png" width="96"/></div>
-								<div class="col-xs-12 col-md-3"><img src="/../style/img/article/x4.png" width="115"/></div>
-								<div class="col-xs-12 col-md-3"><img src="/../style/img/article/x5.png" width="93"/></div>
-								<div class="col-xs-12 col-md-3"><img src="/../style/img/article/x6.png" width="70"/></div>
-							</div>	
-							<div class="row text-center">
-								<div class="col-xs-12 col-md-3">
-									<h4>背景好</h4>
-									<p>核心企业  政府资源</p>
-									<p>供应链金融掌握关键</p>
-								</div>
-								<div class="col-xs-12 col-md-3">
-									<h4>风控严</h4>
-									<p>多层次风险保障机制</p>
-									<p>高标准机构准入门槛</p>
-									<p>严格担保总额控制</p>									
-									<p>严密风险监控</p>									
-								</div>
-								<div class="col-xs-12 col-md-3">
-									<h4>收益稳健</h4>
-									<p>多种期限 任意选择</p>
-									<p>100元起投?灵活投资?</p>											
-									<p>10%-18%超高稳定收益</p>											
-								</div>
-								<div class="col-xs-12 col-md-3">
-									<h4>资金安全</h4>
-									<p>256位全程交易加密</p>
-									<p>新浪支付品牌资金托管</p>											
-									<p>核心企业全额本息保障</p>											
-								</div>
-							</div>									
+	}
+	.risk_economic .photo_im img {
+		width:240px;
+	}
+	#list_select_frame{
+		width:1170px;
+		margin:0px;
+	}
+	.list_select {
+		padding: 10px 0px;
+	}
+	.list_select .col-xs-1:first-child {
+		margin-left:20px;
+	}
+	.list_kong{
+		border-top:1px dashed #ddd;
+		width:750px;
+		margin-left:18px;
+	}
+</style>
 
-							<div style="border-bottom:1px solid #888;">
-								<h4>如何投资？</h4>
-							</div>	
-								
-							<div style="width:95%;margin:30px auto;">
-								<div>
-									<div style="background:#fefefe;color:#fff;width:688px;padding-left:10px;border:1px solid #00aac6;margin-bottom:10px;">
-										<h5 style="height:30px;line-height:30px;color:#00aac6;">1.注册</h5>
-									</div>
-									<div>
-										<img src="/../style/img/article/x8.png" />
-									</div>
-								</div>
-								
-								<div style="margin-top:30px;">
-									<div style="background:#fefefe;color:#fff;width:675px;padding-left:10px;border:1px solid #00aac6;margin-bottom:10px;">
-										<h5 style="height:30px;line-height:30px;color:#00aac6;">2.账户</h5>
-									</div>
-									<div>
-										<img src="/../style/img/article/x9.png" />
-									</div>
-								</div>
-								
-								<div style="margin-top:30px;">
-									<div style="background:#fefefe;color:#fff;width:694px;padding-left:10px;border:1px solid #00aac6;margin-bottom:10px;">
-										<h5 style="height:30px;line-height:30px;color:#00aac6;">3.投资</h5>
-									</div>
-									<div>
-										<img src="/../style/img/article/x10.png" />
-									</div>
-
-								</div>
-								
-								<div style="margin-top:30px;">
-									<div style="background:#fefefe;color:#fff;width:693px;padding-left:10px;border:1px solid #00aac6;margin-bottom:10px;">
-										<h5 style="height:30px;line-height:30px;color:#00aac6;">4.支付</h5>
-									</div>									
-									<div>
-										<img src="/../style/img/article/x11.png" />
-									</div>
-								</div>	
-							</div>	
-							
-						</div>
-					</div>
-					
-					
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <?php $this->load->view('front/footer');?>
 </body>
 </html>
+

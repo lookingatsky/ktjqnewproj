@@ -631,6 +631,11 @@ class Sinanotify extends CI_Controller {
 							$prorow = $this->db->get('bulk_standard',1,0)->row_array();
 							$this->load->model('public_m');
 							$this->public_m->send_notice($order_row['uid'],'系统于 '.date('Y-m-d H:i:s',$order_row['dateline'])." 还款成功,项目：".$prorow['title'].",金额为".$order_row['monkey']);
+							
+							$this->db->where('id',$order_row['uid']);	
+							$result = $this->db->get('user',1,0)->row_array();
+							$this->load->model('interface_m');
+							$this->interface_m->sendinterestmessage($result['mobile'],$prorow['title'],$order_row['monkey'],7);
 						}
 					}
 					else

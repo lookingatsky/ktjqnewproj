@@ -56,97 +56,110 @@ var _hmt = _hmt || [];
 	})
     </script>
 </head>
-<body class="grey_body">
+<body>
 <?php $this->load->view('front/header');?>
-
-<div class="container">
-    <div class="row">	
-        <div class="col-xs-12 col-md-2 about_nav">	
-
-			<a href="<?php echo site_url('news/article_about');?>"><img src="/../style/img/article/about.png" height="50" /> 关于我们</a>
-			<a href="<?php echo site_url('news/article_safety');?>"><img src="/../style/img/article/safety.png" height="50" /> 安全保障</a>
-			<a href="<?php echo site_url('news/article_control');?>"><img src="/../style/img/article/control.png" height="50" /> 风控体系</a>
-			<a href="<?php echo site_url('news/article_mode');?>" class="active"><img src="/../style/img/article/platform_.png" height="50" /> 平台模式</a>
-			<a href="<?php echo site_url('news/article_transfer');?>"><img src="/../style/img/article/debt.png" height="50" /> 债权转让</a>
-			<a href="<?php echo site_url('news/article_partener');?>"><img src="/../style/img/article/cooperation.png" height="50" /> 合作伙伴</a>
-			<a href="<?php echo site_url('news/article_fee');?>"><img src="/../style/img/article/fee.png" height="50" /> 费用标准</a>
-			<a href="<?php echo site_url('news/article_novice');?>"><img src="/../style/img/article/novice.png" height="50" /> 新手指引</a>
-			<a href="<?php echo site_url('news/newslist/1');?>"><img src="/../style/img/article/repay.png" height="50" /> 还款公告</a>
-			<a href="<?php echo site_url('news/newslist/11');?>"><img src="/../style/img/article/website.png" height="50" /> 网站公告</a>
-			<a href="<?php echo site_url('news/newslist/3');?>"><img src="/../style/img/article/media.png" height="50" /> 媒体报道</a>
-			<a href="<?php echo site_url('news/newslist/7');?>"><img src="/../style/img/article/help.png" height="50" /> 帮助中心</a>
-			<a href="<?php echo site_url('news/article_contact');?>"><img src="/../style/img/article/contact.png" height="50" /> 联系我们</a>
-        </div>
-
-        <div class="col-xs-12 col-md-10">
-            <div class="about_con clearfix">
-
+<img src="<?php echo base_url();?>style/img/zizhi/xin1_02.gif" class="img-responsive" alt=""/>
 <style>
-.new_content p{
-}
-.new_content img{
-	width:100%;
-}
-.clear{
-	clear:both;
-}
-.text-kt{
-	color:#00aac6;
-}
-.text-grey{
-	color:#aaa;
-}
-.text-dgrey{
-	color:#888;
-}
-.mode_ul{
-	list-style-type:disc;
-	color:#00aac6;
-	font-size:18px;
-}
-.mode_ul li{
-	margin-top:20px;
-}
-.mode_ul p{
-	color:#888;
-	font-size:14px;
-	line-height:30px;
-}
-</style>				
-				<div class="new_content" style="padding:30px; line-height:1.7em;font-size:14px;color:#666">
-					<div style="border-left:4px solid #00aac6;border-bottom:1px solid #888;font-size:16px;height:30px;line-height:30px;margin-bottom:20px;padding-left:10px;">平 台 模 式</div>
-					
-					<div style="width:98%;margin:20px auto;">
-						<div><img src="/../style/img/article/p1.png" /></div>
-						<div style="width:90%;margin:50px auto 0 auto;">
-							<ul class="mode_ul">
-								<li>
-									<h4>供 应 链 金 融</h4>
-									<p style="text-indent:20px;">平台优选并整合优质的供应链，以其核心企业为重点，为其上下游关联企业提供融资服务。</p>
-									<p style="text-indent:20px;">对中坚企业要求为优质行业（国家不提倡贷款的行业不予考虑），其规模应为中等以上企业，在当地应有一定的影响力和美誉度。企业资产规模不小于1000万元</p>
-								</li>
-								<li>
-									<h4>商 户 金 融</h4>
-									<p style="text-indent:20px;">平台精选推出拥有商铺（或厂房）、房产、车辆的商户专属借款项目。以房产、车辆为抵押或质押品，以合作机构为担保回购方。商户金融为投资用户提供双重保障，一为资产保证，抵押品不得高于评估价值的70%；二为合作机构所承担的担保回购责任，一旦借款商户逾期未还，则此债权转移至合作机构，由合作机构代偿投资用户本息。</p>								
-								</li>
-								<li>
-									<h4>机 构 金 融</h4>
-									<p style="text-indent:20px;">针对资产管理公司、典当行、小贷公司等金融机构所提供的抵押、质押债权资产包借款项目。用于金融机构项目资金补充，借款方为金融机构、以其所提供资产包为质押。如其相关借款资产产权人发生逾期或坏账，则由此金融机构进行代偿。</p>	
-								</li> 
-								<li>
-									<h4>流 程 图</h4>
-									<div style="width:80%;margin:0 auto;"><img src="/../style/img/article/p2.png" /></div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					
-					
-                </div>
-            </div>
+    .navigitor_c{
+        width:1100px;
+        margin:0px auto;
+        color:#666;
+    }
+    .navigitor_c li{
+        padding-left:15px;
+    }
+    .navigitor_c li a{
+        color:#666;
+    }
+    .fanctory_j{
+        width:1100px;
+        margin:0px auto;
+        padding:30px;
+    }
+    .fanctory_j img{
+        margin-bottom:20px;
+    }
+    .fanctory_j p {
+        padding-left:10px;
+        text-indent: 2em;
+        line-height:25px;
+    }
+    .navigitor_c li .active{
+        border-bottom:5px solid #337ab7;
+    }
+</style>
+<div style="background-color: #eee;">
+    <ul class="nav nav-tabs navigitor_c">
+        <li><a href="<?php echo site_url('news/article_about'); ?>" >关于我们</a></li>
+        <li><a href="<?php echo site_url('news/article_mode'); ?>" class="active" >平台模式</a></li>
+        <li><a href="<?php echo site_url('news/article_transfer'); ?>" >债权转让</a></li>
+        <li><a href="<?php echo site_url('news/article_partener'); ?>" >合作伙伴</a></li>
+        <li><a href="<?php echo site_url('news/article_fee'); ?>" >费用标准</a></li>
+        <li><a href="<?php echo site_url('news/newslist/11'); ?>" >网站公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/1'); ?>" >还款公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/3'); ?>" >	理财知识</a></li>
+        <li><a href="<?php echo site_url('news/newslist/7'); ?>" >	帮助中心</a></li>
+        <li><a href="<?php echo site_url('news/article_contact'); ?>" >联系我们</a></li></li>
+    </ul>
+</div>
+<style>
+    .risk_economic{
+        width:1100px;
+        margin:30px auto;
+    }
+    .risk_economic .row{
+        padding:0px 100px 10px 50px;
+    }
+    .risk_economic .col-md-4 {
+        color:#337ab7;
+        font-size:20px;
+    }
+    .risk_economic p{
+        margin-left:30px;
+        line-height:25px;
+        margin-bottom: 0px;
+    }
+    .risk_economic .lined {
+        border-top:1px solid #337ab7;
+        margin-top:15px;
+    }
+    .risk_economic .p_d{
+        padding-left:35px;
+    }
+    .risk_economic .p_d>img{
+        margin:20px 0px;
+    }
+    .risk_economic .p_d h5{
+        color:#337ab7;
+        text-indent: 2em;
+        line-height:25px;
+        margin:0px;
+    }
+	.nav-tabs>li>a {
+		border:none;
+	}
+</style>
+<div style="background-color: #f9f9f9;padding-top:10px;">
+    <div class="risk_economic">
+        <div class="row p_d">
+            <img src="<?php echo base_url();?>style/img/article/9.jpg" alt=""/>
+            <p>平台优选并整合优质的供应链，以其核心为重点，为其上下游关联企业提供融资服务。</p>
+            <p>对中坚企业要求为优质行业（国家不提倡贷款的行业不予考虑），其规模应为中等以上企业，在当地应有一定的影响力和美誉度。企业资产规模不小于1000万元。</p>
+            <img src="<?php echo base_url();?>style/img/article/10.jpg" alt=""/>
+            <p>平台精选推出拥有商铺（或厂房）、房产、车辆的商户专属借款项目。以房产、车辆为抵押或质押品，以合作机构为担保回购方。商户金融为投资用户提供双重保障，一为资产保证，抵押品不得高于评估价值的70%；二为合作机构所承担的担保回购责任，一旦借款商户逾期未还，则此债权转移至合作机构，由合作机构代偿投资用户本息。</p>
+            <img src="<?php echo base_url();?>style/img/article/11.jpg" alt=""/>
+            <p style="padding-bottom:30px;">针对资产管理公司、典当行、小贷公司等金融机构所提供的抵押、质押债权资产包借款项目。用于金融机构项目资金补充，借款方为金融机构、以其所提供资产包为质押。如其相关借款资产产权人发生逾期或坏账，则由此金融机构进行代偿。</p>
         </div>
     </div>
 </div>
+<div>
+    <div class="risk_economic">
+        <img src="<?php echo base_url();?>style/img/article/12.jpg" style="margin-left:20px;" alt=""/>
+        <img src="<?php echo base_url();?>style/img/article/13.jpg" class="img-responsive text-center" style="margin-left:150px;" alt=""/>
+    </div>
+</div>
+
+
 <?php $this->load->view('front/footer');?>
 </body>
 </html>

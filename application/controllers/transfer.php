@@ -97,10 +97,11 @@ class Transfer extends CI_Controller {
 					{
 						//$sina_sell = $this->sina_m->sell_transfer($create_sell_order,$user_transfer['user_id'],$user_transfer['monkey'],$user_transfer['pro_id']);
 						//新浪代付
-						$fenzhang = $user_transfer['user_id']."^"."UID^SAVING_POT^"."kuaitoujiqi@sina.com"."^EMAIL^BASIC^".$user_transfer['poundage']."^项目id号".$user_transfer['pro_id']."债权转让分账";
-						$trade_list = $create_sell_order."~".$user_transfer['user_id']."~UID~SAVING_POT~".$user_transfer['monkey']."~".$fenzhang."~债权转让放款~~~".$user_transfer['pro_id']."~";
-						
-						$sina_sell = $this->sina_m->sell_transfer($create_sell_order,$trade_list);
+						$money = $user_transfer['monkey'];
+						$fenzhang = $user_transfer['user_id']."^"."UID^SAVING_POT^"."kuaitoujiqi@sina.com"."^EMAIL^BASIC^".$user_transfer['poundage']."^债权转让^";
+						// $trade_list = $create_sell_order."~".$user_transfer['sendee']."~UID~SAVING_POT~".$user_transfer['monkey']."~"."$fenzhang"."~债权转让放款~~~".$user_transfer['pro_id']."~";
+						$uid = $user_transfer['user_id'];
+						$sina_sell = $this->sina_m->sell_transfer($create_sell_order,$money,$uid,$fenzhang);
 						
 						if($sina_sell[0] != 0)
 						{

@@ -24,7 +24,7 @@
 <body>
 <style>
 .login_title{
-	width:100px;
+	width:140px;
 	height:30px;
 	text-align:center;
 	margin-left:18px;
@@ -34,11 +34,11 @@
 	margin:20px auto 20px 0;
 }
 .verify_frame_input{
-	margin:20px auto auto 43px;
+	margin:20px auto auto 50px;
 	border-right:1px solid #f2f2fd;
 }
 .login_frame_adv{
-	margin:50px auto auto 30px;	
+	margin:110px auto auto 30px;	
 	
 }
 </style>
@@ -57,7 +57,7 @@
 					<img src="<?php echo base_url();?>style/img/register_step_link.jpg" />
 				</div>
 				<div class="col-xs-12 col-md-3 text-center">
-					<img src="<?php echo base_url();?>style/img/register_step_2.png" />
+					<img src="<?php echo base_url();?>style/img/register_step_2.jpg" />
 				</div>
 				<div class="col-xs-12 col-md-1 text-center">
 					<img src="<?php echo base_url();?>style/img/register_step_link.jpg" />
@@ -67,72 +67,58 @@
 				</div>
 			</div>
 			<div class="row verify_frame" id="authentication">
-				<div class="col-xs-12 col-md-4 verify_frame_input">
+				<div class="col-xs-14 col-md-4 verify_frame_input">
 					<div class="row">
 					<h4>
-						<div class="login_title">实名认证</div>
+						<div class="login_title">开通新浪存钱罐</div>
 					</h4>					
 					</div>
 					<form class="form-horizontal mt10" onSubmit="return false">
 
 					<div class="row">
-						<div class="col-xs-12 col-md-12">
+						<div class="col-xs-14 col-md-12">
 							<p class="alert alert-warning my_alert" style="text-align:left">提示：绑定后不可修改,请仔细填写</p>
 						</div>
 					</div>
 					
 					<div class="row">
 						
-						<div class="col-xs-12 col-md-12">
-							<div class="input-group">
-							   <span class="input-group-btn">
-								  <button class="btn btn-info" type="button" style="width:80px;">
-									 真实姓名
-								  </button>
-							   </span>
-							   <input type="text" class="form-control" placeholder="请输入真实姓名" id="name">
-							</div>	
+						<div class="col-xs-14 col-md-12">
+							<input type="text" class="form-control" placeholder="请输入真实姓名" id="name">
 						</div>
 					</div>
 					<div class="row" id="name_error" style="display:none;">	
-						<div class="col-xs-12 col-md-12">
+						<div class="col-xs-14 col-md-12">
 						<p class="alert alert-danger my_alert">
 						</p>
 						</div>
 					</div>	
 					
 					<div class="row">
-						<div class="col-xs-12 col-md-12">
-							<div class="input-group">
-							   <span class="input-group-btn">
-								  <button class="btn btn-info" type="button" style="width:80px;">
-									 身份证号
-								  </button>
-							   </span>
-							   <input type="text" class="form-control" placeholder="请输入您的身份证号"  id="idcard">
-							</div>	
+						<div class="col-xs-14 col-md-12">
+							<input type="text" class="form-control" placeholder="请输入您的身份证号"  id="idcard">
 						</div>
 					</div>
 					<div class="row" id="idcard_error" style="display:none;">
-						<div class="col-xs-12 col-md-12">
+						<div class="col-xs-14 col-md-12">
 						<p class="alert alert-danger my_alert">
 						</p>
 						</div>
 					</div>	
 					
 					<div class="row">
-						<div class="col-xs-12 col-md-12">
+						<div class="col-xs-14 col-md-12">
 							<input type="checkbox" checked="checked" name="ifagree" id="ifagree" value="1" />&nbsp;&nbsp;我已同意&nbsp;<a href="<?php echo site_url('news/article/77');?>" target="_blank">《新浪支付服务使用协议》</a>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-md-12">
-							<button type="button" class="btn btn-danger btn-block" id="submit_verify">现在认证</button>
+						<div class="col-xs-14 col-md-12">
+							<button type="button" class="btn btn-info btn-default btn-block" id="submit_verify">现在认证</button>
 						</div>
 					</div>	
 					</form>
 				</div>
-				<div class="col-xs-12 col-md-7">
+				<div class="col-xs-14 col-md-7">
 					<div class="login_frame_adv">
 						<a href="#"><img src="<?php echo base_url();?>style/img/register_banner.jpg" width="100%" /></a>
 					</div>

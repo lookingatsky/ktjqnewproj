@@ -76,18 +76,24 @@ class Welcome_m extends CI_Model {
 	}
 	//登录检测
 	function login($username,$password)
-	{
+	{  	
 		$where = "password = '".$password."' and (nickname = '".$username."' or mobile = '".$username."')";
 		$where .= "and type = 1";//投资人用户类型
 		$this->db->where($where);
 		$query = $this->db->get('user',1,0);
+		$ip = $this->input->ip_address();
 		if($query->num_rows()<=0)
 		{
 			return "faield";	
 		}
 		else
-		{
+		{   
 			$row = $query->row_array();
+			$id = $row['id'];
+			$this->db->set('userid',$id);
+			$this->db->set('ip',$ip);
+			$this->db->set('time',time());
+			$this->db->insert('user_log');
 			$sina_query = $this->sina_m->query_balance($row['id']);
 			if($sina_query[0] == 0)
 			{

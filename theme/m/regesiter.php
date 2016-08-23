@@ -148,10 +148,6 @@
 	background-color:#337ab7;
 	border-color:#90daf7;
 }
-#sendcode{
-	background-color:#337ab7;
-	border-color:#90daf7;	
-}
 </style>
     <div class="row" style="margin-top: 10px;">
         <div class="col-xs-6">

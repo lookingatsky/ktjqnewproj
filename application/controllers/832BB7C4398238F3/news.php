@@ -152,4 +152,18 @@ class News extends Admin_Controller {
 			$this->_message('提交失败',admin_url('news/news_list'),2);	
 		}			
 	}
+	public function feedback(){
+		$data['result'] = $this->public_m->result('feedback');
+		$this->_view('news/feedback',$data);
+	}
+	public function del_feedback($id = false){
+		if($this->public_m->del('feedback',$id))
+		{
+			$this->_message('删除成功',admin_url('news/feedback/'));	
+		}
+		else
+		{
+			$this->_message('删除失败',admin_url('news/feedback/'));
+		}
+	}
 }

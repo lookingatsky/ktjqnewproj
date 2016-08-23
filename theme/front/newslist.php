@@ -46,63 +46,160 @@
 	})		
     </script>
 </head>
-<body class="grey_body">
+<body>
 <?php $this->load->view('front/header');?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-2 about_nav">
-			<!------
-            <a href="<?php echo site_url('news/article/9');?>"><span class="glyphicon glyphicon-user"></span> 关于我们</a>
-            <a href="<?php echo site_url('news/article/8');?>"><span class="glyphicon glyphicon-lock"></span> 安全保障</a>
-            <a href="<?php echo site_url('news/article/6');?>"><span class="glyphicon glyphicon-certificate"></span> 平台模式</a>
-            <a href="<?php echo site_url('news/article/13');?>"><span class="glyphicon glyphicon-retweet"></span> 债权转让</a>
-            <a href="<?php echo site_url('news/article/12');?>"><span class="glyphicon glyphicon-globe"></span> 合作伙伴</a>
-            <a href="<?php echo site_url('news/article/11');?>"><span class="glyphicon glyphicon-list"></span> 费用标准</a>
-            <a href="<?php echo site_url('news/article/7');?>"><span class="glyphicon glyphicon-book"></span> 新手指引</a>
-            <a href="<?php echo site_url('news/newslist/1');?>" <?php if($id == 1){?>class="active"<?php }?>><span class="glyphicon glyphicon-usd"></span> 还款公告</a>
-            <a href="<?php echo site_url('news/newslist/11');?>" <?php if($id == 11){?>class="active"<?php }?>><span class="glyphicon glyphicon-volume-down"></span> 网站公告</a>
-            <a href="<?php echo site_url('news/newslist/3');?>" <?php if($id == 3){?>class="active"<?php }?>><span class="glyphicon glyphicon-camera"></span> 媒体报道</a>
-             <a href="<?php echo site_url('news/newslist/7');?>" <?php if($id == 7){?>class="active"<?php }?>><span class="glyphicon glyphicon-question-sign"></span> 帮助中心</a>
-            <a href="<?php echo site_url('news/article/10');?>"><span class="glyphicon glyphicon-phone-alt"></span> 联系我们</a>
-			-------->
-			<a href="<?php echo site_url('news/article_about');?>"><img src="/../style/img/article/about.png" height="50" /> 关于我们</a>
-			<a href="<?php echo site_url('news/article_safety');?>"><img src="/../style/img/article/safety.png" height="50" /> 安全保障</a>
-			<a href="<?php echo site_url('news/article_control');?>"><img src="/../style/img/article/control.png" height="50" /> 风控体系</a>
-			<a href="<?php echo site_url('news/article_mode');?>"><img src="/../style/img/article/platform.png" height="50" /> 平台模式</a>
-			<a href="<?php echo site_url('news/article_transfer');?>"><img src="/../style/img/article/debt.png" height="50" /> 债权转让</a>
-			<a href="<?php echo site_url('news/article_partener');?>"><img src="/../style/img/article/cooperation.png" height="50" /> 合作伙伴</a>
-			<a href="<?php echo site_url('news/article_fee');?>"><img src="/../style/img/article/fee.png" height="50" /> 费用标准</a>
-			<a href="<?php echo site_url('news/article_novice');?>"><img src="/../style/img/article/novice.png" height="50" /> 新手指引</a>
-			<a href="<?php echo site_url('news/newslist/1');?>" <?php if($id == 1){?>class="active"<?php }?>><img src="/../style/img/article/repay<?php if($id == 1){?>_<?php }?>.png" height="50" /> 还款公告</a>
-			<a href="<?php echo site_url('news/newslist/11');?>" <?php if($id == 11){?>class="active"<?php }?>><img src="/../style/img/article/website<?php if($id == 11){?>_<?php }?>.png" height="50" /> 网站公告</a>
-			<a href="<?php echo site_url('news/newslist/3');?>" <?php if($id == 3){?>class="active"<?php }?>><img src="/../style/img/article/media<?php if($id == 3){?>_<?php }?>.png" height="50" /> 媒体报道</a>
-			<a href="<?php echo site_url('news/newslist/7');?>" <?php if($id == 7){?>class="active"<?php }?>><img src="/../style/img/article/help<?php if($id == 7){?>_<?php }?>.png" height="50" /> 帮助中心</a>
-			<a href="<?php echo site_url('news/article_contact');?>"><img src="/../style/img/article/contact.png" height="50" /> 联系我们</a>				
+<img src="/../style/img/zizhi/xin1_02.gif" class="img-responsive" alt=""/>
+<style>
+    .navigitor_c{
+        width:1100px;
+        margin:0px auto;
+        color:#666;
+    }
+    .navigitor_c li{
+        padding-left:15px;
+    }
+    .navigitor_c li a{
+        color:#666;
+    }
+    .fanctory_j{
+        width:1100px;
+        margin:0px auto;
+        padding:30px;
+    }
+    .fanctory_j img{
+        margin-bottom:20px;
+    }
+    .fanctory_j p {
+        padding-left:10px;
+        text-indent: 2em;
+        line-height:25px;
+    }
+    .navigitor_c li .active{
+        border-bottom:5px solid #337ab7;
+    }
+	.nav-tabs>li>a {
+		border:none;
+	}
+</style>
+<div style="background-color: #eee;">
+    <ul class="nav nav-tabs navigitor_c">
+        <li><a href="<?php echo site_url('news/article_about'); ?>" >关于我们</a></li>
+        <li><a href="<?php echo site_url('news/article_mode'); ?>" >平台模式</a></li>
+        <li><a href="<?php echo site_url('news/article_transfer'); ?>" >债权转让</a></li>
+        <li><a href="<?php echo site_url('news/article_partener'); ?>" >合作伙伴</a></li>
+        <li><a href="<?php echo site_url('news/article_fee'); ?>" >费用标准</a></li>
+        <li><a href="<?php echo site_url('news/newslist/11'); ?>" <?php if($id == 11){?>class="active"<?php }?>>网站公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/1'); ?>" <?php if($id == 1){?>class="active"<?php }?>>还款公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/3'); ?>"  <?php if($id == 3){?>class="active"<?php }?>>理财知识</a></li>
+        <li><a href="<?php echo site_url('news/newslist/7'); ?>"  <?php if($id == 7){?>class="active"<?php }?>>	帮助中心</a></li>
+        <li><a href="<?php echo site_url('news/article_contact'); ?>" >联系我们</a></li></li>
+    </ul>
+</div>
+
+	<style>
+    .risk_economic{
+        width:1100px;
+        margin:30px auto;
+    }
+    .risk_economic .row{
+        padding:0px 100px 10px 50px;
+    }
+    .risk_economic .col-md-4 {
+        color:#337ab7;
+        font-size:20px;
+    }
+    .risk_economic p{
+        margin-left:30px;
+        line-height:25px;
+        margin-bottom: 0px;
+    }
+    .risk_economic .lined {
+        border-top:1px solid #337ab7;
+        margin-top:15px;
+    }
+    .risk_economic .p_d{
+        padding-left:35px;
+    }
+    .risk_economic .p_d>img{
+        margin:20px 0px;
+    }
+    .risk_economic .p_d h4{
+        color:#337ab7;
+        text-indent: 2em;
+        line-height:25px;
+        margin:0px;
+    }
+	.risk_economic .p_d span{
+		color:#ddd;
+		font-size:12px;
+		float:right;
+	}
+    .risk_economic ul{
+       margin-left:920px;
+    }
+    .risk_economic ul li{
+        float:left;
+        margin-right:5px;
+    }
+</style>
+<style>
+    .flat_video {
+        width:1100px;
+        margin:20px auto;
+        padding:10px 80px 0px 10px;
+    }
+    .flat_video .col-md-10{
+        padding-left:40px;
+    }
+    .flat_video p{
+        text-indent: 2em;
+        line-height:25px;
+    }
+    .flat_video .col-md-10 h4{
+        margin-bottom:15px;
+        color:#337ab7;
+    }
+    .dashed_a{
+        width:1050px;
+        margin:0px auto;
+        border-top: 1px dashed #ddd;
+        height:1px;
+    }
+</style>
+<?php if($id == 3){?>
+<div>
+	<?php foreach($result as $key){?>
+    <div class="row flat_video">
+        <div class="col-xs-12 col-md-2">
+            <a href="<?php echo site_url('news/article/'.$key['id']);?>"><img src="<?php echo base_url();?><?php echo $key['photo'];?>" style="width:150px;"alt="<?php echo $key['title'];?>"/></a>
         </div>
-
-        <div class="col-xs-10">
-            <div class="about_con clearfix">
-                <h3 class="about_title"><span><?php echo $row['name']?></span></h3>
-				<?php foreach($result as $key){?>
-                <div class="news_con">
-                    <div class="news_one">
-                        <h4 class="clearfix"><a class="pull-left news_one_title" href="<?php echo site_url('news/article/'.$key['id']);?>" target="_blank"><?php echo $key['title'];?></a><span class="pull-right news_one_time"><?php echo $key['dateline'];?></span></h4>
-                        <p class="news_one_tip"><?php echo $key['description'];?></p>
-                    </div>
-                </div>
-     			<?php }?>
-
-
-                <div class="pagination pull-right about_page">
-             		<?php echo $links;?>
-                </div>
-
-
-            </div>
+        <div class="col-xs-4 col-md-10">
+            <h4 style="font-size:14px;"><?php echo $key['title'];?></h4>
+            <P><?php echo $key['description'];?><a href="<?php echo site_url('news/article/'.$key['id']);?>">详情&gt;&gt;</a></P>
         </div>
     </div>
+    <div class="dashed_a"></div>
+	<?php }?>
+	<div class="pagination pull-right about_page">
+		<?php echo $links;?>
+	</div>		
 </div>
+<?php }else{ ?>
+<div>
+    <div class="risk_economic">
+		<?php foreach($result as $key){?>
+        <div class="row p_d">
+			<h4  style="font-size:14px;"><a href="<?php echo site_url('news/article/'.$key['id']);?>" target="_blank"><?php echo $key['title'];?></a><span><?php echo $key['dateline'];?></span></h4>
+            <P style="border-bottom:1px dashed #ddd;padding-bottom:10px;padding-left:10px;"><?php echo $key['description'];?></p>
+		</div>
+		<?php }?>
+		<div class="pagination pull-right about_page">
+			<?php echo $links;?>
+		</div>		
+    </div>
+</div>
+<?php } ?>
 <?php $this->load->view('front/footer');?>
 </body>
 </html>

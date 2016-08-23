@@ -23,9 +23,6 @@
 </head>
 <body>
 <style>
-body{
-	background:#f2f2fd;
-}
 .menu_button{
 	text-align:center;
 }
@@ -48,13 +45,13 @@ body{
 .user_menu_1{
 	height:30px;
 	line-height:30px;
-	background:#00aac6;
+	background:#337ab7;
 	color:#fff;
 	padding-left:30px;
 }
 .user_left_menu .active{
-	background:#eee;
-	border-left:2px solid #00aac6;
+	background:#f9f9f9;
+	border-left:2px solid #337ab7;
 }
 .user_recharge{
 	background:#fff;
@@ -90,11 +87,15 @@ body{
 	margin-bottom:30px;
 	height:130px;
 }
+.btn-info{
+	background-color:#337ab7;
+	border:1px solid #337ab7;
+}
 </style>
 
 <?php $this->load->view('usercenter/header');?>
     <!---------------- 个人中心 消息中心 -------------------->
-    <div style="background: #f2f2fd;padding:90px 0 30px 0;">
+    <div style="padding:90px 0 30px 0;">
 		 <div class="container" style="width:1270px;">
 			<div class="row">
 				<?php $this->load->view('usercenter/left');?>
@@ -108,7 +109,7 @@ body{
 									充值
 								</a>
 								&nbsp;
-								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" role="button">
+								<a href="<?php echo site_url('usercenter/withdraw');?>"  style="background-color:#80d5fd;" class="btn btn-info btn-sm" role="button">
 									提现
 								</a>								
 							</div>

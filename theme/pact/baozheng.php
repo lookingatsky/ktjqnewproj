@@ -28,15 +28,15 @@
     <h2 style="text-align: center;font-weight: bold;">保证函</h2>
 
     <div style="margin-top: 30px;">
-		<p>致：编号为<?php echo $info[2]['number'];?>《网络借款协议》项下的各出借方：</p>
+		<p style="margin-bottom: 20px;">致：编号为<?php echo $info[2]['number'];?>《网络借款协议》项下的各出借方：</p>
     	<?php $ex = explode("|",$info[2]['pact']);?>
         <p>保证人：<?php echo $ex[0];?>（以下简称甲方）</p>
-        <p>注册号：<?php echo $ex[1];?></p>
+        <p style="margin-bottom: 20px;">注册号：<?php echo $ex[1];?></p>
         <p>被保证人：<?php echo $info[3]['company_name'];?>（以下简称乙方）</p>
-        <p>注册号：<?php echo $info[3]['license_no'];?></p>
+        <p style="margin-bottom: 20px;">注册号：<?php echo $info[3]['license_no'];?></p>
     </div>
     <br>
-    <p>甲方同意为乙方按期偿还上述合同项下的借款提供保证担保。</p>
+    <p style="margin-bottom: 20px;">甲方同意为乙方按期偿还上述合同项下的借款提供保证担保。</p>
     <p>甲方保证乙方依照合同规定按期偿还全部合同项下的金额，包括主债的本息、违约金及其他负担。如乙方不能按期偿还，甲方将承担被担保人承担的全部偿付义务。</p>
     <br>
     <p style="text-align: right">保证人：<?php echo $ex[0];?></p>

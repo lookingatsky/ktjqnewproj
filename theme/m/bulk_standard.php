@@ -291,7 +291,6 @@
 	<div class="row" style="margin-top: 10px;">
         <div class="col-xs-12">
             <button class="btn btn-success btn-block">即将上线</button>
-			<!-----
             <script language="javascript" src="<?php echo base_url();?>style/js/jquery.countdownTimer.min.js"></script>
             <script language="javascript">
                     $(function(){
@@ -314,7 +313,7 @@
                         	<span>10</span>小时<span>30</span>分<span>15</span>秒
                     	</div>
                     </div> 
-            ----->        
+                    
         </div>
     </div>
 </div>
@@ -438,13 +437,11 @@
 					<?php if($row['assets'] !=""){?>
 					<li><?php echo $ex[1];?></li>
 					<div><?php echo $row['assets'];?></div>
-					<?php }?>
-					
+					<?php }?>	
 					<?php if($row['pledge'] !=""){?>
 					<li><?php echo $ex[2];?></li>
 					<div><?php echo $row['pledge'];?></div>
 					<?php }?>
-					
 					<?php if($row['describe'] !=""){?>
 					<li><?php echo $ex[0];?></li>
 					<div><?php echo $row['describe'];?></div>
@@ -455,7 +452,7 @@
 			<div id="projectImg" style="border:0px solid #ccc;border-radius:5px;display:none;">
 				<div class="col-xs-12">	
 					<ul class="info-list">
-						<li><?php echo $ex[4];?></li>
+						<li>企业证照</li>
 						<div class="row">
 							<?php foreach(explode("~",$row['certificate']) as $key){?>
 							<div class="col-xs-6 dealImgFrame">
@@ -466,7 +463,7 @@
 							<?php }?>												
 						</div>						
 
-						<li><?php echo $ex[5];?></li>
+						<li>合同协议</li>
 						<div class="row">
 							<?php foreach(explode("~",$row['property']) as $key){?>
 							<div class="col-xs-6 dealImgFrame">
@@ -477,7 +474,7 @@
 							<?php }?>							
 						</div>	
 
-						<li><?php echo $ex[6];?></li>
+						<li>企业资产</li>
 						<div class="row">
 							<?php foreach(explode("~",$row['control']) as $key){?>
 							<div class="col-xs-6 dealImgFrame">

@@ -33,7 +33,7 @@ $(function() {
             if (obj.error == 0) {
                 var msg = JSON.parse(obj.msg);
                 $.each(msg,function(key, val) {
-                    $("#" + key + "_error").html('<div class="col-md-12"><p class="alert alert-danger my_alert">' + val + "</p></div>");
+                    $("#" + key + "_error").html('<div class="col-md-12"><p class="alert my_alert">' + val + "</p></div>");
                     $("#" + key + "_error").show();
                     $("#" + key + "_error").attr("data", "faield")
                 });

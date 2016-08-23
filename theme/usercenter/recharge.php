@@ -83,9 +83,6 @@
 </head>
 <body>
 <style>
-body{
-	background:#f2f2fd;
-}
 .menu_button{
 	text-align:center;
 }
@@ -108,13 +105,13 @@ body{
 .user_menu_1{
 	height:30px;
 	line-height:30px;
-	background:#00aac6;
+	background:#337ab7;
 	color:#fff;
 	padding-left:30px;
 }
 .user_left_menu .active{
-	background:#eee;
-	border-left:2px solid #00aac6;
+	background:#f9f9f9;
+	border-left:2px solid #337ab7;
 }
 .user_recharge{
 	background:#fff;
@@ -153,7 +150,7 @@ body{
 }
 </style>
 <?php $this->load->view('usercenter/header');?>
-    <div style="background: #f2f2fd;padding:90px 0 30px 0;">
+    <div style="padding:90px 0 30px 0;">
 		 <div class="container" style="width:1270px;">
 			<div class="row">
 				<?php $this->load->view('usercenter/left');?>
@@ -168,7 +165,7 @@ body{
 									投资
 								</a>
 								&nbsp;
-								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" role="button">
+								<a href="<?php echo site_url('usercenter/withdraw');?>"  style="background-color:#80d5fd;" class="btn btn-info btn-sm" role="button">
 									提现
 								</a>								
 							</div>
@@ -285,7 +282,7 @@ body{
 							
 							<div class="col-md-8 col-xs-12" style="margin-top:10px;">
 								<div class="user_recharge_rule">
-									<div class="alert alert-info transfer_rules" role="alert">
+									<div class="alert alert-info transfer_rules" role="alert" style="background-color:#fff;border:0px;">
 										<div class="row">
 											<div class="col-lg-12">
 												<h4>投资规则</h4>
@@ -322,10 +319,10 @@ body{
 						</div> -->
 						<hr />	
 						<div class="row user_recharge_log">
-							<h4 style="border-left:4px solid #00aac6;padding-left:10px;">充值记录</h4>
+							<h4 style="border-left:4px solid #337ab7;padding-left:10px;">充值记录</h4>
 							<div style="margin:20px 0 20px 0;line-height:20px;">
 								<table class="table table-striped" style="">
-									<thead style="background:#5bc0de;color:#fff;">
+									<thead style="background:#337ab7;color:#fff;">
 										<tr>
 											<th>交易号</th>
 											<th>日期</th>

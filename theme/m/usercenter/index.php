@@ -49,14 +49,14 @@
 				</div>		
 			</div>
 			<div class="col-xs-10 text-left" style="line-height:40px;">
-				<?php echo userinfo('nickname'); ?> 
-					<?php if(userinfo('nowTimeHours') > -1 && userinfo('nowTimeHours') < 12 ){
-						echo "上午好！";
-					}elseif(userinfo('nowTimeHours') > 18){
-						echo "晚上好！";
-					}else{
-						echo "下午好！";
-					}?>
+								<?php echo userinfo('nickname'); ?> 
+								<?php if(userinfo('nowTimeHours') > -1 && userinfo('nowTimeHours') < 12 ){
+									echo "上午好！";
+								}elseif(userinfo('nowTimeHours') > 18){
+									echo "晚上好！";
+								}else{
+									echo "下午好！";
+								}	?>
 			</div>
 		</div>
 		<div class="row" style="margin-top:40px;">

@@ -28,6 +28,11 @@ class Welcome extends Front_Controller {
 		$data['bangzhu'] = $this->welcome_m->indexnews(7);
 		$data['meiti'] = $this->welcome_m->indexnews(3);
 		$data['bulk'] = $this->welcome_m->bulk();
+		
+		$this->load->model('transfer_m');
+		$return = $this->transfer_m->front_transfer_list(5,0);
+		$data['transfers'] = $return[1];
+		
 		//获取焦点图
 		$this->db->order_by('sort','asc');
 		$data['focus'] = $this->db->get('focus')->result_array();
@@ -65,7 +70,7 @@ class Welcome extends Front_Controller {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nickname', '用户名', 'required|trim|encode_php_tags|strip_tags|htmlspecialchars|is_unique[user.nickname]|min_length[4]|max_length[26]');
 		$this->form_validation->set_rules('mobile', '手机号', 'required|trim|is_natural_no_zero|min_length[11]|max_length[11]|is_unique[user.mobile]');
-		$this->form_validation->set_rules('password', '登陆密码', 'required|trim|min_length[8]|max_length[12]');
+		$this->form_validation->set_rules('password', '登陆密码', 'required|trim|min_length[8]|max_length[16]');
 		$this->form_validation->set_rules('matches_password', '确认密码', 'required|trim|matches[password]');
 		$this->form_validation->set_rules('phonecode', '手机验证码', 'required|is_natural_no_zero|min_length[6]|max_length[6]|phonecode[input.mobile]');
 		$this->form_validation->set_error_delimiters('<div class="col-lg-4"><p class="alert alert-danger my_alert">', '</p></div>');
@@ -202,7 +207,7 @@ class Welcome extends Front_Controller {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('phonecode', '手机验证码', 'required|is_natural_no_zero|min_length[6]|max_length[6]|phonecode[input.mobile]');
 		$this->form_validation->set_rules('mobile','手机号','required|is_natural_no_zero|min_length[11]|max_length[11]|callback_check_getphone');
-		$this->form_validation->set_rules('password', '登陆密码', 'required|min_length[8]|max_length[12]');
+		$this->form_validation->set_rules('password', '登陆密码', 'required|min_length[8]|max_length[16]');
 		$this->form_validation->set_rules('matches_password', '确认密码', 'required|matches[password]');
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -297,8 +302,11 @@ class Welcome extends Front_Controller {
 	function login()
 	{
 		$username = trim($this->input->post('username'));
+		$username = mysql_real_escape_string($username);
 		$password = sha1($this->input->post('password'));
-		$piccode =  trim($this->input->post('piccode'));
+		$password = mysql_real_escape_string($password);
+		$piccode = trim($this->input->post('piccode'));
+		$piccode = mysql_real_escape_string($piccode);
 		
 		$code = $this->session->userdata('regesiter_code');
 		
@@ -313,7 +321,8 @@ class Welcome extends Front_Controller {
 	}
 	//退出登录
 	function exit_login()
-	{
+	{	$id = $this->session->userdata('uid');
+	    $this->db->delete('user_log',array('userid'=>$id));
 		$this->session->unset_userdata('uid');	
 		redirect(base_url());
 	}

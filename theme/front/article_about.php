@@ -22,6 +22,7 @@
     <script src="<?php echo base_url();?>style/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo base_url();?>style/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>style/js/base.js"></script>
+</head>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -56,143 +57,132 @@ var _hmt = _hmt || [];
 	})
     </script>
 </head>
-<body class="grey_body">
+<body>
 <?php $this->load->view('front/header');?>
-
-<div class="container">
-    <div class="row">	
-        <div class="col-xs-12 col-md-2 about_nav">	
-
-			<a href="<?php echo site_url('news/article_about');?>" class="active"><img src="/../style/img/article/about_.png" height="50" /> 关于我们</a>
-			<a href="<?php echo site_url('news/article_safety');?>"><img src="/../style/img/article/safety.png" height="50" /> 安全保障</a>
-			<a href="<?php echo site_url('news/article_control');?>"><img src="/../style/img/article/control.png" height="50" /> 风控体系</a>
-			<a href="<?php echo site_url('news/article_mode');?>"><img src="/../style/img/article/platform.png" height="50" /> 平台模式</a>
-			<a href="<?php echo site_url('news/article_transfer');?>"><img src="/../style/img/article/debt.png" height="50" /> 债权转让</a>
-			<a href="<?php echo site_url('news/article_partener');?>"><img src="/../style/img/article/cooperation.png" height="50" /> 合作伙伴</a>
-			<a href="<?php echo site_url('news/article_fee');?>"><img src="/../style/img/article/fee.png" height="50" /> 费用标准</a>
-			<a href="<?php echo site_url('news/article_novice');?>"><img src="/../style/img/article/novice.png" height="50" /> 新手指引</a>
-			<a href="<?php echo site_url('news/newslist/1');?>"><img src="/../style/img/article/repay.png" height="50" /> 还款公告</a>
-			<a href="<?php echo site_url('news/newslist/11');?>"><img src="/../style/img/article/website.png" height="50" /> 网站公告</a>
-			<a href="<?php echo site_url('news/newslist/3');?>"><img src="/../style/img/article/media.png" height="50" /> 媒体报道</a>
-			<a href="<?php echo site_url('news/newslist/7');?>"><img src="/../style/img/article/help.png" height="50" /> 帮助中心</a>
-			<a href="<?php echo site_url('news/article_contact');?>"><img src="/../style/img/article/contact.png" height="50" /> 联系我们</a>
-        </div>
-
-        <div class="col-xs-12 col-md-10">
-            <div class="about_con clearfix">
-
+<img src="<?php echo base_url();?>style/img/zizhi/xin1_02.gif" class="img-responsive" alt=""/>
 <style>
-.new_content p{
+    .navigitor_c{
+        width:1100px;
+        margin:0px auto;
+        color:#666;
+    }
+    .navigitor_c li{
+        padding-left:15px;
+    }
+    .navigitor_c li a{
+        color:#666;
+    }
+    .fanctory_j{
+        width:1100px;
+        margin:0px auto;
+        padding:30px;
+    }
+    .fanctory_j img{
+        margin-bottom:20px;
+    }
+    .fanctory_j p {
+        padding-left:10px;
+        text-indent: 2em;
+        line-height:25px;
+    }
+    .navigitor_c li .active{
+        border-bottom:5px solid #337ab7;
+    }
+	.nav-tabs>li>a {
+		border:none;
 }
-.new_content img{
-	width:100%;
-}
-.clear{
-	clear:both;
-}
-.text-kt{
-	color:#00aac6;
-}
-.text-grey{
-	color:#aaa;
-}
-.text-dgrey{
-	color:#888;
-}
-.mode_ul{
-	list-style-type:disc;
-	color:#00aac6;
-	font-size:18px;
-}
-.mode_ul li{
-	margin-top:20px;
-}
-.mode_ul p{
-	color:#888;
-	font-size:14px;
-	line-height:30px;
-}
-</style>	
-<link rel="stylesheet" href="<?php echo base_url();?>style/css/lightbox.css">
-<script src="<?php echo base_url();?>style/js/lightbox-plus-jquery.js"></script>
-			
-				<div class="new_content" style="padding:30px; line-height:1.7em;font-size:14px;color:#666">
-					<div style="border-left:4px solid #00aac6;border-bottom:1px solid #888;font-size:16px;height:30px;line-height:30px;margin-bottom:20px;padding-left:10px;">关 于 我 们</div>
-				
-					<div style="width:98%;margin:20px auto;">
-						<div><img src="/../style/img/article/about1.png" /></div>
-						<div style="width:90%;margin:50px auto 0 auto;">
-							<ul class="mode_ul">
-								<li>
-									<h4 style="margin-bottom:20px;">公 司 简 介</h4>
-									<div class="row">
-										<div class="col-md-8">
-											<p style="text-indent:20px;">
-												<span style="font-size:30px;">快</span>投机器平台（www.kuaitoujiqi.com）成立于2015年9月，由北京泰恒长隆网络科技有限公司建设并运营，是主要专注于供应链金融模式，风控严谨，制度完善，交易系统安全。作为成熟投资人选择的安全投资平台，快投机器与新浪第三方支付进行合作，支付端做到独立与隔离，保障资金通道效率与安全 <a href="<?php echo site_url('news/article_safety');?>">>>点击查看 安全保障</a>，资产端通过与大中型企业、集团公司等核心企业，第三方担保公司、资产管理公司、银行等金融机构合作，同时与专业的律师事务所以及会计事务所全程合作 <a href="<?php echo site_url('news/article_partener');?>">>>点击查看 合作伙伴</a>，打造高端的互联网金融平台模式，为投资人提供全方位的投资安全保障。
-											</p>
-										</div>
-										<div class="col-md-4" style="margin-top:30px;">
-											<p><img src="/../style/img/zizhi/about_1.png" /></p>
-										</div>
-									</div>									
-								</li>
-								<li>
-									<h4 style="margin-bottom:20px;">供 应 链 金 融</h4>
-									<div class="row">
-										<div class="col-md-4" style="margin-top:100px;">
-											<p><img src="/../style/img/zizhi/about_2.png" /></p>
-										</div>									
-										<div class="col-md-8">
-											<p style="text-indent:20px;"><span style="font-size:30px;">供</span>应链金融是目前快投机器平台推出的主要融资产品，平台首先对核心企业进行精心的筛选和全方位的审查，再对根据通过申请或者核心企业推荐的供应链上下游企业进行借款风控审查 <a href="<?php echo site_url('news/article_control');?>">>>点击查看 风控体系</a>，并且由核心企业为供应链企业提供担保。除此之外，平台对供应链所涉行业也会有整体的评估，对供应链整体和局部都做出分析，做到对借款项目的全方位的整体把控，避免了只对借款企业的单一审查而产生的局限。</p>
-											<p style="text-indent:20px;">除此之外，平台还将提供商户贷和机构金融项目等精品项目供投资者选择，在做到提供专业投资产品的同时，也为投资用户提供多元化的选择。总之，清晰便捷的投资流程，专业化与多元化并存的投资产品，是快投机器的服务宗旨 <a href="<?php echo site_url('news/article_mode');?>">>>点击查看 平台模式</a></p>
-										</div>
-									</div>									
-								</li>
-								<li>
-									<h4 style="margin-bottom:20px;">企 业 优 选 计 划</h4>
-									<div class="row">								
-										<div class="col-md-8">
-											<p style="text-indent:20px;"><span style="font-size:30px;">平</span>台推出的每个项目的安全性和质量都有很大的保障，这就是平台推出的“企业优选计划”，我们提供给投资人的是精品项目，所有项目做到最大程度的透明披露，免去投资人对投资项目安全的忧虑，可以在快节奏的工作和生活当中快速的、机器化精准筛选投资项目，获得预期的投资收益。另外，投资者在急于收回资金的时候，可以通过平台提供的债权转让服务 <a href="<?php echo site_url('news/article_transfer');?>">>>点击查看 债权转让</a>进行转让债权，及时回笼资金。</p>
-										</div>
-										<div class="col-md-4">
-											<p><img src="/../style/img/zizhi/about_3.png" /></p>
-										</div>											
-									</div>									
-								</li>
-								<li>
-									<h4 style="margin-bottom:20px;">风 险 准 备 金</h4>
-									<div class="row">
-										<div class="col-md-4">
-											<p><img src="/../style/img/zizhi/about_4.png" /></p>
-										</div>									
-										<div class="col-md-8">
-											<p style="text-indent:20px;"><span style="font-size:30px;">平</span>台在通过严格把控项目质量的同时，不忽略经济波动或者政策指向等因素带来的投资风险，平台通过建立风险准备金制度 <a href="<?php echo site_url('news/article_safety');?>">>>点击查看 安全保障</a>，在借款人出现违约时，在第一时间为投资人补充资金，投资者债权从而转移给平台，平台再去向借款人追索，这样就避免了追索期给投资人带来的损失。</p>
-										</div>
-									</div>									
-								</li>
-								<li>
-									<h4 style="margin-bottom:20px;">公 司 资 质</h4>
-									<div class="dealImgFrame">
-										<a class="thumbnail" data-lightbox="certificate" href="/../style/img/zizhi/3.jpg">
-											<img src="/../style/img/zizhi/3.jpg" style="width:150px;">
-										</a>										
-										<a class="thumbnail" data-lightbox="certificate" href="/../style/img/zizhi/2.jpg" style="margin-right:20px;">
-											<img src="/../style/img/zizhi/2.jpg" style="width:150px;">
-										</a>											
-										<a class="thumbnail" data-lightbox="certificate" href="/../style/img/zizhi/1.jpg" style="margin-right:20px;">
-											<img src="/../style/img/zizhi/1.jpg" style="width:150px;">
-										</a>
-									</div>							
-								</li>
-							</ul>
-						</div>
-					</div>
-					
-                </div>
-            </div>
+</style>
+<div style="background-color: #eee;">
+    <ul class="nav nav-tabs navigitor_c">
+        <li><a href="<?php echo site_url('news/article_about'); ?>" class="active">关于我们</a></li>
+        <li><a href="<?php echo site_url('news/article_mode'); ?>" >平台模式</a></li>
+        <li><a href="<?php echo site_url('news/article_transfer'); ?>" >债权转让</a></li>
+        <li><a href="<?php echo site_url('news/article_partener'); ?>" >合作伙伴</a></li>
+        <li><a href="<?php echo site_url('news/article_fee'); ?>" >费用标准</a></li>
+        <li><a href="<?php echo site_url('news/newslist/11'); ?>" >网站公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/1'); ?>" >还款公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/3'); ?>" >理财知识</a></li>
+        <li><a href="<?php echo site_url('news/newslist/7'); ?>" >	帮助中心</a></li>
+        <li><a href="<?php echo site_url('news/article_contact'); ?>" >联系我们</a></li>
+    </ul>
+</div>
+<div class="fanctory_j">
+    <img src="<?php echo base_url();?>style/img/zizhi/7_05.gif" alt=""/>
+    <div class="row">
+       <div class="col-xs-12 col-md-8">
+           <p>快投机器平台（www.kuaitoujiqi.com）由北京泰恒长隆网络科技有限公司建设并运营，公司成立于2015年9月，主要专注于供应链金融模式下的网络借贷信息服务，风控严谨，制度完善，交易系统安全，是成熟投资人值得选择的安全、可靠的网络借贷信息服务平台。快投机器与新浪第三方支付进行合作，由新浪支付提供资金存管，支付端做到独立与隔离，保障资金通道效率与安全&gt;&gt;<a href="<?php echo site_url('news/article_safety');?>">点击查看 安全保障</a>，资产端通过与大中型企业、集团企业等核心企业，第三方担保公司、资产管理公司等机构合作，风控端与专业的律师事务所以及会计事务所全程合作 &gt;&gt;<a href="<?php echo site_url('news/article_partener'); ?>">点击查看 合作伙伴</a>，打造高端的互联网金融平台模式，为投资人提供全方位的投资安全保障。</p>
+       </div>
+        <div class="col-xs-12 col-md-4">
+            <img src="<?php echo base_url();?>style/img/zizhi/7_09.gif" alt=""/>
         </div>
     </div>
 </div>
+
+<div class="fanctory_j">
+    <img src="<?php echo base_url();?>style/img/zizhi/7_12.gif" alt=""/>
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <img src="<?php echo base_url();?>style/img/zizhi/7_15.gif" alt=""/>
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <p>供应链金融是目前快投机器平台推出的主要融资产品，平台首先对核心企业进行精心的筛选和全方位的审查，再对根据通过申请或者核心企业推荐的供应链上下游企业进行借款风控审查，并且由核心企业为供应链企业提供担保。除此之外，平台对供应链所涉行业也会有整体评估，对供应链整体和布局都作出分析，做到对借款项目的全方位的整体把控，避免了只对借款行业的单一审查而产生的局限。</p>
+            <p>除此之外，平台还提供诸如车辆抵押贷等精品项目供投资者选择，在做到提供专业投资产品的同时，也为投资用户提供多元化的选择。总之，清晰便捷的投资流程，专业化与多元化并存的投资产品，是快投机器的服务宗旨。</p>
+        </div>
+    </div>
+</div>
+
+<div class="fanctory_j">
+    <img src="<?php echo base_url();?>style/img/zizhi/7_18.gif" alt=""/>
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <p>平台推出的每个项目的安全性和质量都有很大的保障，这就是平台推出的“企业优化计划”，正如我们的“快投机器”的名字一样，我们提供给投资人的是精品项目，所有的项目做到最大程度的透明披露，免去投资人对投资项目安全的忧虑，可以在快节奏的工作和生活当中快速的、机器化精准筛选投资项目，获得预期的投资收益。另外，投资者在急于收回资金的时候，可以通过平台提供的债权转让服务进行转让债权，及时回笼资金。</p>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <img src="<?php echo base_url();?>style/img/zizhi/7_22.gif" alt=""/>
+        </div>
+    </div>
+</div>
+
+<div class="fanctory_j">
+    <img src="<?php echo base_url();?>style/img/zizhi/7_23.gif" alt=""/>
+    <div class="row pho dealImgFrame">
+		<a class="thumbnail" data-lightbox="certificate" href="<?php echo base_url();?>style/img/zizhi/3.jpg">
+			<img src="<?php echo base_url();?>style/img/zizhi/3.jpg" alt="" style="width:150px;"/>
+		</a>
+		<a class="thumbnail" data-lightbox="certificate" href="<?php echo base_url();?>style/img/zizhi/2.jpg">
+			<img src="<?php echo base_url();?>style/img/zizhi/2.jpg" alt="" style="width:150px;"/>
+		</a>
+		<a class="thumbnail" data-lightbox="certificate" href="<?php echo base_url();?>style/img/zizhi/1.jpg">
+			<img src="<?php echo base_url();?>style/img/zizhi/1.jpg" alt="" style="width:150px;"/>
+		</a>
+    </div>		
+</div>
+<style>
+    .fanctory_j .pho{
+        margin-left:60px;
+    }
+    .fanctory_j .pho img{
+        margin-right:15px;
+    }
+    body{
+        color:#666;
+    }
+
+    .fLeft{
+        float:left;
+    }
+    .fRight{
+        float:right;
+    }
+    .clear{
+        clear:both;
+    }
+
+</style>
+
+<link rel="stylesheet" href="<?php echo base_url();?>style/css/lightbox.css">
+<script src="<?php echo base_url();?>style/js/lightbox-plus-jquery.js"></script>
+
 <?php $this->load->view('front/footer');?>
 </body>
 </html>

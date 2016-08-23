@@ -45,9 +45,6 @@
 </head>
 <body>
 <style>
-body{
-	background:#f2f2fd;
-}
 .menu_button{
 	text-align:center;
 }
@@ -70,13 +67,13 @@ body{
 .user_menu_1{
 	height:30px;
 	line-height:30px;
-	background:#00aac6;
+	background:#337ab7;
 	color:#fff;
 	padding-left:30px;
 }
 .user_left_menu .active{
-	background:#eee;
-	border-left:2px solid #00aac6;
+	background:#f9f9f9;
+	border-left:2px solid #337ab7;
 }
 .user_recharge{
 	background:#fff;
@@ -116,7 +113,7 @@ body{
 <?php $this->load->view('usercenter/header');?>
     <!---------------- 个人中心 首页 -------------------->
 	
-    <div style="background:#f2f2fd;padding:90px 0 30px 0;">
+    <div style="padding:90px 0 30px 0;">
 		 <div class="container" style="width:1270px;">
 			<div class="row">
 				<?php $this->load->view('usercenter/left');?>
@@ -130,7 +127,7 @@ body{
 									充值
 								</a>
 								&nbsp;
-								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" role="button">
+								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" style="background-color:#80d5fd;" role="button">
 									提现
 								</a>								
 							</div>
@@ -210,7 +207,7 @@ body{
 								<div class="row text-center" style="border:1px solid #ddd;border-radius:5px;">
 									<div class="col-md-12 col-xs-12">
 									<div class="row">
-										<div class="col-md-12 col-xs-12" style="line-height:50px;height:50px;font-size:18px;color:#fff;background:#00aac6;">资产总览</div>
+										<div class="col-md-12 col-xs-12" style="line-height:50px;height:50px;font-size:18px;color:#fff;background:#337ab7;">资产总览</div>
 									</div>
 									<div class="row" style="border-bottom:1px solid #ddd;">
 										<div class="col-md-6 col-xs-12" style="border-right:1px solid #ddd;height:80px;">

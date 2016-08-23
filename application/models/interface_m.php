@@ -112,6 +112,52 @@ class Interface_m extends CI_Model {
 		
 	    
 	}
+	
+	//发送付息成功短信
+	function sendinterestmessage($phone,$title,$money,$modelid = false)
+	{
+		
+		$this->add_sms_visit($phone);
+		
+		header("Content-Type:text/html;charset=UTF-8");
+		
+		//获取短信模板
+		$model = $this->get_sms($modelid);
+		$username = substr($phone,-4);
+		$content = str_replace('{username}',$username,$model);
+		$content = str_replace('{title}',$title,$content);
+		$content = str_replace('{money}',$money,$content);
+		
+		$sn = "SDK-WSS-010-09397";
+		$pwd = "B6B55709EA49F37DE5206CE1BF03654F"; //md5(sn+pwd) 大写
+		
+		$url = 'http://sdk.entinfo.cn:8061/webservice.asmx/mdsmssend?sn='.$sn.'&pwd='.$pwd.'&mobile='.$phone.'&content='.$content.'&ext=&rrid=&stime=&msgfmt=';
+		
+		$output = file_get_contents($url);
+
+		$xml = simplexml_load_string($output);
+		$arr = json_decode(json_encode($xml),true);
+		$content_sms = json_encode($xml);
+		if($arr[0] > 1)
+		{    
+			$this->db->set('datetime',time());
+			$this->db->set('phone',$phone);
+			$this->db->set('content',$content_sms);
+			$this->db->set('status',1);//成功
+			$this->db->insert('sms_log');
+			return true;	
+		}
+		else
+		{    
+			$this->db->set('datetime',time());
+			$this->db->set('phone',$phone);
+			$this->db->set('content',$content_sms);
+			$this->db->set('status',0);//失败
+			$this->db->insert('sms_log');
+			return false;
+		}
+	}	
+	
 	//发送邮件
 	function send_email($email = false)
 	{

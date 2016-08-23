@@ -92,5 +92,29 @@ class News extends Front_Controller {
 
 	function article_partener(){
 		$this->load->view('front/article_partener');
-	}		
+	}	
+	function article_feedback(){
+		//echo $this->input->ip_address();
+		$this->load->view('front/feedback');
+	}
+	function feedback(){
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('textarea1', '文本长度', 'required|min_length[10]|max_length[500]');
+	    $this->form_validation->set_rules('contact', '联系方式', 'required|valid_email || required|trim|is_natural_no_zero|min_length[11]|max_length[11]');
+		if ($this->form_validation->run() == FALSE){
+			$data['error'] = 1;
+			echo json_encode($data);
+		}else{
+		$content = $_POST['textarea1'];
+		$select = $_POST['select1'];
+		$contact = $_POST['contact'];
+			$this->db->set('time',time());
+			$this->db->set('phone',$contact);
+			$this->db->set('content',$content);
+			$this->db->set('status',$select);//成功
+			$this->db->insert('feedback');
+			$data['error'] = 0;
+			echo json_encode($data);
+		}
+	}	
 }

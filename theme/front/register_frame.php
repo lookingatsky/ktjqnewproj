@@ -33,31 +33,269 @@
 
 </head>
 <body>
-<style>
-.login_title{
-	width:150px;
-	height:30px;
-	text-align:center;
-	margin-left:18px;
-	border-bottom:3px solid #00aac6;
-}
-.register_frame .row{
-	margin:20px auto 20px 0;
-}
-.login_frame_input{
-	margin:20px auto auto 43px;
-	border-right:1px solid #f2f2fd;
-}
-.login_frame_adv{
-	margin:25px auto auto 30px;	
+<script language="javascript" src="<?php echo base_url();?>style/js/work.js"></script>
+<?php $this->load->view('front/header_model');?>
+<div class="header" style="height:40px;line-height:40px;background-color: #333;">
 	
-}
-</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<img src="<?php echo base_url();?>style/img/header/top_tel_icon.png" width="20" /> 客服热线：400-677-7505 &nbsp;|&nbsp;
+				<a href="http://weibo.com/p/1006065833446993" rel="nofollow" target="_blank"><img src="<?php echo base_url();?>style/img/header/top_wb_icon.png" width="19" height="17" /> 官方微博</a>
+					&nbsp;&nbsp;
+				<a data-toggle="modal" data-target="#weixinModal" style="cursor:pointer"><img src="<?php echo base_url();?>style/img/header/top_wx_icon.png" width="19" height="17" />官方微信</a> 			
+			</div>	
+			<div class="col-xs-12 col-md-2"></div>
+			<div class="col-xs-12 col-md-4 text-right">
+				<input type="hidden" name="uid"  id="uid" value="<?php echo $this->session->userdata('uid')?$this->session->userdata('uid'):0;?>" />
+				<?php
+				 $num = $this->session->userdata('uid');
+				 if($num){
+				 $sql = "SELECT nickname FROM `user`where id = $num";
+				$result = $this->db->query($sql)->result();}
+				?>
+				<?php if($this->session->userdata('uid') && $result != null){ ?>
+				<span class="header_word">欢迎您,<?php echo userinfo('nickname');?></span>
+					&nbsp;|&nbsp;
+				<?php }?>
+				<?php if($this->session->userdata('uid') && $result == null){?>
+					<a href="<?php echo site_url('welcome/login_frame');?>">登录</a>
+					&nbsp;|&nbsp;
+				<?php }?>
+				<?php if(!$this->session->userdata('uid')){?>
+					<a href="<?php echo site_url('welcome/login_frame');?>">登录</a>
+					&nbsp;|&nbsp;
+				<?php }?>
+					
+				<?php if($this->session->userdata('uid') && $result != null){?>
+					<a href="<?php echo site_url('usercenter/index');?>">个人中心</a>
+					&nbsp;|&nbsp;
+				<?php }?>
+				<?php if($this->session->userdata('uid') &&  $result != null){?>
+					<a href="<?php echo site_url('welcome/exit_login');?>">退出</a>
+				<?php }?>				
+					
+				<?php if($this->session->userdata('uid') &&  $result == null){?>
+					<a href="<?php echo site_url('welcome/register_frame');?>">注册</a>
+				<?php }?>
 
+				<?php if(!$this->session->userdata('uid')){?>
+					<a href="<?php echo site_url('welcome/register_frame');?>">注册</a>
+				<?php }?>
+			</div>	
+		</div>
+	</div>	
+</div>
+	<script src="<?php echo base_url();?>style/js/jquery.easing.min.js"></script>
+	<script src="<?php echo base_url();?>style/js/jquery.lavalamp.min.js"></script>
+<style>
+  .login .col-md-3{
+        text-align: left;
+		padding-left:0px;
+    }
+    .login .col-md-5{
+        padding-left:0px;padding-right:0px;
+    }
+    .login .m_l .z_h{
+        font-size:12px;
+    }
+    .login .m_l .col-md-12{
+        margin-left:15px;
+    }
+    .login .m_l .col-md-5 button {
+        background-color: #337ab7;
+        color:#fff;
+        margin:30px 0px 10px 0px;
+    }
+    .login .m_l{
+        margin-top:40px;
+    }
+    .navigation{
+        height:120px;
+    }
+    .login{
+        width:1270px;
+        margin:20px auto;
+        padding:20px 120px 20px 60px;
+        background-color: #fff;
+        font-size: 18px;
+
+    }
+    .login .zc .col-md-1,.login .m_d{
+        border-top:1px solid #ddd;
+        margin-top:12px;
+    }
+    .navigation .container a img {
+        margin-bottom:15px;
+    }
+    .navigation{
+        padding:30px 0px 0px 0px;;
+    }
+    .navigation .col-md-2{
+      margin-right:80px;
+    }
+    .navigation ul{
+        border-left:2px solid #9b9b9b;
+        margin-top:10px;
+        height:60px;
+    }
+    .navigation ul li {
+        float:left;
+        font-size: 24px;
+        margin-right:20px;
+        padding-top:15px;
+
+    }
+    body{
+        color:#666;
+    }
+
+    .fLeft{
+        float:left;
+    }
+    .fRight{
+        float:right;
+    }
+    .clear{
+        clear:both;
+    }
+	#register_frame .col-md-3 .alert{
+		padding:0px;
+		margin-bottom:0px;
+		color:#dd0000;
+		font-size:6px;
+	}
+</style>
 	<!---头部--->
-    <?php $this->load->view('front/header');?>
+<div class="navigation">
+    <div class="container">
+        <a class="col-xs-12 col-md-3 pull-left" href="<?php echo base_url('');?>"><img height="79px" src="<?php echo base_url();?>style/img/header/logo.jpg"></a>
+        <ul class="col-md-4 col-xs-12 text-center">
+            <!-- <div class="col-md-3 col-xs-12">
+                <button></button>
+            </div> -->
+            <li>安全</li>
+            <li>透明</li>
+            <li>专业</li>
+            <li>创新</li>
+        </ul>
+    </div>
+</div>
+<div class="login">
+    <div class="row text-center">
+        <div class="col-xs-12 col-md-1"></div>
+        <div class="col-xs-12 col-md-2">注册快投机器</div>
+        <div class="col-xs-12 col-md-9 m_d"></div>
+    </div>
 	
-	<div style="background: #f2f2fd;padding:20px 0;">
+	<div class="row text-right m_l register_frame" id="register_frame">
+		<div class="col-xs-12 col-md-3"></div>
+		<form class="form-horizontal col-xs-12 col-md-7">
+			<div class="row" id="verify_error" style="display:none;">
+				<div class="col-xs-12 col-md-12">
+					<div class="alert alert-danger">用户名输入错误！</div>
+				</div>					
+			</div>	
+			<div class="form-group">
+				<span class="col-md-4 col-xs-6">用户名：</span>
+				<div class="col-md-5 col-xs-6">
+					<input type="text" class="form-control" name="nickname" id="nickname" placeholder="4-26位的字母/数字/下划线或手机号">
+				</div>
+				<div class="col-xs-6 col-md-3" id="nickname_error" style="display:none;">
+							
+				</div>
+			</div>
+			<div class="form-group">
+				<span  class="col-md-4 col-xs-6">手机号：</span>
+				<div class="col-md-5 col-xs-6">
+					<input type="text" class="form-control"  placeholder="请输入手机号"  name="mobile" id="mobile">
+				</div>
+				<div class="col-md-3 col-xs-6" id="mobile_error" style="display:none;">		
+				</div>	
+			</div>
+			
+			<div class="form-group">
+				<span class="col-md-4 col-xs-6">验证码：</span>
+				<div class="col-md-3 col-xs-6" style="padding-left:0px;padding-right:0px;">
+					<input type="password" class="form-control"  placeholder="请输入验证码" name="piccode" id="piccode">
+				</div>
+				<div class="col-md-2 col-xs-6" style="padding-left:0px;padding-right:0px;">
+					<img src="<?php echo site_url('welcome/regesiter_code');?>" alt="点击刷新,不分大小写" style="cursor:pointer;border:1px solid #ddd;width:70px;" class="piccode">
+				</div>
+				<div class="col-md-3 col-xs-6" id="piccode_error" style="display:none;">		
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<span class="col-md-4 col-xs-6">手机验证码：</span>
+				<div class="col-md-3 col-xs-6" style="padding-left:0px;padding-right:0px;">
+					<input type="password" class="form-control"  name="phonecode" id="phonecode" placeholder="请输入验证码">
+				</div>
+				<div class="col-md-2 col-xs-6" style="padding-right:0px;">
+					<button type="button" class="btn btn-info btn-block sendSMSButton" id="sendcode" data="0">获取验证码</button>
+				</div>
+				<div class="col-xs-6 col-md-3" id="phonecode_error" style="display:none;">		
+				</div>	
+			</div>
+			<div class="form-group">
+				<span class="col-md-4 col-xs-6">密码：</span>
+				<div class="col-md-5 col-xs-6">
+					<input type="password" class="form-control" name="password" id="password" placeholder="8-12位密码">
+				</div>
+				<div class="col-md-3 col-xs-6" id="password_error" style="display:none;">		
+				</div>
+			</div>	
+			 <div class="form-group">
+				<span class="col-md-4 col-xs-6">确认密码：</span>
+				<div class="col-md-5 col-xs-6">
+					<input type="password" class="form-control" name="matches_password" id="matches_password" placeholder="8-12位密码">
+				</div>
+				<div class="col-md-3 col-xs-6" id="matches_password_error" style="display:none;">		
+				</div>
+			</div>
+			
+			 <div class="form-group">
+				<span class="col-md-4 col-xs-6">邀请号码：</span>
+				<div class="col-md-5 col-xs-6">
+					<?php if($recommender){?>
+					<input type="text" class="form-control" value="<?php echo $recommender;?>" readonly="readonly" name="recommender" id="recommender">
+					<?php }else{?>
+					<input type="text" class="form-control" placeholder="无推荐人可不填(手机号)" name="recommender" id="recommender">
+					<?php }?>
+				</div>
+				<div class="col-md-3 col-xs-6" id="recommender_error" style="display:none;">		
+				</div>	
+			</div>
+			
+			 <div class="row">
+				<div class="col-xs-12 col-md-10" style="font-size:12px; padding-right:50px;">
+					<input type="checkbox" checked="checked"  name="ifagree" id="ifagree" value="1" />&nbsp;&nbsp;我已同意&nbsp;<a href="<?php echo site_url('news/article/74');?>" target="_blank">《快投机器服务协议》</a>
+				</div>
+			</div>
+			
+			 <div class="row">
+				<div class="col-xs-6 col-md-4"></div>
+				<div class="col-xs-12 col-md-5 text-right">
+					<button type="button" class="btn  btn-block" id="submit_register">立即注册</button>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-md-9 text-right z_h">
+					已有账号？&nbsp;&nbsp;<a href="<?php echo site_url('welcome/login_frame');?>">立即登录</a>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-md-10 text-right" style="font-size: 12px;color:#91bde5;margin-top:20px;">
+					<img src="/../style/img/article/zhuce1_03.gif" alt=""/>您 的 信 息 通 过 2 5 6 位 S S L 加 密 保 护，数 据 传 输 安 全
+				</div>
+			</div>
+		</form>
+		<div class="col-xs-12 col-md-2"></div>
+	</div>
+</div>							
+	<!--<div style="background: #f2f2fd;padding:20px 0;">
 		<div class="container" style="min-height:800px;line-height:26px;background:#fff;">
 			<div class="row" style="border-bottom:1px solid #f2f2fd;height:60px;line-height:60px;margin-top:60px;">
 				<div class="col-xs-12 col-md-3 text-center">
@@ -92,7 +330,7 @@
 					</div>	
 					
 					<div class="row">
-						<div class="col-xs-12 col-md-12">
+						<div class="col-xs-6 col-md-6">
 							<div class="input-group">
 							   <span class="input-group-btn">
 								  <button class="btn btn-primary" type="button" style="width:80px;" disabled="disabled">
@@ -102,9 +340,11 @@
 							   <input type="text" class="form-control"  placeholder="用户名为4-26个字母或数字组成" name="nickname" id="nickname"> 
 							</div>	
 						</div>
+						<div class="col-xs-6 col-md-6" id="nickname_error" style="display:none;">
+						
+						</div>	
 					</div>
-					<div class="row" id="nickname_error" style="display:none;">		
-					</div>	
+					
 					
 					<div class="row">
 						<div class="col-xs-12 col-md-12">
@@ -251,7 +491,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 		
 <!-- 注册失败 -->
 <div class="modal fade" id="registerFaild" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

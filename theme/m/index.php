@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+	<meta name="baidu-site-verification" content="aKNhxbN0m7"/>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="renderer" content="webkit" />
@@ -8,7 +9,6 @@
     <link rel="apple-touch-icon" href="<?php echo base_url();?>style/img/iphoneico.png"/>  
     <meta name="apple-mobile-web-app-title" content="快投机器">
     <link type="image/x-icon" href="<?php echo base_url();?>favicon.ico"/>
-    
     
     <title><?php echo $title;?></title>
     <meta name="keywords" content="<?php echo $keyword;?>" />
@@ -173,6 +173,10 @@ with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElemen
 		<div class="row" style="margin-top:20px;font-size:10px;">
 			<div class="col-xs-2"></div>
 			<div class="col-xs-8 text-center">
+<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=850104539&amp;site=qq&amp;menu=yes" style="opacity: 1;">
+	<img src="http://www.597chi.com/admin/views/images/qqlianxi.gif" width="77" height="22">
+</a>
+				<!---
 				<a href="<?php echo site_url('m/news/article/178');?>">关于我们</a>
 				&nbsp;|&nbsp;
 				<a href="<?php echo site_url('m/news/article/179');?>">安全保障</a>
@@ -180,6 +184,8 @@ with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElemen
 				<a href="<?php echo site_url('m/news/article/180');?>">风控体系</a>
 				&nbsp;|&nbsp;
 				<a href="<?php echo site_url('m/news/article/181');?>">联系我们</a>
+				--->
+				
 			</div>
 			<div class="col-xs-2"></div>
 		</div>

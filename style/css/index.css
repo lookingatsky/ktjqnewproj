@@ -13,7 +13,7 @@
     width: 80%;
     font-size: 18px;
     font-weight: bold;
-    background: #337ab7;
+    background: #00aac6;
     border-radius: 15px;
     display: inline-block;
     color: #fff;
@@ -35,7 +35,7 @@
     padding: 10px 0 20px 0;
 }
 .index_feat h2{
-    color: #337ab7;
+    color: #00aac6;
     margin-top: 70px;
 }
 .index_feat p{
@@ -183,16 +183,16 @@
 }
 .about_nav a:hover{
     text-decoration: none;
-	border-top:1px solid #337ab7;
-	border-bottom:1px solid #337ab7;
+	border-top:1px solid #00aac6;
+	border-bottom:1px solid #00aac6;
     //background: #f9f9f9;
 }
 .about_nav a.active{
-    /*background: #337ab7;
+    /*background: #00aac6;
     color: #fff;*/
-	border-top:1px solid #337ab7;
-	border-bottom:1px solid #337ab7;	
-	color:#337ab7;
+	border-top:1px solid #00aac6;
+	border-bottom:1px solid #00aac6;	
+	color:#00aac6;
 	font-size:16px;
 }
 .about_con{
@@ -215,12 +215,12 @@
 }
 .about_title span{
     display: inline-block;
-    border-bottom: 3px solid #337ab7;
+    border-bottom: 3px solid #00aac6;
     padding: 0 20px 15px 20px;
 }
 .news_one_title{
     display: inline-block;
-    color:#337ab7 ;
+    color:#00aac6 ;
     font-size: 16px;
 }
 .news_one_time{
@@ -237,11 +237,11 @@
     margin-right: 30px;
 }
 .pagination li span{
-    color: #337ab7;
+    color: #00aac6;
 }
 .pagination li.active span{
-    background:#337ab7 ;
-    border-color:#337ab7 ;
+    background:#00aac6 ;
+    border-color:#00aac6 ;
 }
 .grey_body{
     background: #f2f2fd;

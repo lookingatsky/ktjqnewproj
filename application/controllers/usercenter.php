@@ -261,21 +261,21 @@ class Usercenter extends Front_Controller {
 	}
 	
 	//充值中心
-	function recharge($type = 1,$page = 0)
+	function recharge($page = 0)
 	{
-
 		$data['userinfo'] = userinfo();
 		$this->load->library('form_validation');
 
  		$this->load->library('pagination');
 		$config['base_url'] = site_url('usercenter/recharge');
 		$config['per_page'] = 15; 
-		$config['uri_segment'] = 4;
+		$config['cur_page'] = $page;
 		$return = $this->usercenter_m->record(1,$config['per_page'],$page);
+		
 		$config['total_rows'] = $return[0];
 		$this->pagination->initialize($config); 
 		$data['result'] = $return[1];
-		$data['links'] = $this->pagination->create_links();		
+		$data['links'] = $this->pagination->create_links();	
 		$data['type'] = 2;	
 
 		$bankinfo = require('./data/bankinfo.php');
@@ -357,24 +357,31 @@ class Usercenter extends Front_Controller {
 		$this->load->view('usercenter/record',$data);	
 	}
 	//红包
-/*	function redpaper($type = 0)
-	{
+	function redpaper($page = 0)
+	{   
 		$userinfo = userinfo();
-		$this->db->select('red_paper.title,red_paper.monkey,user_paper.id,user_paper.static,user_paper.dateline');
-		$this->db->from('user_paper');
-		$this->db->join('red_paper','user_paper.paperid = red_paper.id');	
-		$this->db->where('user_paper.user_id',$userinfo['id']);
-		switch($type)
-		{
-			case 1:$this->db->where('user_paper.static',1);break;//未使用
-			case 2:$this->db->where('user_paper.static',2);break;//已经使用
-			default:break;	
-		}
-		$query = $this->db->get();
-		$data['result'] = $query->result_array();
-		$data['type'] = $type;
-		$this->load->view('usercenter/redpaper',$data);		
-	}*/
+		$data['userinfo'] = userinfo();
+		$uid = $userinfo['id'];
+		$per_page = 15;	
+		$queryall= $this->db->query("SELECT user_products.uid,user_products.projectid,bulk_standard.id,bulk_standard.title as alltitle,fr_order.id as allid,fr_order.type,fr_order.uid,fr_order.monkey,fr_order.dateline,user_products.monkey,red_paper.title,red_paper.monkey FROM (fr_order left join user_products on user_products.uid = fr_order.uid) left join red_paper on fr_order.monkey = red_paper.monkey left join bulk_standard on user_products.projectid = bulk_standard.id WHERE fr_order.type = 16 and user_products.monkey >= 5000 and fr_order.uid=$uid and red_paper.monkey>0");//获取记录总数
+
+		$query= $this->db->query("SELECT user_products.uid,user_products.projectid,bulk_standard.id,bulk_standard.title as alltitle,fr_order.id as allid,fr_order.type,fr_order.uid,fr_order.monkey,fr_order.dateline,user_products.monkey,red_paper.title,red_paper.monkey FROM (fr_order left join user_products on user_products.uid = fr_order.uid) left join red_paper on fr_order.monkey = red_paper.monkey left join bulk_standard on user_products.projectid = bulk_standard.id WHERE fr_order.type = 16 and user_products.monkey >= 5000 and fr_order.uid=$uid and red_paper.monkey>0 order by fr_order.id DESC limit $page,10");
+		 // var_dump($query);
+		 $data['info'] = $query->result_array();
+		 $num = $queryall->num_rows();
+		 // var_dump($num);
+ 		$this->load->library('pagination');
+		$config['base_url'] = site_url('usercenter/redpaper');
+		$config['per_page'] = 10;//每页记录数 
+		$config['cur_page'] = $page;
+		$config['total_rows'] = $num;//总记录数
+
+		$this->pagination->initialize($config); 
+		$data['links'] = $this->pagination->create_links();	
+		//var_dump($data['links']);
+       $this->load->view('usercenter/redpaper',$data);
+		 		
+	}
 	//债券转让
 	function transfer($page = 0)
 	{

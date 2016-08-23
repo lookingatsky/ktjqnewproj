@@ -83,20 +83,20 @@ class Planning_task extends Front_Controller {
 				//差多少
 				$cha_f = $count_send[2] - $zong;
 				//10014542^UID^BASIC ^10014543^UID^ENSURE^1.00^备注1
-				$fenzhang = $key_s['uid']."^"."UID^SAVING_POT^"."kuaitoujiqi@sina.com"."^EMAIL^BASIC^".sprintf("%.2f", ($send[1]-(-$cha_f)))."^".$key['title']."用户分账";//分账信息组合
-				//组合新浪单条字符串sinapay_system
+				$fenzhang = $key_s['uid']."^"."UID^SAVING_POT^"."kuaitoujiqi@sina.com"."^EMAIL^BASIC^".round(($send[1]-(-$cha_f)),2)."^".$key['title']."用户分账";//分账信息组合
+				//组合新浪单条字符串sinapay_systemsprintf("%.2f", ($send[1]-(-$cha_f)))
 			
-			$trade_list = $create_small."~".$key_s['uid']."~UID~SAVING_POT~".($send[2]-(-$cha_f))."~".$fenzhang."~".$key['title']."利息发放~~~".$key['id']."~";
+			$trade_list = $create_small."~".$key_s['uid']."~UID~SAVING_POT~".round(($send[2]-(-$cha_f)),2)."~".$fenzhang."~".$key['title']."利息发放~~~".$key['id']."~";
 					
 				
 			}
 			else
 			{
 				//10014542^UID^BASIC ^10014543^UID^ENSURE^1.00^备注1
-				$fenzhang = $key_s['uid']."^"."UID^SAVING_POT^"."kuaitoujiqi@sina.com"."^EMAIL^BASIC^".$send[1]."^".$key['title']."用户分账";//分账信息组合 
+				$fenzhang = $key_s['uid']."^"."UID^SAVING_POT^"."kuaitoujiqi@sina.com"."^EMAIL^BASIC^".round($send[1],2)."^".$key['title']."用户分账";//分账信息组合 
 				//组合新浪单条字符串 sinapay_system
 			
-			$trade_list = $create_small."~".$key_s['uid']."~UID~SAVING_POT~".$send[2]."~".$fenzhang."~".$key['title']."利息发放~~~".$key['id']."~";
+			$trade_list = $create_small."~".$key_s['uid']."~UID~SAVING_POT~".round($send[2],2)."~".$fenzhang."~".$key['title']."利息发放~~~".$key['id']."~";
 				
 			}
 			array_push($sina_array,$trade_list);

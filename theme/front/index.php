@@ -68,12 +68,6 @@ $(function(){
 			$retop.css({ 'opacity': 1 });
 		} 
 	});
-	/*setTimeout(function(){
-	$("#retop .m2").slideDown();	
-},800);*/
-
-
-	/*$("body").css("overflow-x","scroll");*/
 
 	function preventDefault(e){
 		if(document.all)window.event.returnValue=false;
@@ -129,13 +123,10 @@ $(function(){
 <body>
 <link rel="stylesheet" href="<?php echo base_url();?>style/css/front.css">
 
-	<!---头部--->
+
     <?php $this->load->view('front/header');?>
 	
-	
-    <!-- --------------------------- 焦点图---------------------->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
         	<?php foreach($focus as $val=>$key){?>
             <li data-target="#myCarousel" data-slide-to="<?php echo $val;?>" <?php if($val==0){?>class="active"<?php }?>></li>
@@ -161,28 +152,39 @@ $(function(){
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div><!-- /.carousel -->
-	
-	<!-- 轮播图/点击注册 
-	<!-- 
-	<div class="registryFrame" style="background:url('style/img/GlassFrame.png');">
-		<div class="registryFrameInfo">
-			<div class="registryFrameInfo1">100%</div>
-			<div class="registryFrameInfo2">活期存款收益</div>
-			<div class="registryFrameInfo3"></div>
-			<div class="registryFrameInfo4">
-				<a href="<?php echo site_url('welcome/register_frame');?>">
-					<img src="style/img/registerReward.png" />
-				</a>
-			</div>
-			<div class="registryFrameInfo5">
-				<a href="<?php echo site_url('welcome/login_frame');?>">已有账号，<span>马上登陆</span></a>
-			</div>
+    </div>
+
+	<div class="ad">
+		<div class="container" style="height:42px;line-height:26px;">
+			<ul class="row" id="scrollnews" style="height:40px;line-height:40px;overflow:hidden">
+				<?php foreach($webgonggao as $key){?>
+				<li style="margin-left:15px;">
+					<a href="<?php echo site_url('news/article/'.$key['id']);?>" style="color:#337ab7;"><img src="<?php echo base_url();?>style/img/V2_03.gif" alt=""/>[ 快投机器公告 ]</a>
+					<a href="<?php echo site_url('news/article/'.$key['id']);?>" style="display:inline-block;width:750px;text-align:left;margin-left:10px;"><?php echo $key['title'];?></a>
+					<span style="margin-right:20px;"><?php echo substr($key['dateline'],5,5);?></span>
+					<a href="<?php echo site_url('news/article/'.$key['id']);?>">查看详情</a>
+					<a href="<?php echo site_url('news/newslist/11');?>" style="margin-left:20px;text-decoration:underline;color:#337ab7;">更多公告</a>
+				</li>
+				<?php }?>
+
+			</ul>
 		</div>
-	</div>	
-	-->
-			
+	</div>
+
 <script>
+var scrollnews = document.getElementById('scrollnews');
+	var lis = scrollnews.getElementsByTagName('li');
+	var ml = 0;
+	var timer1 = setInterval(function(){
+		var liHeight = lis[0].offsetHeight;
+		var timer2 = setInterval(function(){
+			scrollnews.scrollTop = (++ml);
+			if(ml == liHeight){ clearInterval(timer2);
+				scrollnews.scrollTop = 0;
+				ml = 0;
+				lis[0].parentNode.appendChild(lis[0]); } },10);  },3000);
+				
+	
 $(function(){
 	$(".newsListGGTitleLeft").click(function(){
 		$(this).siblings().addClass("active");
@@ -221,399 +223,531 @@ $(function(){
 })
 </script>		
 	
-	<!---- 风控安全体系 ---->
+	
 	<div class="safetySystem">
 		<div class="container xinlang">
 			<div class="row">
 				<div class="col-xs-4 col-md-4">
 					<div class="safetySystemImg fLeft">
-						<a href="<?php echo site_url('news/article_safety');?>"><img src="<?php echo base_url();?>style/img/sanfang.png" alt="收益稳健" title="快投机器_收益稳健" /></a>
+					<a href="<?php echo site_url('product/bulk_standard_list');?>"><img src="<?php echo base_url();?>style/img/V2_03.jpg" />合理收益</a>
 					</div>
 					<div class="safetySystemContent fLeft">
-					<h4 class="text-center">收益稳健</h4>
-					<p class="text-center" style="margin-bottom:5px;">多种期限 任意选择</p>
-					<p class="text-center" style="margin-bottom:5px;">100元起投 灵活投资</p>
-					<p class="text-center" style="margin-bottom:5px;">10%-18%超高稳定收益</p>
+						<p>多种期限&nbsp;任意选择</p>
+						<p> 100元起投&nbsp;灵活投资</p>
+						<p>10%-14%&nbsp;年化收益</p>
 					</div>
 					<div class="safetySystemLink fRight">
-						<img src="<?php echo base_url();?>style/img/jianbian.jpg" />
+						<img src="<?php echo base_url();?>style/img/V2_24.gif" />
 					</div>
-					<div class="clear"></div>
+				   <div class="clear"></div>
 				</div>
 				<div class="col-xs-4 col-md-4">
 					<div class="safetySystemImg fLeft">
-						<a href="<?php echo site_url('news/article_safety');?>"><img src="<?php echo base_url();?>style/img/fengkong.png" alt="高效专业" title="快投机器_高效专业" /></a>
+						<a href="<?php echo site_url('news/article_mode');?>"><img src="<?php echo base_url();?>style/img/V2_05.jpg" alt=""/>高效专业</a>
 					</div>
 					<div class="safetySystemContent fLeft">
-					<h4 class="text-center">高效专业</h4>
-					<p class="text-center" style="margin-bottom:5px;">高度透明 专款专用</p>
-					<p class="text-center" style="margin-bottom:5px;">核心企业 优质资源</p>
-					<p class="text-center" style="margin-bottom:5px;">供应链金融掌握关键</p>
+						<p>项目透明&nbsp;及时披露</p>
+						<p>核心企业&nbsp;优质推荐</p>
+						<p>供应链金融健康发展</p>
 					</div>
 					<div class="safetySystemLink fRight">
-						<img src="<?php echo base_url();?>style/img/jianbian.jpg" />
+						<img src="<?php echo base_url();?>style/img/V2_24.gif" />
 					</div>
 					<div class="clear"></div>				
 				</div>
 				<div class="col-xs-4 col-md-4">
 					<div class="safetySystemImg fLeft">
-						<a href="<?php echo site_url('news/article_safety');?>"><img src="<?php echo base_url();?>style/img/xianxing.png" alt="安全保障" title="快投机器_安全保障" /></a>
+						<a href="<?php echo site_url('news/article_safety');?>"><img src="<?php echo base_url();?>style/img/V2_07.jpg" alt=""/>安全保障</a>
 					</div>
 					<div class="safetySystemContent fLeft">
-					<h4 class="text-center">安全保障</h4>
-					<p class="text-center" style="margin-bottom:5px;">256位全程交易加密</p>
-					<p class="text-center" style="margin-bottom:5px;">新浪支付品牌资金托管</p>
-					<p class="text-center" style="margin-bottom:5px;">核心企业全额本息保障</p>
+						<p> 数据和客户信息保密</p>
+						<p> 新浪支付&nbsp;资金托管</p>
+						<p> 核心企业&nbsp;全程担保</p>
 					</div>
 					<div class="clear"></div>				
 				</div>
 			</div>
 		</div>
 	</div>
+	<style>
+	a:hover{
+		text-decoration:none;
+	}
+	a:link{
+		text-decoration:none;
+	}
 
-	<!--网站公告-->
-	<!--
-	<div>
-		<div class="container" style="height:50px;line-height:50px;">
-			<div class="row">
-				<div class="col-xs-14 col-md-9">
-					<div class="pull-left"><img src="style/img/alarm.jpg" /></div>
-					<div class="pull-left" style="margin-left:10px;">快投机器公告</div>
-					<div class="pull-left cls_container myscroll" style="margin-left:10px;height:50px;line-height:50px;">
-						 <ul>
-							<?php foreach($meiti as $key){?>
-								<li style="height:50px;line-height:50px;"><a href="<?php echo site_url('news/article/'.$key['id']);?>"><?php echo $key['title'];?></a></li>
-							<?php }?>
-						 </ul>
-					</div>
-				</div>
-				<div class="col-xs-14 col-md-3">
-				</div>
-			</div>
-		</div>
-	</div>	
-	-->
-	
-	
-	<div>
-		<!---- 新浪存钱罐利润 ---->
+	#contain{
+		overflow:hidden;margin:0px;padding:0;
+		height:42px;
+	}
+	#contain li{
+		overflow:hidden;
+		height:42px;
+	}
+	.ad{
+	background: #fff;
+	border-bottom:1px solid #ddd;
+	}
+	.ad ul li{
+	float:left;
+	line-height:42px;
+	width:1120px;
+
+	}
+	.ad ul li a{
+	color:#666;
+	text-align:right;
+	}
+	.projectInfo h2{
+		color:#337ab7;
+	}
+	.productListContentLeft .col-xs-5 a {
+		margin-top:20px;
+	}
+	.productListDetail {
+		border-bottom:1px solid #ddd;
+		width:1150px;
+		margin:0px auto;
+	}
+	. productListDetail .col-xs-12{
+		border-bottom:1px solid #ddd;
+	}
+	</style>
 		
-		<!---- 
-		<div class="container weiQianBao">
-			<div class="weiQianBaoLeft fLeft">
-				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<div class="weiQianBaoLeftImg fLeft"><img src="style/img/index/weiqianbao.png" /></div>
-						<div class="weiQianBaoLeftContent fLeft">
-							<div class="row text-center">
-								<div class="col-xs-3 col-md-3">
-									<div class="weiQianBaoLeftContentText">
-										<span class="text-red"><span class="text-lg">0.01</span>元</span><br />
-										<span class="text-blue">起存金额</span>
-									</div>
-								</div>
-								<div class="col-xs-3 col-md-3">
-									<div class="weiQianBaoLeftContentText">
-										<span class="text-red"><span class="text-lg">2.786</span>%</span><br />
-										<span class="text-blue">七日年化收益率</span>
-									</div>								
-								</div>
-								<div class="col-xs-2 col-md-2">
-									<div class="weiQianBaoLeftContentText">
-										<span class="text-red"><span class="text-lg">T</span>+<span class="text-lg">1</span></span><br />
-										<span class="text-blue">赎回方式</span>
-									</div>									
-								</div>
-								<div class="col-xs-4 col-md-4">
-									<a href="<?php echo site_url('welcome/register_frame');?>">
-										<div class="weiQianBaoLeftContentBtn">立即加入</div>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
+	<style>
+	body{
+		background:#eee;
+		color:#666;
+	}
+	.safetySystem{
+		width:1150px;
+		margin:0px auto;
+		background:#fff;
+		height:186px;
+	 }
+	.safetySystem .row .col-md-4{
+		margin-top:8px;
+		padding-left:80px;
+	}
+	.safetySystemImg{
+		width:62px;
+		margin:60px 20px auto auto;
+	}
+	.safetySystemImg img{
+		width:100%;
+	}
+	.safetySystemContent{
+		margin:50px 0px auto 20px;;
+		width:50%;
+		line-height:20px;
+	}
+	.safetySystemLink{
+		width:1px;
+		height:170px;
+	}
+	.safetySystemLink img{
+		height:100%;
+	}
+	.fLeft{
+		float:left;
+	}
+	.fRight{
+		float:right;
+	}
+	.clear{
+		clear:both;
+	}
+	.productList{
+		margin-top:30px;
+	}
+	.productListTitled {
+		width:100%;
+		border-left:4px solid #337ab7;
+		color:#337ab7;
+		font-size:18px;
+	}
+	.productListTitled b{
+		margin-left:5px;
+		font-size:12px;
+		color:#666;
+		font-weight:normal;
+	}
+	.productListContent{
+		width:100%;
+		height:200px;
+		background:#fff;=
+		border:1px solid #c6c6c6;
+	}
+	.productListDetail{
+		width:1150px;
+	}
+	.productListContentLeft{
+		width:100%;
+		height:120px;
+	}
+	.productListContentLeft .col-xs-5 div{
+		float:right;
+	}
+	.productListContentRight{
+		width:25%;
+		background:#c1fbfc;
+		height:198px;
+	}
+	.productListStatus{
+		margin-top:60px;
+	}
+	.productListStatus a{
+		margin-top:20px;
+	}
+	.projectTitle{
+		height:40px;
+		line-height:40px;
+	}
+	.projectTitle a{
+		color:#000;
+	}
+	.projectTitle a:hover{
+		color:#00aac6;
+		text-decoration:none;
+	}
+	.projectTitle div:nth-child(1){
+		width:75%;
+		color:#000;
+		font-size:16px;
+	}
+	.projectTitle div:nth-child(2){
+		width:25%;
+		font-size:12px;
+		color:#aaa;
+	}
+	.projectLink{
+		width:100%;
+		height:8px;
+		background:url('./images/波浪3.png');
+	}
+	.projectImg{
+		width:160px;
+		margin:0px auto auto 20px;
+	}
+	.projectInfo>div{
+		float:left;
+		width:150px;
+	}
+	.projectInfo .col-xs-5>div{
+		float:left;
+	}
+	.projectNum div:nth-child(1){
+		margin-top:20px;
+	}
+	.projectNum div:nth-child(3){
+		margin-top:20px;	
+	}
+	.productListLeft{
+		width:1150px;
+		margin-bottom:20px;
+	}
+	.productListRight{
+		width:290px;
+	}
+	h2{
+		font-size:20px;
+		margin-top:0px;
+	}
+   </style>
+	<div class="container productList" style="margin:0px auto 0px auto;">
+		<div class="row" style="width:1150px;margin:10px auto;background:#eee;">
+			<div class="col-xs-12 col-md-2" style="width:150px;">
+				<div class="productListTitled fLeft "><b></b>投 资 项 目</div>
 			</div>
-			<div class="weiQianBaoRight fRight">
-				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<div class="weiQianBaoRightContent1">
-						<img src="style/img/index/zhuceren.png" />
-						<span>
-							注册用户
-							<span class="text-blue">35535</span>
-							人
-						</span>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<div class="weiQianBaoRightContent2">
-						<img src="style/img/index/gongtouzijin.png" />
-						<span>
-							累计投资
-							<span class="text-blue">355350914</span>
-							元
-						</span>
-						</div>						
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<div class="weiQianBaoRightContent3">
-						<img src="style/img/index/zuanquzijin.png" />
-						<span>
-							已为投资赚取
-							<span class="text-blue">35535091</span>
-							元
-						</span>
-						</div>						
-					</div>
-				</div>
+			<div class="col-xs-12 col-md-8 trext-left" style="padding:0px;">
+				<p style="color:#999;margin-top:5px;font-size:10px;">机器正在为您快速审核项目，预计项目发布时间为：<i style="color:#ff6600;">9：00、11:00、14：00、16：00、18：00</i>，其余时间请关注网站公告。</p>
 			</div>
-			<div class="weiQianBaoLink1"><img src="style/img/index/weiqianbaoLink.png" /></div>
-			<div class="weiQianBaoLink2"><img src="style/img/index/weiqianbaoLink.png" /></div>
+			<div class="col-xs-12 col-md-2" style="width:230px;">
+				<div class="fRight" style="padding-right:30px;text-decoration: underline;"><a href="<?php echo site_url('product/bulk_standard_list');?>">更多&gt;&gt;</a></div>
+			</div>
 			<div class="clear"></div>
 		</div>
-		---->
-		
-		<!----------------------------- 活动 -------------------->
-		<div class="container" style="margin-top:20px;">
-			<div class="row" style="border:1px solid #ddd;margin:12px auto;background:#fff;">
-				<a href="<?php echo site_url('welcome/duanwu');?>">
-				<img src="<?php echo base_url();?>style/img/header/head_huodong.jpg" width="100%" border="0" alt="518理财嘉年华" title="快投机器_518理财嘉年华"/>
-				</a>
-			</div>
-		</div>
-		
-		
-		<!---- 投资项目  网站公告 ---->
-		<div class="container productList">
-				<div class="productListLeft fLeft">
-				
-					<div class="row">
-						<div class="col-xs-12 col-md-12">
-							<div class="productListTitle">
-								<b>投 资 项 目</b>
-								<a href="<?php echo site_url('product/bulk_standard_list');?>" class="fRight">查看更多>></a>
-							</div>
+	</div>
+			
+	<?php foreach($bulk as $key){?>
+	<div class="row productListDetail" style="background-color: #fff;">
+		<div class="col-xs-12 col-md-12">
+			<div class="productListContentLeft fLeft">
+				<div class="projectTitle">
+					<div class="fLeft"><a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>"><?php echo $key['title'];?></a>
+					</div>
+					<span style="float:right; margin-right: 37px;">上线日期：<?php echo date('m月d日 H:i',strtotime($key['creattime']));?></span>
+						<div class="clear"></div>
+					</div>
+					<div class="row projectInfo text-center col-xs-7 col-md-7">
+						<div>
+							<h2 style="color: #ff6600;"><?php echo $key['rate']*100;?><span>%</span></h2>
+							<p>年化利率</p>
+						</div>
+						<div>
+							<h2><?php echo $key['day'];?></h2>
+							<p>期限（月）</p>
+						</div>
+						<div>
+							<h2><?php echo $key['money'];?></h2>
+							<p>借款金额（元）</p>
+						</div>
+						<div>
+							<h2><?php echo $key['restmoney'];?></h2>
+							<p>可购余额</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-3" style="padding-top:30px;">
+						<div style="height:5px;background:#ccc;"></div>
+						<div style="height:5px;position:relative;top:-5px;">
+							<div class="pull-left" style="height:5px;background:#00aac6;width:<?php echo ((int)$key['money']-(int)$key['restmoney'])/(int)$key['money']*100;?>%;border-radius:0 4px 4px 0;"></div>
 							<div class="clear"></div>
 						</div>
-					</div>
-					
-					
-					<?php foreach($bulk as $key){?>
-					<div class="row productListDetail">
-						<div class="col-xs-12 col-md-12">
-							<div class="productListContent">
-								<div>
-									<div class="projectTitle">
-										<div class="fLeft"><a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>"><?php echo $key['title'];?></a></div>
-										<div class="fRight">上线日期：<?php echo date('m月d日 H:i',strtotime($key['creattime']));?></div>
-										<div class="clear"></div>
-									</div>	
-									<div class="projectLink"></div>
-								</div>
-								<div class="productListContentLeft fLeft">
-									<div class="row projectInfo">
-										<div class="col-xs-4 col-md-4">
-											<div class="projectImg">
-												<a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>"><img src="<?php echo base_url();?><?php echo $key['photo'];?>" width="166" height="125" alt="<?php echo $key['title'];?>" title="快投机器_<?php echo $key['title'];?>" /></a>
-											</div>										
-										</div>
-										<div class="col-xs-8 col-md-8 text-center">
-											<div class="row projectNum">
-												<div class="col-xs-6 col-md-6">
-													<p>借款金额：<span class="text-success">￥<span class="text-mid"><?php echo $key['money'];?></span></span></p>
-													<p>年化收益率：<span class="text-red"><span class="text-mid"><?php echo $key['rate']*100;?></span>%</span></p>
-												</div>
-												<div class="col-xs-1 col-md-1">
-													<img src="<?php echo base_url();?>style/img/index/pline.png" alt="快投机器项目" title="快投机器_快投机器项目" />
-												</div>
-												<div class="col-xs-5 col-md-5">
-													<p>期限：<span class="text-success"><span class="text-mid"><?php echo $key['day'];?></span>个月</span></p>
-													<p style="line-height:30px;"><?php echo $key['repay'];?></p>												
-												</div>
-											</div>
-											<div class="row" style="margin-top:10px;">
-												<div class="col-xs-12 col-md-12" style="width:95%;">
-													<div class="progress progress-striped" style="height:10px;margin-top:10px;">
-													   <div class="progress-bar progress-bar-primary active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ((int)$key['money']-(int)$key['restmoney'])/(int)$key['money']*100;?>%;">
-														  <span class="sr-only"><?php echo ((int)$key['money']-(int)$key['restmoney'])/(int)$key['money']*100;?>%</span>
-													   </div>
-													</div>												
-												</div>
-											</div>	
-										</div>
-									</div>
-								</div>
-								<div class="productListContentRight fRight text-center">
-									<div class="productListStatus">
-										可购余额：<span class="text-success">￥ <span class="text-mid"><?php echo $key['restmoney'];?></span></span>
-										<?php if($key['static'] == 1){
-													if($key['restmoney'] == 0){?>
-														<a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" class="btn btn-primary btn-normal" target="_blank" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;审核中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-													<?php }else{
-													if($key['is_open'] == 1 and $key['creattime'] > date('Y-m-d H:i:s')){ 
-													//预告  当前时间小于开始时间?>
-														<a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" class="btn btn-success btn-primary btn-normal" id="ljgm_step3" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;即将上线&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-													<?php }else{?>
-														<a class="btn btn-danger btn-normal" href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;购买&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-										<?php } } }?>
-										<?php if($key['static'] == 2){?>
-											<a class="btn btn-grey" href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;还款中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-										<?php }?>
-										<?php if($key['static'] == 3){?>
-											<input type="button" class="btn btn-default btn-normal" id="ljgm_step3" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已结束&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" disabled="disabled">
-										<?php }?>										
-										<?php if($key['static'] == 4){?>
-											<input type="button" class="btn btn-default btn-normal" id="ljgm_step3" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;初审中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" disabled="disabled">
-										<?php }?>	
-									</div>
-								</div>	
-								<div class="clear"></div>
-							</div>	
-						</div>
-					</div>					
-					<?php }?>				
 
-					<div class="row">
-						<div class="col-xs-12 col-md-12 ">
-							<div class="productListDetailAlert text-right">
-								项目上线时间：工作日上午<span class="text-red text-mid">9：00</span>，其他时间以实际为准。&nbsp;&nbsp;
-							</div>
+					</div>
+					<div class="col-xs-12 col-md-2 text-right an">
+						<div style="margin-top:20px;">
+							<?php if($key['static'] == 1){
+								if($key['restmoney'] == 0){?>
+									<a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" class="btn  btn-normal btn-block" style="border:1px solid #337ab7;color:#337ab7;" target="_blank" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;审 核 中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+								<?php }else{
+										if($key['is_open'] == 1 and $key['creattime'] > date('Y-m-d H:i:s')){ 
+										//预告  当前时间小于开始时间?>
+											<a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" class="btn btn-normal btn-block" style="background-color:#337ab7;color:#fff;" id="ljgm_step3" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;即 将 上 线&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+										<?php }else{?>
+											<a class="btn btn-normal btn-block" href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>"  style="background-color:#f68121;border:0px;color:#fff;" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立 即 投 资&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<?php } } }?>
+							<?php if($key['static'] == 2){?>
+								<a class="btn btn-default btn-block" href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>"  style="background-color:#cbd3de;border:0px;color:#fff;" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;还 款 中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<?php }?>
+							<?php if($key['static'] == 3){?>
+								<input type="button" class="btn btn-default btn-normal btn-block" id="ljgm_step3" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已结束&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" disabled="disabled">
+							<?php }?>										
+							<?php if($key['static'] == 4){?>
+								<input type="button" class="btn btn-default btn-normal btn-block" id="ljgm_step3" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;初审中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" disabled="disabled">
+							<?php }?>
+							<!---
+							<a href="<?php echo site_url('product/bulk_standard/'.$key['id']);?>" role="btn" class="btn btn-normal btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立即投资&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							---->
 						</div>
-					</div>				
-				</div>
-						
-				<div class="productListRight fRight">
-					<!--- 登录 注册 --->
-					<!--- 
-					<div style="margin-bottom:20px;">
-						<div style="width:50%;float:left;"><a role="btn" class="btn btn-danger btn-block" href="<?php echo site_url('welcome/login_frame');?>">登 录</a></div>
-						<div style="width:50%;float:left;"><a role="btn" class="btn btn-default btn-block" href="<?php echo site_url('welcome/register_frame');?>">注 册</a></div>
 						<div class="clear"></div>
-					</div>			
-					--->
-<link rel="stylesheet" href="<?php echo base_url();?>style/css/indexAdd.css" />					
-
-					<!--- 红包送不停 --->
-					<?php if(!$this->session->userdata('uid')){?>
-					<div class="newsListTop" style="margin-bottom:20px;">
-						<a href="<?php echo site_url('welcome/login_frame');?>">
-							<div class="loginLink pull-left">
-								登 录
-							</div>	
-						</a>
-
-						<a href="<?php echo site_url('welcome/register_frame');?>">
-							<div class="registerLink pull-right">
-								立即注册
-							</div>	
-						</a>
-						<div class="clear"></div>
-					</div>
-					<?php }?>
-					<div class="newsListTop">
-						
-						<a href="<?php echo site_url('welcome/register_frame');?>" ><img src="<?php echo base_url();?>style/img/index/right_1.png" width="100%" alt="新浪存钱罐利息" title="快投机器_新浪存钱罐利息" /></a>
-					</div>
-					
-					<div class="newsListGG">
-						<div class="newsListGGTitle">
-							<div class="newsListGGTitleLeft fLeft text-center" style="border-right:1px solid #c6c6c6;">平台公告</div>
-							<div class="newsListGGTitleRight fRight text-center active">还款公告</div>
 						</div>
-						<div class="newsListGGContent">
-							<ul>
-								<?php foreach($webgonggao as $key){?>
-								<li>
-									<a href="<?php echo site_url('news/article/'.$key['id']);?>">
-										<div class="newsListGGContent1 fLeft"><img src="<?php echo base_url();?>style/img/index/time.png"  alt="平台公告" title="快投机器_平台公告" /></div>
-										<div class="newsListGGContent2 fLeft"><?php echo $key['title'];?></div>
-										<div class="newsListGGContent3 fRight"><?php echo substr($key['dateline'],5,5);?></div>
-										<div class="clear"></div>
-									</a>
-								</li>
-								<?php }?>
-							</ul>
-							<div class="text-right"><a href="<?php echo site_url('news/newslist/11');?>">查看更多>></a></div>
-						</div>
-						<div class="newsListGGContent_" style="display:none;">
-							<ul>
-								<?php foreach($gonggao as $key){?>
-								<li>
-									<a href="<?php echo site_url('news/article/'.$key['id']);?>">
-										<div class="newsListGGContent1 fLeft"><img src="<?php echo base_url();?>style/img/index/time.png"  alt="还款公告" title="快投机器_还款公告" /></div>
-										<div class="newsListGGContent2 fLeft"><?php echo $key['title'];?></div>
-										<div class="newsListGGContent3 fRight"><?php echo substr($key['dateline'],5,5);?></div>
-										<div class="clear"></div>
-									</a>
-								</li>
-								<?php }?>
-							</ul>
-							<div class="text-right"><a href="<?php echo site_url('news/newslist/1');?>">查看更多>></a></div>
-						</div>						
-					</div>	
-					
-					<!--- 新手引导 --->
-					<div class="noviceGuide">
-						<img src="<?php echo base_url();?>style/img/index/right_2.png" width="100%" alt="收益分析表" title="快投机器_收益分析表" />
-						<a href="<?php echo site_url('news/article_safety');?>"><img src="<?php echo base_url();?>style/img/index/right_3.png" width="100%" alt="风险准备金" title="快投机器_风险准备金" /></a>
-					</div>	
-				
-					<div class="mediaList">
-						<div class="mediaListTitle">
-							<a href="<?php echo site_url('news/newslist/3');?>">
-							<div class="text-center">媒体报道</div>
-							</a>
-						</div>		
-						<div class="mediaListContent">
-							<ul>
-								<?php foreach($meiti as $key){?>
-								<li>
-									<a href="<?php echo site_url('news/article/'.$key['id']);?>">
-										<div class="newsListGGContent1 fLeft"><img src="<?php echo base_url();?>style/img/index/time.png" alt="媒体报道" title="快投机器_媒体报道" /></div>
-										<div class="newsListGGContent2 fLeft"><?php echo $key['title'];?></div>
-										<div class="newsListGGContent3 fRight"><?php echo substr($key['dateline'],5,5);?></div>
-										<div class="clear"></div>
-									</a>
-								</li>
-								<?php }?>
-							</ul>
-							<div class="text-right"><a href="<?php echo site_url('news/newslist/3');?>">查看更多>></a></div>
-						</div>					
 					</div>
-				</div>
-		</div>
-		
-	</div>			
-	
-	<!----合作伙伴--->
-        <div class="container" style="min-height:100px;margin-top:40px;">
-			<div class="productListTitle">
-				<b>合作伙伴</b>
-				<a href="<?php echo site_url('news/article_partener');?>" class="fRight">查看更多>></a>			
+				<div class="clear"></div>
 			</div>
-			<!---->
-			<!--主要合作机构开始-->
-			<div class="partner">
-				<div class="dowebok" style="margin:30px 20px 15px 20px">
-					<a href="<?php echo site_url('news/article_partener');?>" target="_blank"><img src="<?php echo base_url();?>style/img/com_xlzf.png" border="0" alt="新浪支付" title="快投机器_快投机器合作伙伴" /></a>	
-					<a href="<?php echo site_url('news/article_partener');?>" target="_blank"><img src="<?php echo base_url();?>style/img/header/lvsuo.png" border="0" alt="今海瑞律师事务所" title="快投机器_快投机器合作伙伴" /></a>	
-					<a href="<?php echo site_url('news/article_partener');?>" target="_blank"><img src="<?php echo base_url();?>style/img/header/danbao.png" border="0" alt="华瑞信恒担保有限公司" title="快投机器_快投机器合作伙伴" /></a>	
-					<a href="<?php echo site_url('news/article_partener');?>" target="_blank"><img src="<?php echo base_url();?>style/img/header/aliyun.png"  border="0" alt="阿里云" title="快投机器_快投机器合作伙伴" /></a>		
+		</div>
+		<?php } ?>
+	</div>	
+	<style>
+	.productListDetail .projectTitle .an .btn{
+		display:block;
+		width:140px;
+		padding:7px 0px;
+	}
+	.transfer_listed {
+		margin-top: 20px;
+		background-color: #fff;
+	    border: 1px solid #ddd;
+		width:100%;
+		}
+	.project_tab tr {
+	    border-bottom:1px dashed  #cccccc;
+	    line-height:60px;
+		text-align: center;
+		}
+	.project_tab tr:first-child {
+		font-size: 16px;
+		}
+	.project_tab tr td:first-child{
+		width:300px;
+	    }
+	.project_tab tr td:nth-child(6){
+	    width:120px;
+	    }
+	.project_tab tr td:nth-child(6) a{
+		border:1px solid #337ab7;
+		padding:5px 25px;
+		}
+	.project_tab tr td:nth-child(6) a:hover{
+		text-decoration:none;	
+		}
+	</style>
+
+	<div class="transfer_listed" style="width:1150px;margin:10px auto;">
+		<div class="row" style="margin-top:10px;width:1150px;margin:10px auto;">
+			 <div class="col-xs-12 col-md-6">
+				<div class="productListTitled fLeft "><b></b>债 权 市 场</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="fRight" style="padding-right:30px;text-decoration: underline;"><a href="<?php echo site_url('product/transfer_list');?>">更多&gt;&gt;</a></div>
+			</div>
+		 </div>
+		<table class="project_tab" style="width:1120px;margin:0px auto 40px;">
+			<tr>
+				<td>项目名称</td>
+			    <td>年化收益率</td>
+				<td>预期收益</td>
+			    <td>还款时间</td>
+				<td>转让金额</td>
+				<td>状态</td>
+			</tr>
+			<?php foreach($transfers as $key){?>
+			<tr>
+				<td class="text-left"><a href="<?php echo site_url('product/transfer/'.$key['id']);?>"><?php echo $key['title'];?></a></td>
+				<td><?php echo $key['rate']*100;?><span>%</span></td>
+			    <td><?php echo $key['interest'];?></td>
+				<td><?php echo date('m-d',$key['endtitme']-86400);?></td>
+				<td><?php echo $key['monkey'];?></td>
+				<td>
+					<?php if($key['static'] == 2){?>
+						<a href="<?php echo site_url('product/transfer/'.$key['id']);?>" class="btn btn-block" target="_blank">&nbsp;购买债权&nbsp;</a>
+					<?php }?>
+					<?php if($key['static'] == 3){?>
+						<a class="btn btn-block" disabled="disabled" >&nbsp;已完成&nbsp;</a>
+					<?php }?>	
+				</td>
+			</tr>
+			<?php }?>
+		</table>
+	</div>
+   <!--<div>
+		<img src="<?php echo base_url();?>style/img/V2_12.jpg"  class="img-responsive" alt=""/>
+	</div>	-->
+
+	<style>
+	.productListplat b{
+		font-size:18px;
+		font-weight:normal;
+		color:#337ab7;
+		border-left:4px solid #337ab7;
+		padding-left:5px;
+		}
+	.bank_safe tr td{
+	    padding:1px 0px 1px 10px;
+		border-bottom:1px dashed  #cccccc;
+	    }
+	.bank_safe tr{
+		line-height:40px;
+		}
+	.bank_safe {
+		color:#337ab7;
+		font-size:15px;
+		padding:0px;
+		}
+		
+	</style>
+	<div style="background-color:#f9fbfc;">
+		<div class="platform row text-center" style="width:1150px;margin:0px auto;padding-top:30px;padding-left:0px;">
+			<div class="col-xs-6 col-md-6 FLeft">
+				<div class="col-xs-12 col-md-6" style="padding-left:0px;">
+					<div class="productListplat fLeft"><b>网站公告</b></div>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="fRight" style="text-decoration: underline;"><a href="<?php echo site_url('news/newslist/11');?>">更多&gt;&gt;</a></div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-6 fRight">
+				<div class="col-xs-12 col-md-6" style="padding-left:0px;">
+					<div class="productListplat fLeft "><b>还款公告</b></div>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="fRight" style="text-decoration: underline;"><a href="<?php echo site_url('news/newslist/1');?>">更多&gt;&gt;</a></div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-2"></div>
+		</div>
+
+		<div class="platform row" style="width:1150px;margin:0px auto 0px;">
+			<div class="col-xs-6 col-md-6 FLeft ">
+				<table class="col-xs-12 col-md-12 bank_safe" style="padding-left:0px;">
+					<?php foreach($webgonggao as $key){?>
+					<tr>
+						<td><a class="text_in" href="<?php echo site_url('news/article/'.$key['id']);?>"><?php echo $key['title'];?></a></td>
+					</tr>
+					<?php }?>
+				</table>
+
+			</div>
+		
+			<div class="col-xs-6 col-md-6 fRight">
+				<table class="col-xs-12 col-md-12 bank_safe" style="padding-left:0px;">
+					<?php foreach($gonggao as $key){?>
+					<tr>
+						<td><a href="<?php echo site_url('news/article/'.$key['id']);?>"><?php echo $key['title'];?></a></td>
+					</tr>
+					<?php }?>
+				</table>
+			</div>					
+			<div class="col-xs-6 col-md-2"></div>
+		</div>
+		<div  style="width:1150px;margin:0px auto;padding:30px 0px 20px 15px;">
+			<div class="row">
+				<div class="col-xs-12 col-md-6" >
+					<div class="productListTitled fLeft "><b></b>理 财 知 识</b></div>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="fRight" style="padding-right:30px;text-decoration: underline;"><a href="<?php echo site_url('news/newslist/3');?>">更多&gt;&gt;</a></div>
 				</div>
 			</div>
 			
-        </div>
-	<!--合作伙伴结束-->
+			<?php foreach($meiti as $index => $key) if($index<=1){?>
+				<div class="row flat_video">
+					<div class="col-xs-12 col-md-2">
+						<a href="<?php echo site_url('news/article/'.$key['id']);?>"><img src="<?php echo base_url();?><?php echo $key['photo'];?>" alt=""/></a>
+					</div>
+					<div class="col-xs-4 col-md-10">
+						<h4><a href="<?php echo site_url('news/article/'.$key['id']);?>"><?php echo $key['title'];?></a></h4>
+						<P><?php echo $key['description'];?></P>
+					</div>
+				</div>
+				<?php if($index != (count($meiti)-1)){?>
+				<div class="line_da"></div>
+				<?php }?>
+			<?php }?>
+			
+			
+		</div>
+	</div>
+	<style>
+	 .text_in{
+		 text-overflow:ellipsis;overflow:hidden;white-space:nowrap;
+		 }
+	.flat_video .col-md-2 img{
+		width:120px;
+	}
+	h4 a{
+	font-size:16px;
+	}
+	.line_da{
+		border-top:1px dashed #ddd;
+		width:1100px;
+		height:2px;
+		margin-left:20px;
+	}
+	.flat_video {
+		padding:20px 50px 10px 20px;
+	}
+	.flat_video .col-md-10 h4{
+		font-size:16px;
+		color:#337ab7;
+	}
+</style>
+
 	
-	<!---底部--->
-    <?php $this->load->view('front/footer');?>
-    
-   
+	<div style="background-color:#fff;padding-bottom:30px;">
+		<div style="width:1150px;margin:10px auto;padding-top:20px;">
+			<div class="productListplat" style="padding-left:15px;"><b>合作伙伴</b></div>
+			<div style="margin:20px 0px 30px 50px;">
+
+				<a href="https://pay.sina.com.cn/zjtg" target="_blank"><img src="<?php echo base_url();?>style/img/V2_15.jpg"  /></a>
+				<a href="http://www.jhrlawyer.com/" target="_blank"><img src="<?php echo base_url();?>style/img/header/V2_17.jpg" /></a>
+				<a href="<?php echo site_url('news/article_partener');?>#ly" target="_blank"><img src="<?php echo base_url();?>style/img/header/V2_19.jpg" /></a>
+				<a href="https://www.aliyun.com/?utm_medium=text&utm_source=bdbrand&utm_campaign=bdbrand&utm_content=se_32492" target="_blank"><img src="<?php echo base_url();?>style/img/header//V2_21.jpg"  /></a>
+
+			</div>
+		</div>
+	</div>
+<?php $this->load->view('front/footer');?>			
 </body>
 </html>

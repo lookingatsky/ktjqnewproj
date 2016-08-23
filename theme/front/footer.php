@@ -1,6 +1,161 @@
 	<!--底部开始-->
 	<div class="foot">
-		<!-- <div style="background:#00ddf9;height:2px;margin:0px auto 10px auto;"></div> -->
+		<div class="row">
+			<div class="col-xs-4 col-md-8 text-center">
+				<form style="margin-top:20px;margin-bottom:10px;">
+					<a href="<?php echo site_url('news/article_about');?>">关于我们</a><span>|</span>
+					<a href="<?php echo site_url('news/newslist/19');?>">政策法规</a><span>|</span>
+					<a href="<?php echo site_url('news/newslist/3');?>">理财知识</a><span>|</span>
+					<a href="<?php echo site_url('news/article_partener');?>">合作伙伴</a><span>|</span>
+					<a href="<?php echo site_url('news/article/74');?>">隐私保护</a><span>|</span>
+					<a href="<?php echo site_url('news/article/74');?>">服务协议</a><span>|</span>
+					<?php if(!$this->session->userdata('uid')){?>
+					<a type="button" data-toggle="modal" data-target="#myModal">意见反馈</a><span>|</span>
+					<?php }else{?>
+					<a href="<?php echo site_url('news/article_feedback');?>">意见反馈</a><span>|</span>
+					<?php }?>
+					<a href="<?php echo site_url('news/newslist/7');?>">帮助中心</a><span>|</span>
+					<a href="<?php echo site_url('news/article_contact');?>">联系我们</a>
+				</form>
+				<p>
+				Copyright © 2016 kuatoujiqi.com Inc. All Rights Reserved. 北京泰恒长隆网络科技有限公司 版权所有<span></span>京ICP备15056810号-2	
+				</p>
+				<p>
+				市场有风险&nbsp;投资需谨慎
+				</p>
+				<p style="margin-top:20px;">
+				<a id='___szfw_logo___' href='https://credit.szfw.org/CX20160503015013080166.html' rel="nofollow" target='_blank'><img src='<?php echo base_url();?>style/img/footer/cert.png' border='0' /></a>
+				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" rel="nofollow"><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+				</p>
+			</div>
+			<div class="col-xs-4 col-md-4">
+				<h4>客服热线</h4>
+				<p><i>400-677-7505</i></p>
+				<h4>服务时间</h4>
+				<p>工作日 9:00 - 18:00</p>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel"></h4>
+				</div>
+				<div class="modal-body">
+					<ul>
+						<li><img src="<?php echo base_url();?>style/img/footer/机器人2.png" alt=""/></li>
+						<li>
+							<h5>请先登录!</h5>
+							<p>点击启动机器跳转至登录页面。</p>
+						</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<a href="<?php echo site_url('welcome/login_frame');?>" type="button" class="btn btn-primary">启 动 机 器</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<style>
+	a:hover{
+	text-decoration:none;
+}
+	.modal-dialog{
+		width:400px;
+		margin-top:300px;
+		height:200px;
+	}
+	.modal-header{
+		border-bottom:0px;
+	}
+	.modal-header button.close:link{
+		border:0px;
+	}
+	.modal-header button.close{
+		opacity:1;
+		color:#000;
+		font-size:14px;
+		padding:1px 3px 3px 3px;
+		background-color:#eee;
+		border-radius:50%;
+	}
+	.modal-body ul{
+		margin:10px auto;
+		width:220px;
+	}
+	.modal-body ul li img{
+		width:36px;
+		height:36px;
+		margin-right:10px;
+		margin-top:5px;
+	}
+	.modal-body ul li{
+		float:left;
+	}
+	.modal-body ul li p{
+		font-size:12px;
+		color:#666;
+	}
+	.modal-body ul li h5{
+		color:#080808;
+		font-weight:bold;
+		margin-bottom:0px;
+		font-size:16px;
+	}
+	.modal-body{
+		color:#2c93dd;
+		font-size:18px;
+	}
+	.modal-footer{
+		border-top:0px;
+		text-align:center;
+	}
+	.modal-footer button{
+		padding:5px 30px;
+	}
+</style>
+
+	<style>
+	.foot .row{
+		width:1270px;margin:0px auto;
+		padding:30px 0px 20px 0px;
+		color:#fff;
+	}
+	.foot .row .col-md-8{
+		border-right:1px solid #fff;
+	}
+	.foot .row .col-md-8 a{
+		color:#fff;
+		font-size:12px;
+	}
+	.foot .row .col-md-8 p{
+		font-size:12px;
+	}
+	.foot .row .col-md-8 p img {
+		margin-right:20px;
+	}
+	.foot .row .col-md-8 span{
+		margin:0px 3px 0px 5px;
+	}
+	.foot .row .col-md-4{
+		padding-left:50px;
+	}
+	.foot .row .col-md-4 h4{
+		font-size:15px;
+	}
+	.foot .row .col-md-4 p{
+		padding-left:50px;
+		font-size:12px;
+	}
+	a:hover{
+		cursor:pointer;
+	}
+	</style>
+	<!--<div class="foot">
+		 <div style="background:#00ddf9;height:2px;margin:0px auto 10px auto;"></div>
 		<div class="foot_center gy">
 			<div class="foot_nav">
 			<ul>
@@ -8,11 +163,11 @@
 				<h2>关于我们</h2>  
 				<p><a href="<?php echo site_url('news/article_about');?>">公司简介</a></p>
 				<p><a href="<?php echo site_url('news/article_mode');?>">平台模式</a></p>
-				<p><a href="<?php echo site_url('news/article_fee');?>">费用标准</a></p>
+				<p><a href="<?php echo site_url('news/article_fee');?>">费用标准</a></p>-->
 			
 			<!--<p><a href="<?php echo site_url('news/article/76');?>">联系我们</a></p>-->
 			<!--<p><a href="about.html">加入我们</a></p>-->
-			</li>
+			<!--</li>
 			<li>
 				<h2>产品服务</h2>
 				<p><a href="<?php echo site_url('news/article_safety');?>">安全保障</a></p>
@@ -56,7 +211,7 @@
 			
 			<div class="foot02_img">
 				<a id='___szfw_logo___' href='https://credit.szfw.org/CX20160503015013080166.html' rel="nofollow" target='_blank'><img src='<?php echo base_url();?>style/img/footer/cert.png' border='0' /></a>
-				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" rel="nofollow"><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+				<a logo_size="124x47" logo_type="realname" href="http://www.anquan.org" rel="nofollow"><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a>-->
 				<!----<a href="http://webscan.360.cn/index/checkwebsite/url/www.kuaitoujiqi.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/169f4cd3ecd57dd12dafbb65384b59dd"/></a>---->
 				
 				<!----<img src="<?php echo base_url();?>style/img/footer/foot_pic01.jpg" />
@@ -64,7 +219,7 @@
 				<img src="<?php echo base_url();?>style/img/footer/foot_pic03.jpg" />
 				<img src="<?php echo base_url();?>style/img/footer/foot_pic04.jpg" />
 				<img src="<?php echo base_url();?>style/img/footer/foot_pic05.jpg" />---->
-				<div style="clear:both;"></div>
+				<!--<div style="clear:both;"></div>
 			</div>
 			
 			<div style="margin-top:20px;">
@@ -72,7 +227,7 @@
 				<p style="margin:0;">Copyright © 2016 kuatoujiqi.com Inc. All Rights Reserved. 北京泰恒长隆网络科技有限公司 版权所有</p>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<!--底部结束-->
 	
 <!--<div class="foot">

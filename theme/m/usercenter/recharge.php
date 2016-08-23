@@ -22,29 +22,11 @@
     <script src="<?php echo base_url();?>style/js/bootstrap.min.js"></script>
 	<script language="javascript">
 	$(document).ready(function(){
-		/*
 		$('#regesiter_btn').click(function(){
 			$(this).attr('disabled',true);
 			$(this).text('提交处理中');
 			$('#regesiter_form').submit();
 		});
-		*/
-		$("#regesiter_btn").click(function(){
-			$(this).attr('disabled',true);
-			$(this).text('提交处理中');			
-			var money =  $('#exampleInputAmount').val();	
-			$.post('/m/usercenter/send_recharge',{
-				monkey:money
-			},function(data){
-				var obj = JSON.parse(data);
-				
-				if(obj.error == 0){
-					document.write(obj.msg);
-				}else{
-					alert(obj.msg);
-				}	
-			})
-		})		
 	});
 	</script>
 </head>
@@ -85,7 +67,7 @@
         </div>
 
         <div class="form-group" style="margin: 20px 0px">
-            <button type="button" class="btn btn-lg btn-danger btn-block" id="regesiter_btn">充值</button>
+            <button type="submit" class="btn btn-lg btn-danger btn-block" id="regesiter_btn">充值</button>
         </div>
     </form>
 

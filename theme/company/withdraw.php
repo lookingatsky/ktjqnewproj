@@ -4,7 +4,7 @@
 <form class="form-horizontal" action="form_withdraw" id="form_bind" method="post">
     <table width="900" border="0" cellpadding="8" cellspacing="0">
   <tr>
-    <td colspan="3">备注信息：提现手续费为提现金额的0.003%(最低为0.01元) ，提现手续费会从余额中另扣</td>
+    <td colspan="3">备注信息：提现手续费为2元 提现手续费会从余额中另扣</td>
   </tr>
 
   <tr>

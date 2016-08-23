@@ -159,7 +159,7 @@
         </div>
 
         <div class="form-group">
-            <p class="text-muted" style="margin-top: 5px;">将为您支付提现手续费( 详情请参考<a href="https://www.kuaitoujiqi.com/news/article/11.html" target="_blank">《费用说明 》</a> )</p>
+            <p class="text-muted" style="margin-top: 5px;">将为您支付提现手续费( 详情请参考<a href="https://www.fengrongwang.com/news/article/11.html" target="_blank">《费用说明 》</a> )</p>
             <p class="text-danger" style="font-size:16px">注:单笔提现最大为5万，每日提现上限为50万！</p>
 
         </div>

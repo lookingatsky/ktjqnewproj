@@ -244,35 +244,56 @@ class sina_m extends CI_Model {
 		return $this->_interface_submit($post,'mas');	
 	}
 	
-	//债券转让代付交易
-	function sell_transfer($out_trade_no = false,$trade_list = false)
-	{
-		/*
-		$post['out_trade_no'] = $out_trade_no;
-		$post['out_trade_code'] =  2001;
-		$post['payee_identity_id'] = $uid; //收款人ID	
-		$post['payee_identity_type'] = "UID";
-		$post['amount'] = $monkey;
-		$post['account_type'] = "SAVING_POT";
-		//$post['split_list'] = "";//分账信息
-		$post['summary'] = "债券转让成功收款";
-		$post['goods_id'] = $goods_id; //标的ID 
-		$post['service'] = "create_single_hosting_pay_trade";
-		$post['notify_url'] = site_url('transfer/sell_transfer');//异步跳转
-		return $this->_interface_submit($post,'mas');
-		*/
+	// //债券转让代付交易
+	// function sell_transfer($out_trade_no = false,$trade_list = false)
+	// {
 		
-		$post['out_pay_no'] = $out_trade_no;
+	// 	$post['out_trade_no'] = $out_trade_no;
+	// 	$post['out_trade_code'] =  2001;
+	// 	$post['payee_identity_id'] = $uid; //收款人ID	
+	// 	$post['payee_identity_type'] = "UID";
+	// 	$post['amount'] = $monkey;
+	// 	$post['account_type'] = "SAVING_POT";
+	// 	//$post['split_list'] = "";//分账信息
+	// 	$post['summary'] = "债券转让成功收款";
+	// 	$post['goods_id'] = $goods_id; //标的ID 
+	// 	$post['service'] = "create_single_hosting_pay_trade";
+	// 	$post['notify_url'] = site_url('transfer/sell_transfer');//异步跳转
+	// 	return $this->_interface_submit($post,'mas');
+		
+		
+	// 	$post['out_pay_no'] = $out_trade_no;
+	// 	$post['out_trade_code'] = 2001;	
+	// 	$post['trade_list'] = $trade_list;
+	// 	$post['notify_method'] = "single_notify";
+	// 	//$post['notify_url'] = wwwdomain.'sinanotify/send_user_lixi';//异步跳转
+	// 	$post['notify_url'] = site_url('transfer/sell_transfer');//异步跳转
+	// 	$post['service'] = "create_batch_hosting_pay_trade";
+	// 	$result =  $this->_interface_submit($post,'mas');
+	// 	return $result;		
+	// }
+	
+	function sell_transfer($out_trade_no = false,$monkey,$uid,$fenzhang)
+	{
+		$this->db->where('userid',$uid);
+		$ip_result = $this->db->get('user_log')->row_array();
+		$ip = $ip_result['ip'];
+		$post['out_trade_no'] = $out_trade_no;
 		$post['out_trade_code'] = 2001;	
-		$post['trade_list'] = $trade_list;
+		$post['payee_identity_id'] = "$uid";
+		$post['payee_identity_type'] = "UID";
+		$post['account_type'] = "SAVING_POT";
+		$post['amount'] = $monkey;
+		$post['split_list'] = $fenzhang;
+		$post['summary'] = "债权转让";
 		$post['notify_method'] = "single_notify";
 		//$post['notify_url'] = wwwdomain.'sinanotify/send_user_lixi';//异步跳转
+		$post['user_ip'] = $ip;
 		$post['notify_url'] = site_url('transfer/sell_transfer');//异步跳转
-		$post['service'] = "create_batch_hosting_pay_trade";
+		$post['service'] = "create_single_hosting_pay_trade";
 		$result =  $this->_interface_submit($post,'mas');
 		return $result;		
 	}
-	
 	//托管提现 代付手续费到账户
 	function withdraw_fu($out_trade_no = false,$monkey = false)
 	{

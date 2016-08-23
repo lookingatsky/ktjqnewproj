@@ -122,13 +122,13 @@
 .user_menu_1{
 	height:30px;
 	line-height:30px;
-	background:#00aac6;
+	background:#337ab7;
 	color:#fff;
 	padding-left:30px;
 }
 .user_left_menu .active{
-	background:#eee;
-	border-left:2px solid #00aac6;
+	background:#f9f9f9;
+	border-left:2px solid #337ab7;
 }
 .user_recharge{
 	background:#fff;
@@ -164,10 +164,14 @@
 	margin-bottom:30px;
 	height:130px;
 }
+.btn-info{
+	background-color:#337ab7;
+	border:1px solid #337ab7;
+}
 </style>
     <!---------------- 个人中心 债权转让 -------------------->
 	<?php $this->load->view('usercenter/header');?>
-    <div style="background: #f2f2fd;padding:90px 0 30px 0;">
+    <div style="padding:90px 0 30px 0;">
 		 <div class="container" style="width:1270px;">
 			<div class="row">
 				<?php $this->load->view('usercenter/left');?>
@@ -181,7 +185,7 @@
 									充值
 								</a>
 								&nbsp;
-								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" role="button">
+								<a href="<?php echo site_url('usercenter/withdraw');?>" style="background-color:#80d5fd;" class="btn btn-info btn-sm" role="button">
 									提现
 								</a>								
 							</div>
@@ -259,7 +263,7 @@
 						<div class="row">	
 							<div class="col-md-12 col-xs-12">
 								<div class="user_recharge_rule">
-									<div class="alert alert-info transfer_rules" role="alert" style="margin:30px;">
+									<div class="alert alert-info transfer_rules" role="alert" style="margin:30px;background-color:#fff;border:0px;">
 										<div class="row">
 											<div class="col-lg-12">
 												<h4>投资到期前用户可以进行债权转让。</h4>
@@ -290,7 +294,7 @@
 						<div class="row">
 							<div class="col-md-11 col-xs-12" style="margin-left:35px;">
 								<table class="table table-striped" style="">
-									<thead style="background:#5bc0de;color:#fff;">
+									<thead style="background:#337ab7;color:#fff;">
 										<tr>
 											<th>项目ID</th>
 											<th>购买时间</th>

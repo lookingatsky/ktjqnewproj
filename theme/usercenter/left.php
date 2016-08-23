@@ -96,7 +96,11 @@ $(function(){
 								信 息 中 心
 							</a>
 						</div>
-						
+						<div class='user_menu col-md-12 col-xs-12 <?php if($uri == "redpaper"){?>active<?php }?>' style="word-spacing:4px;">
+							<a href="<?php echo site_url('usercenter/redpaper');?>">
+								红包记录
+							</a>
+						</div>
     
 						<div class='col-md-12 col-xs-12'  style="word-spacing:4px;height: 45px;line-height: 45px;padding-left: 40px;background:#c9302c;">
 							<a href="<?php echo site_url('welcome/exit_login');?>" style="color:#fff;">退 出 账 号</a>

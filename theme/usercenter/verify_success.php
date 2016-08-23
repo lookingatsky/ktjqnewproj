@@ -34,7 +34,7 @@
 	margin:20px auto 20px 0;
 }
 .verify_frame_input{
-	margin:20px auto auto 43px;
+	margin:20px auto auto 50px;
 	border-right:1px solid #f2f2fd;
 }
 .login_frame_adv{
@@ -57,7 +57,7 @@
 					<img src="<?php echo base_url();?>style/img/register_step_link.jpg" />
 				</div>
 				<div class="col-xs-12 col-md-3 text-center">
-					<img src="<?php echo base_url();?>style/img/register_step_2.png" />
+					<img src="<?php echo base_url();?>style/img/register_step_2.jpg" />
 					<img src="<?php echo base_url();?>style/img/register_step_finished.jpg" />
 				</div>
 				<div class="col-xs-12 col-md-1 text-center">
@@ -69,7 +69,7 @@
 				</div>
 			</div>
 			<div class="row verify_frame" id="authentication">
-				<div class="col-xs-12 col-md-4 verify_frame_input">
+				<div class="col-xs-14 col-md-4 verify_frame_input">
 					<div class="row">
 					<h4>
 						<div class="login_title">开通成功</div>
@@ -96,7 +96,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-md-7">
+				<div class="col-xs-14 col-md-7">
 					<div class="login_frame_adv">
 						<a href="#"><img src="<?php echo base_url();?>style/img/register_banner.jpg" width="100%" /></a>
 					</div>

@@ -249,9 +249,6 @@
 
 
 <style>
-body{
-	background:#f2f2fd;
-}
 .menu_button{
 	text-align:center;
 }
@@ -274,13 +271,13 @@ body{
 .user_menu_1{
 	height:30px;
 	line-height:30px;
-	background:#00aac6;
+	background:#337ab7;
 	color:#fff;
 	padding-left:30px;
 }
 .user_left_menu .active{
-	background:#eee;
-	border-left:2px solid #00aac6;
+	background:#f9f9f9;
+	border-left:2px solid #337ab7;
 }
 .user_recharge{
 	background:#fff;
@@ -320,7 +317,7 @@ body{
 
 <?php $this->load->view('usercenter/header');?>
     <!---------------- 个人中心 安全中心 -------------------->
-    <div style="background: #f2f2fd;padding:90px 0 30px 0;">
+    <div style="padding:90px 0 30px 0;">
 		 <div class="container" style="width:1270px;">
 			<div class="row">
 				<?php $this->load->view('usercenter/left');?>
@@ -334,7 +331,7 @@ body{
 									充值
 								</a>
 								&nbsp;
-								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" role="button">
+								<a href="<?php echo site_url('usercenter/withdraw');?>" style="background-color:#80d5fd;" class="btn btn-info btn-sm" role="button">
 									提现
 								</a>								
 							</div>
@@ -412,7 +409,7 @@ body{
 						<div class="row" style="margin:30px;">	
 							<div class="col-md-12 col-xs-12">
 								<div class="row">
-									<h4 style="border-left:4px solid #00aac6;padding-left:10px;">个人中心</h4>
+									<h4 style="border-left:4px solid #337ab7;padding-left:10px;">个人中心</h4>
 									<div style="width:98%;border-top:1px solid #888;margin:-7px auto 10px auto;"></div>
 								</div>
 								<div class="row" style="color:#888;margin-top:30px;">
@@ -434,7 +431,7 @@ body{
 									<div class="col-md-4 col-xs-12"><button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#passwordModal">修改</button></div>
 								</div>
 								<div class="row" style="color:#888;margin-top:30px;">
-									<h4 style="border-left:4px solid #00aac6;padding-left:10px;">安全中心</h4>
+									<h4 style="border-left:4px solid #337ab7;padding-left:10px;">安全中心</h4>
 									<div style="width:98%;border-top:1px solid #888;margin:-7px auto 10px auto;"></div>
 								</div>	
 								<?php if($userinfo['is_idcard'] == 1){?>

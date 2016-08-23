@@ -1,45 +1,27 @@
 <script language="javascript" src="<?php echo base_url();?>style/js/work.js"></script>
+<style>
+	#box-lanrenzhijia li a:link{
+			text-decoration: none;
+		}
+
+		#box-lanrenzhijia li .start { display:block; position: relative; width:120px; height:40px; margin:0 auto;}
+		#box-lanrenzhijia li .start:after { content: ""; position: absolute; width:25px; height: 100%; top: 0; left: -15px; overflow: hidden;
+			background: -moz-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.2)50%, rgba(255,255,255,0)100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,.2)), color-stop(100%, rgba(255,255,255,0)));
+			background: -webkit-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.2)50%, rgba(255,255,255,0)100%);
+			background: -o-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.2)50%, rgba(255,255,255,0)100%);
+			-webkit-transform: skewX(-25deg);
+			-moz-transform: skewX(-25deg)
+		}
+		#box-lanrenzhijia li .start:hover:after { left: 150%; transition: left 1s ease 0s; }
+	</style>
 <?php $this->load->view('front/header_model');?>
-<div class="header">
-<!--
-    <div class="container">
-            <a class="header_logo col-xs-12 col-md-2 pull-left" href="<?php echo base_url();?>"><img src="/style/ads/header_logo.png"/></a>
-            <div class="header_nav col-xs-12 col-md-7 " >
-            	<?php $header_uri = $this->uri->segment(1,'null'); //product news
-					  $news_uri = $this->uri->segment(2,'null');//article
-					  $news_uri_3 = $this->uri->segment(3,'null');//6 7 8
-				?>
-                <a <?php if($header_uri == "null"){?>id="active"<?php }?> href="<?php echo base_url();?>" class="col-md-2 col-xs-12">首页</a>
-                <a <?php if($header_uri == "product"){?>id="active"<?php }?> href="<?php echo site_url('product/bulk_standard_list');?>" class="col-md-2 col-xs-12">投资列表</a>
-                <a <?php if($news_uri == "article" and $news_uri_3 == 6){?>id="active"<?php }?> href="<?php echo site_url('news/article/6');?>" class="col-md-2 col-xs-12">平台模式</a>
-                <a <?php if($news_uri == "article" and $news_uri_3 == 7){?>id="active"<?php }?> href="<?php echo site_url('news/article/7');?>" class="col-md-2 col-xs-12">
-				
-				
-				、
-				
-				
-				</a>
-                <a <?php if($news_uri == "article" and $news_uri_3 == 8){?>id="active"<?php }?> href="<?php echo site_url('news/article/8');?>" class="col-md-2 col-xs-12">安全保障</a>
-            </div>
-            <div class="header_tool col-md-3 col-xs-12">
-            	<input type="hidden" name="uid"  id="uid" value="<?php echo $this->session->userdata('uid')?$this->session->userdata('uid'):0;?>" />
-                <span class="header_word">欢迎您,<?php if($this->session->userdata('uid')){echo " ，".userinfo('nickname'); }?></span>
-                <?php if(!$this->session->userdata('uid')){?>
-                <button type="button" class="header_btn btn btn-default" data-toggle="modal" data-target="#loginModal">登录</button>			<?php }?>
-                <?php if($this->session->userdata('uid')){?>
-                <button type="button" class="header_btn btn btn-default" onclick="javascript:location='<?php echo site_url('usercenter')?>';">我的账户</button>
-                <?php }?>
-                <?php if(!$this->session->userdata('uid')){?>
-                <button type="button" class="header_btn btn btn-default" data-toggle="modal" data-target="#registerModal">免费注册</button> 
-                <button type="button" class="header_btn btn btn-default" data-toggle="modal" data-target="#getpasswordModal" style="display:none" id="header_getpassword">忘记密码</button>
-                <?php }?>
-            </div>
-    </div> -->
+<div class="header" style="height:40px;line-height:40px;background-color: #333;">
 	
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
-				<img src="<?php echo base_url();?>style/img/header/top_tel_icon.png" width="20" /> 客服热线：400-677-7505 &nbsp;|&nbsp;
+				<img src="<?php echo base_url();?>style/img/header/top_tel_icon.png" width="20" /> 客服热线：400-677-7505 &nbsp;|&nbsp;工作日：9:00-18:00 &nbsp;|&nbsp;
 				<a href="http://weibo.com/p/1006065833446993" rel="nofollow" target="_blank"><img src="<?php echo base_url();?>style/img/header/top_wb_icon.png" width="19" height="17" /> 官方微博</a>
 					&nbsp;&nbsp;
 				<a data-toggle="modal" data-target="#weixinModal" style="cursor:pointer"><img src="<?php echo base_url();?>style/img/header/top_wx_icon.png" width="19" height="17" />官方微信</a> 			
@@ -47,8 +29,19 @@
 			<div class="col-xs-12 col-md-2"></div>
 			<div class="col-xs-12 col-md-4 text-right">
 				<input type="hidden" name="uid"  id="uid" value="<?php echo $this->session->userdata('uid')?$this->session->userdata('uid'):0;?>" />
-				<?php if($this->session->userdata('uid')){ ?>
-				<span class="header_word">欢迎您,<?php echo userinfo('nickname'); ?></span>
+					<?php
+				 $num = $this->session->userdata('uid');
+				 // var_dump($num);
+				 if($num){
+				 $sql = "SELECT nickname FROM `user`where id = $num";
+				$result = $this->db->query($sql)->result();}
+				?>
+				<?php if($this->session->userdata('uid') && $result != null){ ?>
+				<span class="header_word">欢迎您,<?php echo userinfo('nickname');?></span>
+					&nbsp;|&nbsp;
+				<?php }?>
+				<?php if($this->session->userdata('uid') && $result == null){?>
+					<a href="<?php echo site_url('welcome/login_frame');?>">登录</a>
 					&nbsp;|&nbsp;
 				<?php }?>
 				<?php if(!$this->session->userdata('uid')){?>
@@ -56,14 +49,18 @@
 					&nbsp;|&nbsp;
 				<?php }?>
 					
-				<?php if($this->session->userdata('uid')){?>
+				<?php if($this->session->userdata('uid') && $result != null){?>
 					<a href="<?php echo site_url('usercenter/index');?>">个人中心</a>
 					&nbsp;|&nbsp;
 				<?php }?>
-				<?php if($this->session->userdata('uid')){?>
+				<?php if($this->session->userdata('uid') &&  $result != null){?>
 					<a href="<?php echo site_url('welcome/exit_login');?>">退出</a>
 				<?php }?>				
 					
+				<?php if($this->session->userdata('uid') &&  $result == null){?>
+					<a href="<?php echo site_url('welcome/register_frame');?>">注册</a>
+				<?php }?>
+
 				<?php if(!$this->session->userdata('uid')){?>
 					<a href="<?php echo site_url('welcome/register_frame');?>">注册</a>
 				<?php }?>
@@ -76,27 +73,33 @@
     <script type="text/javascript">
         $(function() {
             $("#box-lanrenzhijia").lavaLamp({
-                fx: "backout", 
-                speed: 700,
                 click: function(event, menuItem) {
                     return false;
                 }
             });
         });
     </script>
-<div class="navigation" style="background:#fff;border-bottom:1px solid #00aac6;">
+<div class="navigation" style="background:#fff;border-bottom:1px solid #337ab7;height:100px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-xs-12  pull-left" >
-				<a class="col-xs-12 col-md-12"  href="<?php echo site_url('');?>"><img class="logo" height="80" src="<?php echo base_url();?>style/img/header/logo.jpg" alt="快投机器logo" title="快投机器"></a>
+			<div class="col-md-2 col-xs-12  pull-left" >
+				<a class="col-xs-12 col-md-12"  href="<?php echo site_url('');?>"><img class="logo"  height="80" src="<?php echo base_url();?>style/img/header/logo.jpg" alt="快投机器logo" title="快投机器"></a>
 			</div>	
-			<div class="col-md-8 col-xs-12 pull-right" >	
+			<div class="col-md-9 col-xs-12 pull-right">	
 				<ul class="box-lanrenzhijia" id="box-lanrenzhijia">
 				   <li><a href="<?php echo base_url();?>">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
 				   <li><a href="<?php echo site_url('product/bulk_standard_list');?>">投资列表</a></li>
 				   <li><a href="<?php echo site_url('news/article_safety');?>">安全保障</a></li>
 				   <li><a href="<?php echo site_url('news/article_novice');?>">新手指引</a></li>
 				   <li><a href="<?php echo site_url('news/article_about');?>">关于快投</a></li>
+				   <li style="width:100px;margin-right:0px;text-align:right;">
+				   	<?php if($this->session->userdata('uid')){?>
+				   <a href="<?php echo site_url('usercenter/index');?>" class="start">
+				   <?php }else{ ?>
+				   <a href="<?php echo site_url('welcome/login_frame');?>" class="start">
+				   <?php } ?>
+				   <img style="position:relative;top:-3px;" src="<?php echo base_url();?>style/img/header/1_03.png" alt=""/></a></li>
+
 				</ul>
 			</div>
 		</div>

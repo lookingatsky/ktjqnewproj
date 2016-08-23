@@ -59,50 +59,84 @@ var _hmt = _hmt || [];
 <body class="grey_body">
 <?php $this->load->view('front/header');?>
 
-<div class="container">
-    <div class="row">	
-        <div class="col-xs-12 col-md-2 about_nav">	
-			<a href="<?php echo site_url('news/article_about');?>"><img src="/../style/img/article/about.png" height="50" /> 关于我们</a>
-			<a href="<?php echo site_url('news/article_safety');?>"><img src="/../style/img/article/safety.png" height="50" /> 安全保障</a>
-			<a href="<?php echo site_url('news/article_control');?>"><img src="/../style/img/article/control.png" height="50" /> 风控体系</a>
-			<a href="<?php echo site_url('news/article_mode');?>"><img src="/../style/img/article/platform.png" height="50" /> 平台模式</a>
-			<a href="<?php echo site_url('news/article_transfer');?>"><img src="/../style/img/article/debt.png" height="50" /> 债权转让</a>
-			<a href="<?php echo site_url('news/article_partener');?>"><img src="/../style/img/article/cooperation.png" height="50" /> 合作伙伴</a>
-			<a href="<?php echo site_url('news/article_fee');?>"><img src="/../style/img/article/fee.png" height="50" /> 费用标准</a>
-			<a href="<?php echo site_url('news/article_novice');?>"><img src="/../style/img/article/novice.png" height="50" /> 新手指引</a>
-			<a href="<?php echo site_url('news/newslist/1');?>" <?php if($category['id'] == 1){?>class="active"<?php }?>><img src="/../style/img/article/repay<?php if($category['id'] == 1){?>_<?php }?>.png" height="50" /> 还款公告</a>
-			<a href="<?php echo site_url('news/newslist/11');?>" <?php if($category['id'] == 11){?>class="active"<?php }?>><img src="/../style/img/article/website<?php if($category['id'] == 11){?>_<?php }?>.png" height="50" /> 网站公告</a>
-			<a href="<?php echo site_url('news/newslist/3');?>" <?php if($category['id'] == 3){?>class="active"<?php }?>><img src="/../style/img/article/media<?php if($category['id'] == 3){?>_<?php }?>.png" height="50" /> 媒体报道</a>
-			<a href="<?php echo site_url('news/newslist/7');?>" <?php if($category['id'] == 7){?>class="active"<?php }?>><img src="/../style/img/article/help<?php if($category['id'] == 7){?>_<?php }?>.png" height="50" /> 帮助中心</a>
-			<a href="<?php echo site_url('news/article_contact');?>"><img src="/../style/img/article/contact.png" height="50" /> 联系我们</a>		
-        </div>
-
-        <div class="col-xs-12 col-md-10">
-            <div class="about_con clearfix">
-            	<?php if($row['pid'] == 6){?>
-                <h3 class="about_title"><span><?php echo $row['title']?></span></h3>
-                <?php }else{?>
-                <h3 class="about_title" style="text-align:center"><span style="border-bottom:none; padding-bottom:0px"><?php echo $row['title']?></span><br>
-                <p class="text-right"><span style="font-size:14px; font-weight:normal; height:30px; line-height:30px; padding-top:0px; border-bottom:none">时间:<?php echo substr($row['dateline'],0,10);?></span></p>
-                </h3>
+<img src="<?php echo base_url();?>style/img/zizhi/xin1_02.gif" class="img-responsive" alt=""/>
+<style>
+    .navigitor_c{
+        width:1100px;
+        margin:0px auto;
+        color:#666;
+    }
+    .navigitor_c li{
+        padding-left:15px;
+    }
+    .navigitor_c li a{
+        color:#666;
+    }
+    .fanctory_j{
+        width:1100px;
+        margin:0px auto;
+        padding:30px;
+    }
+    .fanctory_j img{
+        margin-bottom:20px;
+    }
+    .fanctory_j p {
+        padding-left:10px;
+        text-indent: 2em;
+        line-height:25px;
+    }
+    .navigitor_c li .active{
+        border-bottom:5px solid #337ab7;
+    }
+	.nav-tabs>li>a {
+		border:none;
+	}
+</style>
+<div style="background-color: #eee;">
+    <ul class="nav nav-tabs navigitor_c">
+         <li><a href="<?php echo site_url('news/article_about'); ?>" >关于我们</a></li>
+        <li><a href="<?php echo site_url('news/article_mode'); ?>" >平台模式</a></li>
+        <li><a href="<?php echo site_url('news/article_transfer'); ?>">债权转让</a></li>
+        <li><a href="<?php echo site_url('news/article_partener'); ?>" >合作伙伴</a></li>
+        <li><a href="<?php echo site_url('news/article_fee'); ?>" >费用标准</a></li>
+        <li><a href="<?php echo site_url('news/newslist/11'); ?>" <?php if($category['id'] == 11){?>class="active"<?php }?> >网站公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/1'); ?>" <?php if($category['id'] == 1){?>class="active"<?php }?>>还款公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/3'); ?>" <?php if($category['id'] == 3){?>class="active"<?php }?>>	理财知识</a></li>
+        <li><a href="<?php echo site_url('news/newslist/7'); ?>" <?php if($category['id'] == 7){?>class="active"<?php }?>>	帮助中心</a></li>
+        <li><a href="<?php echo site_url('news/article_contact'); ?>" >联系我们</a></li></li>
+    </ul>
+    </ul>
+</div>
+ <div class="tu">
+    <div class="about_con clearfix">
+     <?php if($row['pid'] == 6){?>
+        <h3 class="about_title"><span><?php echo $row['title']?></span></h3>
+         <?php }else{?>
+         <h3 class="about_title" style="text-align:center"><span style="border-bottom:none; padding-bottom:0px"><?php echo $row['title']?></span><br>
+             <p class="text-right"><span style="font-size:14px; font-weight:normal; height:30px; line-height:30px; padding-top:0px; border-bottom:none">时间:<?php echo substr($row['dateline'],0,10);?></span></p>
+         </h3>
                 <?php }?>
 <style>
+.tu {
+	width:1100px;
+	margin:0px auto;
+}
 .new_content p{
 	line-height:2.5em;
 }
 .new_content img{
-	width:100%;
+	width:50%;
 }
 </style>				
-				<div class="new_content" style="padding:30px; line-height:1.7em;font-size:14px;color:#666"><?php echo $row['content'];?><br>
-                <span class="pull-left news_one_title" >上一篇:<?php if(count($prev) >0){?><a href="<?php echo site_url('news/article/'.$prev['id']);?>"><?php echo $prev['title'];?></a><?php }else{ echo "没有了";}?></span><br>
-                <span class="pull-left news_one_title" >下一篇:<?php if(count($next) >0){?><a href="<?php echo site_url('news/article/'.$next['id']);?>"><?php echo $next['title'];?></a><?php }else{ echo "没有了";}?></span>
-                </div>
+		<div class="new_content" style="padding:30px; line-height:1.7em;font-size:14px;color:#666"><?php echo $row['content'];?><br>
+			<span class="pull-left news_one_title" >上一篇:<?php if(count($prev) >0){?><a href="<?php echo site_url('news/article/'.$prev['id']);?>"><?php echo $prev['title'];?></a><?php }else{ echo "没有了";}?></span><br>
+            <span class="pull-left news_one_title" >下一篇:<?php if(count($next) >0){?><a href="<?php echo site_url('news/article/'.$next['id']);?>"><?php echo $next['title'];?></a><?php }else{ echo "没有了";}?></span>
+         </div>
                 
-            </div>
-        </div>
-    </div>
+     </div>
 </div>
+
+
 <?php $this->load->view('front/footer');?>
 </body>
 </html>

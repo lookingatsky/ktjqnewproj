@@ -71,20 +71,20 @@
 				<p style="font-size:10px;">
             	<?php if($key['static'] == 1){?>
                 <?php if($key['restmoney'] == 0){?>
-                	<a class="btn btn-primary btn-block" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">审核中</a>
+                	<a class="btn btn-primary" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">审核中</a>
                 <?php }else{?>
                 	<?php if($key['is_open'] == 1 and $key['creattime'] > date('Y-m-d H:i:s')){?>
-                		<a class="btn btn-success btn-block" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">即将上线</a>
+                		<a class="btn btn-success" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">即将上线</a>
                     <?php }else{?>
                     	<a class="btn btn-danger btn-block" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">立即投资</a>
 					<?php }?>
                 <?php }?>
                 <?php }?>
                 <?php if($key['static'] == 2){?>
-                	<a class="btn btn-warning btn-block" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">还款中</a>	
+                	<a class="btn btn-warning" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">还款中</a>	
                 <?php }?>
                 <?php if($key['static'] == 3){?>
-                	<a class="btn btn-defalut btn-block" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">已结束</a>	
+                	<a class="btn btn-defalut" href="<?php echo site_url('m/product/bulk_standard/'.$key['id']);?>">已结束</a>	
                 <?php }?>			
 				</p>
 				

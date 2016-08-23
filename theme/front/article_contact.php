@@ -22,6 +22,9 @@
     <script src="<?php echo base_url();?>style/js/jquery-1.9.1.min.js"></script>
     <script src="<?php echo base_url();?>style/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>style/js/base.js"></script>
+	  <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="https://webapi.amap.com/maps?v=1.3&key=bfd2d1e0305a0b20eb1c9f94ae12a542"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -56,117 +59,160 @@ var _hmt = _hmt || [];
 	})
     </script>
 </head>
-<body class="grey_body">
+<body>
 <?php $this->load->view('front/header');?>
 
-<div class="container">
-    <div class="row">	
-        <div class="col-xs-12 col-md-2 about_nav">	
 
-			<a href="<?php echo site_url('news/article_about');?>"><img src="/../style/img/article/about.png" height="50" /> 关于我们</a>
-			<a href="<?php echo site_url('news/article_safety');?>"><img src="/../style/img/article/safety.png" height="50" /> 安全保障</a>
-			<a href="<?php echo site_url('news/article_control');?>"><img src="/../style/img/article/control.png" height="50" /> 风控体系</a>
-			<a href="<?php echo site_url('news/article_mode');?>"><img src="/../style/img/article/platform.png" height="50" /> 平台模式</a>
-			<a href="<?php echo site_url('news/article_transfer');?>"><img src="/../style/img/article/debt.png" height="50" /> 债权转让</a>
-			<a href="<?php echo site_url('news/article_partener');?>"><img src="/../style/img/article/cooperation.png" height="50" /> 合作伙伴</a>
-			<a href="<?php echo site_url('news/article_fee');?>"><img src="/../style/img/article/fee.png" height="50" /> 费用标准</a>
-			<a href="<?php echo site_url('news/article_novice');?>"><img src="/../style/img/article/novice.png" height="50" /> 新手指引</a>
-			<a href="<?php echo site_url('news/newslist/1');?>"><img src="/../style/img/article/repay.png" height="50" /> 还款公告</a>
-			<a href="<?php echo site_url('news/newslist/11');?>"><img src="/../style/img/article/website.png" height="50" /> 网站公告</a>
-			<a href="<?php echo site_url('news/newslist/3');?>"><img src="/../style/img/article/media.png" height="50" /> 媒体报道</a>
-			<a href="<?php echo site_url('news/newslist/7');?>"><img src="/../style/img/article/help.png" height="50" /> 帮助中心</a>
-			<a href="<?php echo site_url('news/article_contact');?>" class="active"><img src="/../style/img/article/contact_.png" height="50" /> 联系我们</a>
-        </div>
-
-        <div class="col-xs-12 col-md-10">
-            <div class="about_con clearfix">
-
+<img src="<?php echo base_url();?>style/img/zizhi/xin1_02.gif" class="img-responsive" alt=""/>
 <style>
-.new_content p{
+    .navigitor_c{
+        width:1100px;
+        margin:0px auto;
+        color:#666;
+    }
+    .navigitor_c li{
+        padding-left:15px;
+    }
+    .navigitor_c li a{
+        color:#666;
+    }
+    .fanctory_j{
+        width:1100px;
+        margin:0px auto;
+        padding:30px;
+    }
+    .fanctory_j img{
+        margin-bottom:20px;
+    }
+    .fanctory_j p {
+        padding-left:10px;
+        text-indent: 2em;
+        line-height:25px;
+    }
+    .navigitor_c li .active{
+        border-bottom:5px solid #337ab7;
+    }
+	.nav-tabs>li>a {
+		border:none;
 }
-.new_content img{
-	width:100%;
-}
-.clear{
-	clear:both;
-}
-.text-kt{
-	color:#00aac6;
-}
-.text-grey{
-	color:#aaa;
-}
-.text-dgrey{
-	color:#888;
-}
-</style>				
-				<div class="new_content" style="padding:30px; line-height:1.7em;font-size:14px;color:#666">
-					<div style="border-left:4px solid #00aac6;border-bottom:1px solid #888;font-size:16px;height:30px;line-height:30px;margin-bottom:20px;padding-left:10px;">联 系 我 们</div>
-					
-					<div style="width:98%;margin:20px auto;">
-						<div><img src="/../style/img/article/g1.png" /></div>
-						
-						<div style="width:80%;margin:0 auto;">
-							<div style="margin-top:30px;">
-								<h4 class="text-info">公 司 地 址</h4>
-								<p class="text-dgrey">地址：北京市海淀区紫竹院路广源闸5号6层6138</p>
-								<p class="text-dgrey">电话：010-52806303</p>
-								<p class="text-dgrey">邮编：100081</p>
-							</div>
-							<div style="margin-top:30px;">
-								<h4 class="text-info">客服电话</h4>
-								<p class="text-dgrey">客服热线：400 677 7505（免长途费），周一至周五 9:00-18:00</p>
-								<p class="text-dgrey">在线客服：点击右侧在线客服按钮与客服进行即时在线沟通</p>
-								<p class="text-dgrey">客服邮箱：<span class="text-info">service@kuaitoujiqi.com</span></p>
-							</div>
-							<div style="margin-top:30px;">
-								<h4 class="text-info">媒 体 采 访</h4>
-								<p class="text-dgrey">媒体采访邮箱：</p>
-								<p class="text-info">media@kuaitoujiqi.com</p>
-							</div>
-							<div style="margin-top:30px;">
-								<h4 class="text-info">市 场 合 作</h4>
-								<p class="text-dgrey">网络推广合作邮箱：</p>
-								<p class="text-info">market@kuaitoujiqi.com</p>
-							</div>
-							<div style="margin-top:30px;">
-								<h4 class="text-info">战 略 发 展</h4>
-								<p class="text-dgrey">金融产品合作邮箱：</p>
-								<p class="text-info">development@kuaitoujiqi.com</p>
-							</div>
-							<div style="margin-top:30px;">
-								<h4 class="text-info">其 他 联 系</h4>
-								<div class="row">
-									<div class="col-xs-12 col-md-2 text-center">
-										<p><img src="/../style/img/weixin_foot.jpg" width="100" /></p>
-										<p>微信</p>
-									</div>
-									<div class="col-xs-12 col-md-2 text-center">
-										<p><img src="/../style/img/weibo.png" width="100" /></p>		
-										<p>新浪微博</p>	
-									</div>
-									<div class="col-xs-12 col-md-2 text-center">
-										<p>官方QQ群</p>
-									</div>
-									<div class="col-xs-12 col-md-3">
-										<p>①：367770726</p>
-										<p>②：321414036</p>
-										<p>③：493842008</p>
-										<p>④：494717113</p>										
-									</div>
-									<div class="col-xs-12 col-md-3"></div>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					
-					
-                </div>
-            </div>
+</style>
+<div style="background-color: #eee;">
+    <ul class="nav nav-tabs navigitor_c">
+       <li><a href="<?php echo site_url('news/article_about'); ?>" >关于我们</a></li>
+        <li><a href="<?php echo site_url('news/article_mode'); ?>" >平台模式</a></li>
+        <li><a href="<?php echo site_url('news/article_transfer'); ?>" >债权转让</a></li>
+        <li><a href="<?php echo site_url('news/article_partener'); ?>" >合作伙伴</a></li>
+        <li><a href="<?php echo site_url('news/article_fee'); ?>" >费用标准</a></li>
+        <li><a href="<?php echo site_url('news/newslist/11'); ?>" >网站公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/1'); ?>" >还款公告</a></li>
+        <li><a href="<?php echo site_url('news/newslist/3'); ?>" >理财知识</a></li>
+        <li><a href="<?php echo site_url('news/newslist/7'); ?>" >	帮助中心</a></li>
+        <li><a href="<?php echo site_url('news/article_contact'); ?>" class="active" >联系我们</a></li></li>
+    </ul>
+</div>
+<style>
+    .risk_economic{
+        width:1100px;
+        margin:30px auto;
+    }
+    .risk_economic .row{
+        padding:0px 100px 10px 50px;
+    }
+    .risk_economic .col-md-4 {
+        color:#337ab7;
+        font-size:20px;
+    }
+    .risk_economic p{
+        margin-left:30px;
+        line-height:25px;
+        margin-bottom: 0px;
+        text-indent: 2em;
+    }
+
+    .risk_economic .p_d{
+        padding-left:35px;
+    }
+    .risk_economic .p_d>img{
+        margin:20px 0px;
+    }
+    .risk_economic .p_d h5{
+        color:#337ab7;
+        text-indent: 2em;
+        line-height:25px;
+        margin:0px;
+    }
+    .risk_economic .p_d ul{
+    margin-left:30px;
+    }
+    .risk_economic .p_d ul li{
+        float:left;
+        margin-right:40px;
+    }
+    .risk_economic .p_d ul li p{
+        margin:0px;
+    }
+	   #container{
+        position:relative;
+        top:10px;
+    }
+
+
+</style>
+<div id="container" style="width:1000px;margin:0px auto;height:300px;"></div>
+<script>
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        center: [116.311512, 39.943409],
+        zoom: 13
+    });
+    var marker = new AMap.Marker({
+        position: map.getCenter()
+    });
+    marker.setMap(map);
+    // 设置鼠标划过点标记显示的文字提示
+    marker.setTitle('我是marker的title');
+
+    // 设置label标签
+    marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+        // content: "我是marker的label标签"
+    });
+</script>
+
+<div>
+    <div class="risk_economic">
+        <div class="row p_d">
+            <img src="<?php echo base_url();?>style/img/article/29.jpg" alt=""/>
+            <p>地址：北京市海淀区紫竹院路广源闸5号6层6138</p>
+            <p>电话：010-52806303</p>
+            <p>邮编：100081</p>
+            <img src="<?php echo base_url();?>style/img/article/30.jpg" alt=""/>
+            <p>客服热线：400 677 7505（免长途费），周一至周五 9:00-18:00</p>
+            <p>在线客服：点击右侧在线客服按钮与客服进行即时在线沟通</p>
+            <p>客服邮箱：service@kuaitoujiqi.com</p>
+            <img src="<?php echo base_url();?>style/img/article/31.jpg" alt=""/>
+            <p>媒体采访邮箱：media@kuaitoujiqi.com</p>
+            <img src="<?php echo base_url();?>style/img/article/32.jpg" alt=""/>
+            <p>网络推广合作邮箱：market@kuaitoujiqi.com</p>
+            <img src="<?php echo base_url();?>style/img/article/33.jpg" alt=""/>
+            <p>金融产品合作邮箱：development@kuaitoujiqi.com</p>
+            <img src="<?php echo base_url();?>style/img/article/34.jpg" alt=""/>
+            <ul>
+                <li><img src="<?php echo base_url();?>style/img/article/35.jpg" alt=""/></li>
+                <li><img src="<?php echo base_url();?>style/img/article/36.jpg" alt=""/></li>
+                <li style="margin-right:0px;">官方QQ群：</li>
+                <li style="margin-top:20px;">
+                    <p>①：367770726</p>
+                    <p>②：321414036</p>
+                    <p>③：493842008</p>
+                    <p>④：494717113</p>
+                </li>
+            </ul>
         </div>
+
     </div>
 </div>
+
 <?php $this->load->view('front/footer');?>
 </body>
 </html>

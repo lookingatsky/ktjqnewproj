@@ -23,9 +23,6 @@
 </head>
 <body>
 <style>
-body{
-	background:#f2f2fd;
-}
 .menu_button{
 	text-align:center;
 }
@@ -48,13 +45,13 @@ body{
 .user_menu_1{
 	height:30px;
 	line-height:30px;
-	background:#00aac6;
+	background:#337ab7;
 	color:#fff;
 	padding-left:30px;
 }
 .user_left_menu .active{
-	background:#eee;
-	border-left:2px solid #00aac6;
+	background:#f9f9f9;
+	border-left:2px solid #337ab7;
 }
 .user_recharge{
 	background:#fff;
@@ -95,7 +92,7 @@ body{
 
 <?php $this->load->view('usercenter/header');?>
     <!---------------- 个人中心 投资记录 -------------------->
-    <div style="background: #f2f2fd;padding:90px 0 30px 0;">
+    <div style="padding:90px 0 30px 0;">
 		 <div class="container" style="width:1270px;">
 			<div class="row">
 				<?php $this->load->view('usercenter/left');?>
@@ -109,7 +106,7 @@ body{
 									充值
 								</a>
 								&nbsp;
-								<a href="<?php echo site_url('usercenter/withdraw');?>" class="btn btn-info btn-sm" role="button">
+								<a href="<?php echo site_url('usercenter/withdraw');?>" style="background-color:#80d5fd;"  class="btn btn-info btn-sm" role="button">
 									提现
 								</a>								
 							</div>
@@ -211,6 +208,10 @@ body{
 						</div>	
 						
 <style>
+.btn-info{
+	background-color:#337ab7;
+	border:1px solid #337ab7;
+}
 .table thead tr th{
 	padding:8px 0;
 	text-align:center;
@@ -219,7 +220,7 @@ body{
 						<div class="row">
 							<div class="col-md-11 col-xs-12" style="margin-left:35px;">
 								<table class="table table-striped text-center" style="">
-									<thead style="background:#5bc0de;color:#fff;">
+									<thead style="background:#337ab7;color:#fff;">
 										<tr>
 											<th>项目名称</th>
 											<th width="90">投资时间</th>
@@ -260,7 +261,7 @@ body{
 																switch($key['pstatic'])
 																{
 																	case 1:echo "等待开始";break;
-																	case 2:echo date('Y-m-d',$key['next_interest']-(-86400));break;
+																	case 2:echo date('Y-m-d',$key['next_interest']);break;
 																	case 3:echo "已结束";
 																}
 															}

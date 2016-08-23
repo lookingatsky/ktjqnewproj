@@ -64,7 +64,7 @@
 				 <div class="record_one" style="border-bottom:5px solid #eee;height:89px;">
 					<div class="row" style="height:30px;border-bottom:1px solid #ddd;margin-top:0;border-top:1px solid #eee;">
 						
-						<div class="col-xs-12 text-left"><a href="<?php echo base_url();?><?php echo 'm/product/bulk_standard/'.$key['productid']; ?>"><?php echo $key['title'];?></a></div>
+						<div class="col-xs-12 text-left"><a href="<?php echo 'm/product/bulk_standard/'.$key['productid']; ?>"><?php echo $key['title'];?></a></div>
 					</div>	 
 					<div class="row">
 						<div class="col-xs-4 text-center" style="border-right:1px solid #ddd;">
@@ -96,8 +96,8 @@
 							<div class="text-center">下期还款</div>	
 						</div>		
 						<div class="col-xs-4">
-							<div class="text-center text-primary"><b><?php echo date('m-d H:i',$key['dateline']);?></b></div>
-							<div class="text-center">日期</div>
+							<div class="text-center text-primary"><?php echo date('m-d H:i',$key['dateline']);?></div>
+							<div class="text-center">投资日期</div>
 						</div>
 					</div>	 
 				 </div>
@@ -124,7 +124,7 @@
 				 <div class="record_one" style="border-bottom:5px solid #eee;height:89px;">
 					<div class="row" style="height:30px;border-bottom:1px solid #ddd;">
 						
-						<div class="col-xs-12 text-left"><a href="<?php echo base_url();?><?php echo 'm/product/bulk_standard/'.$key['productid']; ?>"><?php echo $key['title'];?></a></div>
+						<div class="col-xs-12 text-left"><a href="<?php echo 'm/product/bulk_standard/'.$key['productid']; ?>"><?php echo $key['title'];?>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></div>
 					</div>	 
 					<div class="row">
 						<div class="col-xs-6 text-center" style="border-right:1px solid #ddd;">
@@ -132,7 +132,7 @@
 							<div class="text-center">还款金额</div>
 						</div>		
 						<div class="col-xs-6">
-							<div class="text-center text-primary"><b><?php echo date('m-d H:i',$key['dateline']);?></b></div>
+							<div class="text-center text-primary"><?php echo date('m-d H:i',$key['dateline']);?></div>
 							<div class="text-center">日期</div>
 						</div>
 
@@ -169,7 +169,7 @@
 							<div class="text-center">状态</div>	
 						</div>		
 						<div class="col-xs-4">
-							<div class="text-center text-primary"><b><?php echo date('m-d H:i',$key['dateline']);?></b></div>
+							<div class="text-center text-primary"><?php echo date('m-d H:i',$key['dateline']);?></div>
 							<div class="text-center">日期</div>
 						</div>
 
@@ -206,7 +206,7 @@
 						<div class="text-center">状态</div>	
 					</div>		
 					<div class="col-xs-4">
-						<div class="text-center text-primary"><b><?php echo date('m-d H:i',$key['dateline']);?></b></div>
+						<div class="text-center text-primary"><?php echo date('m-d H:i',$key['dateline']);?></div>
 						<div class="text-center">日期</div>
 					</div>
 				</div>	 

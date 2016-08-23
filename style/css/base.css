@@ -23,6 +23,7 @@ ul,ol{
     border-color: #d4145a;
 }
 
+
 /*顶部样式*/
 .header{
     background:#000;
@@ -42,9 +43,12 @@ ul,ol{
 	color:#eee;
 }
 
-
+.my_alert{
+	border:1px solid transparent;
+	background-color:#fff;
+}
 /*底部开始*/
-.foot{ width:100%; height:350px; border-top:4px solid #337ab7; clear:both; background-color:#333;}
+.foot{ width:100%; border-top:4px solid #337ab7; clear:both; background-color:#333;}
 .foot_center{ margin-top:20px; min-height:160px;}
 .foot_center a{color:#888;}
 .foot_center a:hover{color:#fff;}
@@ -617,3 +621,10 @@ ul,ol{
 	border: none;
 	text-decoration:none;
 }
+a:link{
+	 text-decoration: none;
+}
+  a:focus, input[type=button] ,input[type=submit] {        
+
+    outline:none;
+

@@ -45,14 +45,18 @@
 
     <div style="margin-top: 30px;">
         <p>甲方（出借人）:<?php echo $info[4]['name'];?></p>
-        <p>身份证号：<?php echo $info[4]['idcard'];?></p>
-		
-        <p>乙方（借款人）:<?php echo $info[3]['company_name'];?>.</p>
-        <p>注册号：<?php echo $info[3]['license_no'];?></p>
+        <p style="margin-bottom:20px;">身份证号：<?php echo $info[4]['idcard'];?></p>
+        <p>乙方（借款人）:<?php echo $info[3]['company_name'];?></p>
+        <p>法定代表人:<?php echo $info[3]['legal_person'];?></p>
+        <p>住所地:<?php echo $info[3]['address'];?></p>
+        <p style="margin-bottom:20px;">注册号/统一社会信用代码：<?php echo $info[3]['license_no'];?></p>
 		
         <p>丙方（保证方）:<?php echo $ex[0];?></p>
-        <p>注册号：<?php echo $ex[1];?></p>
-		
+        <?php if(!empty($ensure)){;?>
+        <p>法定代表人:<?php echo $ensure['legal_person'];?></p>
+        <p>住所地:<?php echo $ensure['address'];?></p>
+        <?php };?>
+        <p style="margin-bottom:20px;">注册号：<?php echo $ex[1];?></p>
         <p>丁方(平台方): 北京泰恒长隆网络科技有限公司</p>
 		<p>法定代表人：葛继华</p>
 		<p>住所地：北京市海淀区紫竹院路广源闸5号4层4138</p>
@@ -208,17 +212,16 @@
 	<p>如果本协议中的任何一条或多条违反适用的法律法规，则该条将被视为无效，但该无效条款并不影响本协议其他条款的效力。</p>
 	
     <br><br><br><br><br>
-	<div style="background:url(http://www.kuaitoujiqi.com/style/img/gongzhang.gif) no-repeat; overflow:hidden; background-position:20% 100%;height:151px;" >
+	
     <p>甲方（出借人）:<?php echo $info[4]['name'];?></p>
-    
-    <p>乙方（借款人）:<?php echo $info[3]['company_name'];?></p>
-    
-    <p>丙方（保证方）:<?php echo $ex[0];?></p>
-   
-    <p>丁方(平台方): 北京泰恒长隆网络科技有限公司</p>
-	<!----
-    <div id="gongzhang" style="height:151px;background:url(http://www.kuaitoujiqi.com/style/img/zizhi/danbao.png) no-repeat; overflow:hidden;"></div>
-	--->
+    <div style="background:url(http://www.kuaitoujiqi.com/style/img/<?php echo $info[3]['company_name'];?>.png) no-repeat; overflow:hidden; background-position:20% 100%;height:151px;" >
+    <p style="margin-top: 90px">乙方（借款人）:<?php echo $info[3]['company_name'];?></p>
+    </div>
+    <div style="background:url(http://www.kuaitoujiqi.com/style/img/<?php echo $ex[0];?>.png) no-repeat; overflow:hidden; background-position:20% 100%;height:151px;" >
+    <p style="margin-top: 50px">丙方（保证方）:<?php echo $ex[0];?></p>
+    </div>
+   <div style="background:url(http://www.kuaitoujiqi.com/style/img/gongzhang.gif) no-repeat; overflow:hidden; background-position:20% 100%;height:151px;" >
+    <p style="margin-top: 70px">丁方(平台方): 北京泰恒长隆网络科技有限公司</p>
 	</div>
     <br><br><br>
 
@@ -233,7 +236,7 @@
       </tr>
       <?php for($i=1;$i<=$info[2]['day'];$i++){?>
       <tr>
-        <td><?php echo date('Y年m月d日',next_time($info[2]['starttime'],$i-1));?></td>
+        <td><?php echo date('Y年m月d日',next_time($info[2]['starttime']-86400,$i-1));?></td>
         <td>
 		<?php 
 			$year_rate = $info[2]['rate'] * $info[1]['monkey'];
